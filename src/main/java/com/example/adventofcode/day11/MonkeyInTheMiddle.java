@@ -43,7 +43,6 @@ public class MonkeyInTheMiddle {
                         case MULTIPLICATION -> (item * monkey.operationValue) / divideBy;
                         case SELF_MULTIPLICATION -> (item * item) / divideBy;
                         case ADDITION -> (item + monkey.operationValue) / divideBy;
-                        default -> item;
                     };
 
                     if (newWorryLevel % monkey.divisibleBy == 0) {
