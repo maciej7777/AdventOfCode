@@ -5,12 +5,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
+import static com.example.adventofcode.day11.MonkeyInTheMiddle.OperationType.*;
+
 public class MonkeyInTheMiddle {
     private static final String FILENAME = "src/main/java/com/example/adventofcode/day11/input";
     private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day11/example_input";
-    public static final String SELF_MULTIPLICATION = "self multiplication";
-    public static final String MULTIPLICATION = "multiplication";
-    public static final String ADDITION = "addition";
 
     public static void main(String[] args) throws IOException {
         List<Monkey> input = readInput(FILENAME);
@@ -65,11 +64,15 @@ public class MonkeyInTheMiddle {
         return (long) processedItems.get(processedItems.size() - 1) * (long) processedItems.get(processedItems.size() - 2);
     }
 
+    enum OperationType {
+        SELF_MULTIPLICATION, MULTIPLICATION, ADDITION
+    }
+
     static class Monkey {
         int id;
         List<Long> startingItems;
         String operation;
-        String operationType;
+        OperationType operationType;
         long operationValue;
         long divisibleBy;
         int monkeyTrue;
