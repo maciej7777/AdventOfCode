@@ -75,11 +75,9 @@ public class HillClimbingAlgorithm {
     public static int bfs(List<List<Character>> elements, List<Point> startPosition, Point endPosition) {
         Map<Point, Integer> smallestDistance = new HashMap<>();
         Deque<Visiting> toVisit = new ArrayDeque<>();
-        //Set<Point> visited = new HashSet<>();
 
         for (Point sp : startPosition) {
             toVisit.add(new Visiting(sp, 0));
-        //    visited.add(sp);
         }
 
 
@@ -101,7 +99,7 @@ public class HillClimbingAlgorithm {
             for (Point pointToEvaluate : pointsToEvaluate) {
                 if (pointToEvaluate.x >= 0 && pointToEvaluate.x < elements.size()
                         && pointToEvaluate.y >= 0 && pointToEvaluate.y < elements.get(0).size()
-                        && elements.get(current.point.x).get(current.point.y) > elements.get(pointToEvaluate.x).get(pointToEvaluate.y) - 2
+                        && elements.get(current.point.x).get(current.point.y) + 1 >= elements.get(pointToEvaluate.x).get(pointToEvaluate.y)
                         && smallestDistance.getOrDefault(pointToEvaluate, Integer.MAX_VALUE) > current.steps + 1) {
                     toVisit.addLast(new Visiting(pointToEvaluate, current.steps + 1));
                 }
