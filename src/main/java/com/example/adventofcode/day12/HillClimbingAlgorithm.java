@@ -15,12 +15,12 @@ public class HillClimbingAlgorithm {
 
     public static int obtainLengthOfShortestPathFromStart(String fileName) throws IOException {
         List<List<Character>> input = readInput(fileName);
-        return calculateLengthOfShortestPathFromStart(input);
+        return calculateLengthOfShortestPath(input, false);
     }
 
     public static int obtainLengthOfShortestPathFromBottom(String fileName) throws IOException {
         List<List<Character>> input = readInput(fileName);
-        return calculateLengthOfShortestPathFromBottom(input);
+        return calculateLengthOfShortestPath(input, true);
     }
 
     private record Point(int x, int y) {
@@ -46,48 +46,30 @@ public class HillClimbingAlgorithm {
     record Visiting(Point point, int steps) {
     }
 
-    public static int calculateLengthOfShortestPathFromStart(List<List<Character>> elements) {
+    private static int calculateLengthOfShortestPath(List<List<Character>> elements, boolean includeAllStartElements) {
         Point startPosition = null;
         Point endPosition = null;
-        for (int i = 0; i < elements.size(); i++) {
-            for (int j = 0; j < elements.get(i).size(); j++) {
-                if (elements.get(i).get(j).equals('S')) {
-                    startPosition = new Point(i, j);
-                } else if (elements.get(i).get(j).equals('E')) {
-                    endPosition = new Point(i, j);
-                }
-            }
-        }
-        elements.get(startPosition.x).set(startPosition.y, 'a');
-        elements.get(endPosition.x).set(endPosition.y, 'z');
-
-        return bfs(elements, List.of(startPosition), endPosition);
-    }
-
-    public static int calculateLengthOfShortestPathFromBottom(List<List<Character>> elements) {
-        Point startPosition = null;
-        Point endPosition = null;
-        for (int i = 0; i < elements.size(); i++) {
-            for (int j = 0; j < elements.get(i).size(); j++) {
-                if (elements.get(i).get(j).equals('S')) {
-                    startPosition = new Point(i, j);
-                } else if (elements.get(i).get(j).equals('E')) {
-                    endPosition = new Point(i, j);
-                }
-            }
-        }
-        elements.get(startPosition.x).set(startPosition.y, 'a');
-        elements.get(endPosition.x).set(endPosition.y, 'z');
-
         List<Point> startingPositions = new ArrayList<>();
+
         for (int i = 0; i < elements.size(); i++) {
             for (int j = 0; j < elements.get(i).size(); j++) {
-                if (elements.get(i).get(j).equals('a')) {
+                if (elements.get(i).get(j).equals('S')) {
+                    startPosition = new Point(i, j);
+                    startingPositions.add(new Point(i, j));
+                } else if (elements.get(i).get(j).equals('E')) {
+                    endPosition = new Point(i, j);
+                } else if (elements.get(i).get(j).equals('a')) {
                     startingPositions.add(new Point(i, j));
                 }
             }
         }
-        return bfs(elements, startingPositions, endPosition);
+        elements.get(startPosition.x).set(startPosition.y, 'a');
+        elements.get(endPosition.x).set(endPosition.y, 'z');
+
+        if (includeAllStartElements) {
+            return bfs(elements, startingPositions, endPosition);
+        }
+        return bfs(elements, List.of(startPosition), endPosition);
     }
 
     public static int bfs(List<List<Character>> elements, List<Point> startPosition, Point endPosition) {
