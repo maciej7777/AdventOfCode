@@ -91,10 +91,6 @@ public class HillClimbingAlgorithm {
                 smallestDistance.put(current.point, current.steps);
             }
 
-            if (current.point == endPosition) {
-                return smallestDistance.get(endPosition);
-            }
-
             Point[] pointsToEvaluate = {
                     new Point(current.point.x - 1, current.point.y),
                     new Point(current.point.x, current.point.y - 1),
