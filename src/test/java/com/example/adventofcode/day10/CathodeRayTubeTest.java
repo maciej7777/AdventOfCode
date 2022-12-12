@@ -36,7 +36,7 @@ class CathodeRayTubeTest {
 
     @ParameterizedTest
     @MethodSource("filepathsAndExpectedResults")
-    void testCalculateFullyInclusiveIntervals(final String filename,
+    void testObtainSignalStrengthSumAndDrawings(final String filename,
                                               final int expectedSignalStrengthSum,
                                               final String expectedDrawing) throws IOException {
         assertEquals(expectedSignalStrengthSum, CathodeRayTube.obtainSignalStrengthSumAndDrawings(filename).signalStrengthSum());
