@@ -84,11 +84,6 @@ public class HillClimbingAlgorithm {
 
 
         while (!toVisit.isEmpty()) {
-
-            int steps = 0;
-            if (steps == 100) {
-                System.out.println("100");
-            }
             Visiting current = toVisit.getLast();
             toVisit.removeLast();
 
@@ -100,37 +95,35 @@ public class HillClimbingAlgorithm {
                 return smallestDistance.get(endPosition);
             }
 
-            if (current.point != endPosition) {
-                if (current.point.x > 0
-                        && elements.get(current.point.x).get(current.point.y) >
-                        elements.get(current.point.x - 1).get(current.point.y) - 2
-                        && smallestDistance.getOrDefault(new Point(current.point.x - 1, current.point.y), Integer.MAX_VALUE) > current.steps + 1
-                ) {
-                    toVisit.addLast(new Visiting(new Point(current.point.x - 1, current.point.y), current.steps + 1));
-                }
-                if (current.point.y > 0
-                        && elements.get(current.point.x).get(current.point.y) >
-                        elements.get(current.point.x).get(current.point.y - 1) - 2
-                        && smallestDistance.getOrDefault(new Point(current.point.x, current.point.y - 1), Integer.MAX_VALUE) > current.steps + 1
-                ) {
-                    toVisit.addLast(new Visiting(new Point(current.point.x, current.point.y - 1), current.steps + 1));
-                }
-                if (current.point.x + 1 < elements.size()
-                        && elements.get(current.point.x).get(current.point.y) >
-                        elements.get(current.point.x + 1).get(current.point.y) - 2
-                        && smallestDistance.getOrDefault(new Point(current.point.x + 1, current.point.y), Integer.MAX_VALUE) > current.steps + 1
-                ) {
-                    toVisit.addLast(new Visiting(new Point(current.point.x + 1, current.point.y), current.steps + 1));
-                }
+            if (current.point.x > 0
+                    && elements.get(current.point.x).get(current.point.y) >
+                    elements.get(current.point.x - 1).get(current.point.y) - 2
+                    && smallestDistance.getOrDefault(new Point(current.point.x - 1, current.point.y), Integer.MAX_VALUE) > current.steps + 1
+            ) {
+                toVisit.addLast(new Visiting(new Point(current.point.x - 1, current.point.y), current.steps + 1));
+            }
+            if (current.point.y > 0
+                    && elements.get(current.point.x).get(current.point.y) >
+                    elements.get(current.point.x).get(current.point.y - 1) - 2
+                    && smallestDistance.getOrDefault(new Point(current.point.x, current.point.y - 1), Integer.MAX_VALUE) > current.steps + 1
+            ) {
+                toVisit.addLast(new Visiting(new Point(current.point.x, current.point.y - 1), current.steps + 1));
+            }
+            if (current.point.x + 1 < elements.size()
+                    && elements.get(current.point.x).get(current.point.y) >
+                    elements.get(current.point.x + 1).get(current.point.y) - 2
+                    && smallestDistance.getOrDefault(new Point(current.point.x + 1, current.point.y), Integer.MAX_VALUE) > current.steps + 1
+            ) {
+                toVisit.addLast(new Visiting(new Point(current.point.x + 1, current.point.y), current.steps + 1));
+            }
 
-                Point evaluated = new Point(current.point.x, current.point.y + 1);
-                if (current.point.y + 1 < elements.get(0).size() &&
-                        elements.get(current.point.x).get(current.point.y) >
-                                elements.get(evaluated.x).get(evaluated.y) - 2
-                        && smallestDistance.getOrDefault(evaluated, Integer.MAX_VALUE) > current.steps + 1
-                ) {
-                    toVisit.addLast(new Visiting(evaluated, current.steps + 1));
-                }
+            Point evaluated = new Point(current.point.x, current.point.y + 1);
+            if (current.point.y + 1 < elements.get(0).size() &&
+                    elements.get(current.point.x).get(current.point.y) >
+                            elements.get(evaluated.x).get(evaluated.y) - 2
+                    && smallestDistance.getOrDefault(evaluated, Integer.MAX_VALUE) > current.steps + 1
+            ) {
+                toVisit.addLast(new Visiting(evaluated, current.steps + 1));
             }
         }
 
