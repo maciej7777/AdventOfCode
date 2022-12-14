@@ -18,8 +18,8 @@ public class RegolithReservoir {
         System.out.println(calculateNumberOfUnitsOfSandToBlockSource(exampleInput));
     }
 
-    public static int obtainNumberOfUnitsOfSandToStartFlowing(final String FILENAME) throws IOException {
-        Set<Point> input = readInput(FILENAME);
+    public static int obtainNumberOfUnitsOfSandToStartFlowing(final String filename) throws IOException {
+        Set<Point> input = readInput(filename);
         return calculateNumberOfUnitsOfSandToStartFlowing(input);
     }
 
