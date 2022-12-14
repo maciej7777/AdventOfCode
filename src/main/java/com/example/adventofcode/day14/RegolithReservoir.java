@@ -31,7 +31,7 @@ public class RegolithReservoir {
     record Point(int x, int y) {
     }
 
-    public static Set<Point> readInput(String filename) throws IOException {
+    private static Set<Point> readInput(String filename) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
             Set<Point> map = new HashSet<>();
@@ -60,7 +60,7 @@ public class RegolithReservoir {
         }
     }
 
-    public static int calculateNumberOfUnitsOfSandToBlockSource(Set<Point> rocks) {
+    private static int calculateNumberOfUnitsOfSandToBlockSource(Set<Point> rocks) {
         Set<Point> sand = new HashSet<>();
 
         int floor = 0;
@@ -99,7 +99,7 @@ public class RegolithReservoir {
         return sand.size();
     }
 
-    public static int calculateNumberOfUnitsOfSandToStartFlowing(Set<Point> rocks) {
+    private static int calculateNumberOfUnitsOfSandToStartFlowing(Set<Point> rocks) {
         Set<Point> sand = new HashSet<>();
 
         int floor = 0;
