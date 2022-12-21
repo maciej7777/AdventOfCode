@@ -23,8 +23,8 @@ class MonkeyMathTest {
 
     @ParameterizedTest
     @MethodSource("filePathsAndExpectedRoot")
-    void testObtainSurfaceArea(final String filename,
-                               final long expectedRoot) throws IOException {
+    void testCalculateRoot(final String filename,
+                           final long expectedRoot) throws IOException {
         assertEquals(expectedRoot, MonkeyMath.calculateRoot(filename));
     }
 
@@ -41,8 +41,8 @@ class MonkeyMathTest {
 
     @ParameterizedTest
     @MethodSource("filePathsAndExpectedHumn")
-    void testObtainExteriorSurfaceArea(final String filename,
-                                       final long expectedHumn) throws IOException {
+    void testCalculateHumn(final String filename,
+                           final long expectedHumn) throws IOException {
         assertEquals(expectedHumn, MonkeyMath.calculateHumn(filename));
     }
 }
