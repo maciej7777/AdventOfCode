@@ -12,10 +12,10 @@ public class UnstableDiffusion {
     //110 - example
     //4025 - prod input
     public static void main(String[] args) throws IOException {
-        List<Point> input = readInput(FILENAME);
-        List<Point> exampleInput = readInput(EXAMPLE_FILENAME);
-        List<Point> input2 = readInput(FILENAME);
-        List<Point> exampleInput2 = readInput(EXAMPLE_FILENAME);
+        Set<Point> input = readInput(FILENAME);
+        Set<Point> exampleInput = readInput(EXAMPLE_FILENAME);
+        Set<Point> input2 = readInput(FILENAME);
+        Set<Point> exampleInput2 = readInput(EXAMPLE_FILENAME);
 
         System.out.println(calculatePositions2(input, true));
         System.out.println(calculatePositions2(input2, false));
@@ -26,17 +26,17 @@ public class UnstableDiffusion {
     }
 
     public static int calculateElfMoves(String filename, boolean part1) throws IOException {
-        List<Point> input = readInput(filename);
+        Set<Point> input = readInput(filename);
         return calculatePositions2(input, part1);
     }
 
     private record Point(int x, int y) {
     }
 
-    public static List<Point> readInput(String filename) throws IOException {
+    public static Set<Point> readInput(String filename) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
-            List<Point> map = new ArrayList<>();
+            Set<Point> map = new HashSet<>();
 
             int lineNumber = 0;
             while ((line = br.readLine()) != null) {
@@ -62,7 +62,7 @@ public class UnstableDiffusion {
         return moves;
     }
 
-    public static int calculatePositions2(List<Point> elves, boolean part1) {
+    public static int calculatePositions2(Set<Point> elves, boolean part1) {
 
         List<List<Point>> moves = getMovesList();
         int elvesMoved = -1;
@@ -124,7 +124,7 @@ public class UnstableDiffusion {
         return round;
     }
 
-    private static boolean thereIsNoElfAround(List<Point> elves, Point point) {
+    private static boolean thereIsNoElfAround(Set<Point> elves, Point point) {
         return !elves.contains(new Point(point.x, point.y - 1))
                 && !elves.contains(new Point(point.x, point.y + 1))
                 && !elves.contains(new Point(point.x - 1, point.y))
@@ -135,7 +135,7 @@ public class UnstableDiffusion {
                 && !elves.contains(new Point(point.x - 1, point.y + 1));
     }
 
-    private static int calculateSum(List<Point> elves) {
+    private static int calculateSum(Set<Point> elves) {
         int minX = Integer.MAX_VALUE;
         int maxX = 0;
         int minY = Integer.MAX_VALUE;
@@ -166,7 +166,7 @@ public class UnstableDiffusion {
         return sum;
     }
 
-    private static boolean containsPoint(List<Point> elves, Point point, int position, List<List<Point>> moves) {
+    private static boolean containsPoint(Set<Point> elves, Point point, int position, List<List<Point>> moves) {
         return !elves.contains(new Point(point.x + moves.get(position).get(0).x, point.y + moves.get(position).get(0).y))
                 && !elves.contains(new Point(point.x + moves.get(position).get(1).x, point.y + moves.get(position).get(1).y))
                 && !elves.contains(new Point(point.x + moves.get(position).get(2).x, point.y + moves.get(position).get(2).y));
