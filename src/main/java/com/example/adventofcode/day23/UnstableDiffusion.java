@@ -9,8 +9,6 @@ public class UnstableDiffusion {
     private static final String FILENAME = "src/main/java/com/example/adventofcode/day23/input";
     private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day23/example_input";
 
-    //110 - example
-    //4025 - prod input
     public static void main(String[] args) throws IOException {
         Set<Point> input = readInput(FILENAME);
         Set<Point> exampleInput = readInput(EXAMPLE_FILENAME);
