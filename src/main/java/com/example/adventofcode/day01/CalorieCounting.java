@@ -1,4 +1,4 @@
-package com.example.adventofcode.day1;
+package com.example.adventofcode.day01;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CalorieCounting {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day1/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day1/example_input";
+    private static final String FILENAME = "src/main/java/com/example/adventofcode/day01/input";
+    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day01/example_input";
 
     public static void main(String[] args) throws IOException {
         System.out.println(countMaxCalories(FILENAME));

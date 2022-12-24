@@ -1,4 +1,4 @@
-package com.example.adventofcode.day4;
+package com.example.adventofcode.day04;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class CampCleanupTest {
     private static Stream<Arguments> filepathsAndExpectedNumberOfFullyInclusiveIntervals() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day4/example_input", 2),
-                Arguments.of("src/main/java/com/example/adventofcode/day4/input", 571)
+                Arguments.of("src/main/java/com/example/adventofcode/day04/example_input", 2),
+                Arguments.of("src/main/java/com/example/adventofcode/day04/input", 571)
         );
     }
 
@@ -26,8 +26,8 @@ class CampCleanupTest {
 
     private static Stream<Arguments> filepathsAndExpectedNumberOfIntervalIntersections() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day4/example_input", 4),
-                Arguments.of("src/main/java/com/example/adventofcode/day4/input", 917)
+                Arguments.of("src/main/java/com/example/adventofcode/day04/example_input", 4),
+                Arguments.of("src/main/java/com/example/adventofcode/day04/input", 917)
         );
     }
 

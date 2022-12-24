@@ -1,4 +1,4 @@
-package com.example.adventofcode.day6;
+package com.example.adventofcode.day06;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class TuningTrouble {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day6/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day6/example_input";
+    private static final String FILENAME = "src/main/java/com/example/adventofcode/day06/input";
+    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day06/example_input";
 
     public static void main(String[] args) throws IOException {
         List<String> lines = readLines(FILENAME);
