@@ -1,4 +1,4 @@
-package com.example.adventofcode.day4;
+package com.example.adventofcode.day04;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class CampCleanup {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day4/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day4/example_input";
+    private static final String FILENAME = "src/main/java/com/example/adventofcode/day04/input";
+    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day04/example_input";
 
     public static void main(String[] args) throws IOException {
         System.out.println(countFullyInclusiveIntervals(FILENAME));
