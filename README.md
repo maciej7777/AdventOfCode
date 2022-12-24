@@ -1,4 +1,4 @@
 # AdventOfCode2022
-Advent of code (https://adventofcode.com/2022/about) is an event driven Eric Wastl. Following the description from the page, Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like. People use them as interview prep, company training, university coursework, practice problems, a speed contest, or to challenge each other.
+Advent of code (https://adventofcode.com/2022/about) is an event driven by Eric Wastl. Following the description from the page, Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like. People use them as interview prep, company training, university coursework, practice problems, a speed contest, or to challenge each other.
 
 In this repository I paste my solutions for Advent of Code puzzles in 2022. Each solution is provided in a separated directory, there are also test directories added.
