@@ -19,8 +19,8 @@ class RockPaperScissorsTest {
 
     @ParameterizedTest
     @MethodSource("filePathsAndExpectedStrategyScoreForMoves")
-    void testCountMaxCalories(final String filename,
-                              final int expectedStrategyScore) throws IOException {
+    void testObtainStrategyScoreForMoves(final String filename,
+                                         final int expectedStrategyScore) throws IOException {
         assertEquals(expectedStrategyScore, RockPaperScissors.obtainStrategyScoreForMoves(filename));
     }
 
