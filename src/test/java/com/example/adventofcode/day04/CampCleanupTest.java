@@ -33,8 +33,8 @@ class CampCleanupTest {
 
     @ParameterizedTest
     @MethodSource("filepathsAndExpectedNumberOfIntervalIntersections")
-    void countIntervalsIntersections(final String filename,
-                                     final int expectedPairs) throws IOException {
+    void testCountIntervalsIntersections(final String filename,
+                                         final int expectedPairs) throws IOException {
         assertEquals(expectedPairs, CampCleanup.countIntervalsIntersections(filename));
     }
 }
