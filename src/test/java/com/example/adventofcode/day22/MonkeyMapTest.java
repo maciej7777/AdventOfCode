@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MonkeyMapTest {
-    private static Stream<Arguments> filePathsAndExpectedRoot() {
+    private static Stream<Arguments> filePathsAndExpectedPassword() {
         return Stream.of(
                 Arguments.of("src/main/java/com/example/adventofcode/day22/example_input",
                         6032
@@ -22,17 +22,17 @@ class MonkeyMapTest {
     }
 
     @ParameterizedTest
-    @MethodSource("filePathsAndExpectedRoot")
-    void testCalculateRoot(final String filename,
-                           final int expectedRoot) throws IOException {
-        assertEquals(expectedRoot, MonkeyMap.calculatePositions(filename));
+    @MethodSource("filePathsAndExpectedPassword")
+    void testCalculatePassword(final String filename,
+                               final int expectedRoot) throws IOException {
+        assertEquals(expectedRoot, MonkeyMap.calculatePassword(filename));
     }
 
-    private static Stream<Arguments> filePathsAndExpectedHumn() {
+    private static Stream<Arguments> filePathsAndExpectedCubePassword() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day22/example_input",
+                /*Arguments.of("src/main/java/com/example/adventofcode/day22/example_input",
                         5031
-                ),
+                ),*/
                 Arguments.of("src/main/java/com/example/adventofcode/day22/input",
                         109224
                 )
@@ -40,9 +40,9 @@ class MonkeyMapTest {
     }
 
     @ParameterizedTest
-    @MethodSource("filePathsAndExpectedHumn")
-    void testCalculateHumn(final String filename,
-                           final int expectedHumn) throws IOException {
-        assertEquals(expectedHumn, MonkeyMap2.calculatePositions(filename));
+    @MethodSource("filePathsAndExpectedCubePassword")
+    void testCalculateCubePassword(final String filename,
+                                   final int expectedCubePassword) throws IOException {
+        assertEquals(expectedCubePassword, MonkeyMapCube.calculateCubePassword(filename));
     }
 }
