@@ -11,13 +11,13 @@ public class MonkeyMap {
     private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day22/example_input";
 
     public static void main(String[] args) throws IOException {
-        System.out.println(calculatePositions(EXAMPLE_FILENAME));
-        System.out.println(calculatePositions(FILENAME));
+        System.out.println(calculatePassword(EXAMPLE_FILENAME));
+        System.out.println(calculatePassword(FILENAME));
     }
 
-    public static int calculatePositions(String exampleFilename) throws IOException {
+    public static int calculatePassword(String exampleFilename) throws IOException {
         Input exampleInput = readInput(exampleFilename);
-        return calculatePositions(exampleInput);
+        return calculatePassword(exampleInput);
     }
 
 
@@ -76,7 +76,7 @@ public class MonkeyMap {
     private static record Input(Set<Point> map, Set<Point> walls, String inputKey, Point topLeft, List<Move> moves) {
     }
 
-    public static int calculatePositions(Input input) {
+    public static int calculatePassword(Input input) {
         Point currentPosition = input.topLeft;
         int facingPosition = 0;
 
