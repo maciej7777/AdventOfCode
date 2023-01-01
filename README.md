@@ -31,3 +31,5 @@ In this repository I paste my solutions for Advent of Code puzzles in 2022. Each
 | 23 | [Unstable Diffusion](https://adventofcode.com/2022/day/23) | [Solution](src/main/java/com/example/adventofcode/day23/UnstableDiffusion.java) | [Tests](src/test/java/com/example/adventofcode/day23/UnstableDiffusionTest.java) |
 | 24 | [Blizzard Basin](https://adventofcode.com/2022/day/24) | [Solution](src/main/java/com/example/adventofcode/day24/BlizzardBasin.java) | [Tests](src/test/java/com/example/adventofcode/day24/BlizzardBasinTest.java) |
 | 25 | [Full Of Hot Air](https://adventofcode.com/2022/day/25) | [Solution](src/main/java/com/example/adventofcode/day25/FullOfHotAir.java) | [Tests](src/test/java/com/example/adventofcode/day25/FullOfHotAirTest.java) |
+
+You can read more about each of the tasks (and solutions) on the reddit [solution megathreads 2022](https://www.reddit.com/r/adventofcode/wiki/archives/solution_megathreads/2022/).
