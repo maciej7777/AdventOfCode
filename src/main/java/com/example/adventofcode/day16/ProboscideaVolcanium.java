@@ -148,19 +148,15 @@ public class ProboscideaVolcanium {
     }
 
     private static Map<Long, Integer> calculateMaxPressureReduction(Map<Valve, Map<Valve, Integer>> newInput, Map<Valve, Long> binaryPositions, Valve move, int timeLeft, long open, int currentReduction) {
-        if (move.flowRate > 0 && timeLeft > 1 && ((binaryPositions.get(move) & open) == 0)) {
+        if (move.flowRate > 0 && timeLeft > 1) {
             timeLeft--;
             currentReduction += timeLeft * move.flowRate;
             open = (open | binaryPositions.get(move));
         }
 
-        if (timeLeft == 0) {
-            return Map.of(open, currentReduction);
-        }
-
         Map<Long, Integer> costReductionMap = new HashMap<>();
         for (Map.Entry<Valve, Integer> nextNode : newInput.get(move).entrySet()) {
-            if (timeLeft - nextNode.getValue() > 0) {
+            if (timeLeft - nextNode.getValue() > 0 && (binaryPositions.get(nextNode.getKey()) & open) == 0) {
                 Map<Long, Integer> returnedCostReductionMap = calculateMaxPressureReduction(newInput, binaryPositions, nextNode.getKey(), timeLeft - nextNode.getValue(), open, currentReduction);
                 for (Map.Entry<Long, Integer> reduction : returnedCostReductionMap.entrySet()) {
                     if (reduction.getValue() > costReductionMap.getOrDefault(reduction.getKey(), 0)) {
