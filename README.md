@@ -33,3 +33,6 @@ In this repository I paste my solutions for Advent of Code puzzles in 2022. Each
 | 25 | [Full Of Hot Air](https://adventofcode.com/2022/day/25) | [Solution](src/main/java/com/example/adventofcode/day25/FullOfHotAir.java) | [Tests](src/test/java/com/example/adventofcode/day25/FullOfHotAirTest.java) |
 
 You can read more about each of the tasks (and solutions) on the reddit [solution megathreads 2022](https://www.reddit.com/r/adventofcode/wiki/archives/solution_megathreads/2022/).
+
+Some threads on reddit were especially interesting in 2022. You can find some of them below:
+* day 19 possible optimisations - https://www.reddit.com/r/adventofcode/comments/zpy5rm/2022_day_19_what_are_your_insights_and/
