@@ -22,6 +22,10 @@ class RopeBridgeTest {
                 ),
                 Arguments.of("src/main/java/com/example/adventofcode/day09/example_input",
                         10,
+                        1
+                ),
+                Arguments.of("src/main/java/com/example/adventofcode/day09/example_input_larger",
+                        10,
                         36
                 ),
                 Arguments.of("src/main/java/com/example/adventofcode/day09/input",
