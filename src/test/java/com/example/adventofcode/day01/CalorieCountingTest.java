@@ -13,7 +13,7 @@ class CalorieCountingTest {
 
     private static Stream<Arguments> filepathsAndExpectedMaxCalories() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day01/example_input", 24000),
+                Arguments.of("src/main/java/com/example/adventofcode/day01/example_input", 24001),
                 Arguments.of("src/main/java/com/example/adventofcode/day01/input", 68467)
         );
     }
