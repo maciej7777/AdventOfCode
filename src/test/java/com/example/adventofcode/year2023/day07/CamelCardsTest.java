@@ -1,6 +1,5 @@
 package com.example.adventofcode.year2023.day07;
 
-import com.example.adventofcode.year2023.day07.CamelCards;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
