@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class RockPaperScissorsTest {
     private static Stream<Arguments> filePathsAndExpectedStrategyScoreForMoves() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day02/example_input", 15),
-                Arguments.of("src/main/java/com/example/adventofcode/day02/input", 11475)
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day02/example_input", 15),
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day02/input", 11475)
         );
     }
 
@@ -26,8 +26,8 @@ class RockPaperScissorsTest {
 
     private static Stream<Arguments> filePathsAndExpectedStrategyScoreForResults() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day02/example_input", 12),
-                Arguments.of("src/main/java/com/example/adventofcode/day02/input", 16862)
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day02/example_input", 12),
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day02/input", 16862)
         );
     }
 

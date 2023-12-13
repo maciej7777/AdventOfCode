@@ -12,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class MonkeyMathTest {
     private static Stream<Arguments> filePathsAndExpectedRoot() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day21/example_input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day21/example_input",
                         152L
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/day21/input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day21/input",
                         276156919469632L
                 )
         );
@@ -30,10 +30,10 @@ class MonkeyMathTest {
 
     private static Stream<Arguments> filePathsAndExpectedHumn() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day21/example_input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day21/example_input",
                         301L
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/day21/input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day21/input",
                         3441198826073L
                 )
         );

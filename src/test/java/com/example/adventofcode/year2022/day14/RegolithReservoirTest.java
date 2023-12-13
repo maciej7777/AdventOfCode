@@ -12,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class RegolithReservoirTest {
     private static Stream<Arguments> filePathsAndExpectedNumberOfUnitsOfSandToStartFlowing() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day14/example_input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day14/example_input",
                         24
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/day14/input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day14/input",
                         808
                 )
         );
@@ -30,10 +30,10 @@ class RegolithReservoirTest {
 
     private static Stream<Arguments> filePathsAndExpectedNumberOfUnitsOfSandToBlockSource() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day14/example_input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day14/example_input",
                         93
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/day14/input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day14/input",
                         26625
                 )
         );

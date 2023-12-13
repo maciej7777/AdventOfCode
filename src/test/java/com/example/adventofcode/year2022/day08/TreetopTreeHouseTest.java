@@ -12,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class TreetopTreeHouseTest {
     private static Stream<Arguments> filePathsAndExpectedTreesVisibleFromOutside() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day08/example_input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day08/example_input",
                         21
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/day08/input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day08/input",
                         1684
                 )
         );
@@ -30,10 +30,10 @@ class TreetopTreeHouseTest {
 
     private static Stream<Arguments> filePathsAndExpectedHighestScenicScore() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day08/example_input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day08/example_input",
                         8
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/day08/input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day08/input",
                         486540
                 )
         );

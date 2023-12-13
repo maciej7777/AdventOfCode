@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class CampCleanupTest {
     private static Stream<Arguments> filepathsAndExpectedNumberOfFullyInclusiveIntervals() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day04/example_input", 2),
-                Arguments.of("src/main/java/com/example/adventofcode/day04/input", 571)
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day04/example_input", 2),
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day04/input", 571)
         );
     }
 
@@ -26,8 +26,8 @@ class CampCleanupTest {
 
     private static Stream<Arguments> filepathsAndExpectedNumberOfIntervalIntersections() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day04/example_input", 4),
-                Arguments.of("src/main/java/com/example/adventofcode/day04/input", 917)
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day04/example_input", 4),
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day04/input", 917)
         );
     }
 
