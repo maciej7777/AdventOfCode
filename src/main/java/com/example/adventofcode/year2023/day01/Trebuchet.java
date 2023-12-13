@@ -1,4 +1,4 @@
-package com.example.adventofcode.day01_2023;
+package com.example.adventofcode.year2023.day01;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.Map;
 
 public class Trebuchet {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day01_2023/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day01_2023/example_input";
+    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2023/day01/input";
+    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2023/day01/example_input";
 
-    private static final String EXAMPLE_FILENAME2 = "src/main/java/com/example/adventofcode/day01_2023/example_input2";
+    private static final String EXAMPLE_FILENAME2 = "src/main/java/com/example/adventofcode/year2023/day01/example_input2";
 
     private static final Map<String, String> digitNames = Map.of(
             "one", "1",
@@ -45,6 +45,17 @@ public class Trebuchet {
         return sums.stream().mapToInt(i -> i).sum();
     }
 
+    private static List<String> readLines(String filename) throws IOException {
+        List<String> lines = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                lines.add(line);
+            }
+        }
+        return lines;
+    }
 
     private static List<Integer> readCalibrationNumbers(final String filename) throws IOException {
         List<Integer> sums;
