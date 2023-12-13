@@ -73,13 +73,13 @@ public class PointOfIncidence {
         return sum;
     }
 
-    private static boolean checkReflectionRow(int topRow, List<List<Character>> map, int expectedSmudges) {
-        int i = topRow;
-        int j = topRow + 1;
+    private static boolean checkReflectionRow(int reflectionRow, List<List<Character>> map, int expectedSmudges) {
+        int topRow = reflectionRow;
+        int bottomRow = reflectionRow + 1;
         int smudges = 0;
-        while (i >= 0 && j < map.size()) {
-            for (int k = 0; k < map.get(i).size(); k++) {
-                if (!map.get(i).get(k).equals(map.get(j).get(k))) {
+        while (topRow >= 0 && bottomRow < map.size()) {
+            for (int i = 0; i < map.get(topRow).size(); i++) {
+                if (!map.get(topRow).get(i).equals(map.get(bottomRow).get(i))) {
                     if (smudges < expectedSmudges) {
                         smudges++;
                     } else {
@@ -87,33 +87,33 @@ public class PointOfIncidence {
                     }
                 }
             }
-            i--;
-            j++;
+            topRow--;
+            bottomRow++;
         }
 
         return smudges == expectedSmudges;
     }
 
-    private static boolean checkReflectionColumn(int leftColumn, List<List<Character>> map, int expectedMistakes) {
-        int i = leftColumn;
-        int j = leftColumn + 1;
-        int mistakes = 0;
+    private static boolean checkReflectionColumn(int reflectionColumn, List<List<Character>> map, int expectedSmudges) {
+        int leftColumn = reflectionColumn;
+        int rightColumn = reflectionColumn + 1;
+        int smudges = 0;
 
-        while (i >= 0 && j < map.get(0).size()) {
-            for (int k = 0; k < map.size(); k++) {
-                if (!map.get(k).get(i).equals(map.get(k).get(j))) {
-                    if (mistakes < expectedMistakes) {
-                        mistakes++;
+        while (leftColumn >= 0 && rightColumn < map.get(0).size()) {
+            for (int i = 0; i < map.size(); i++) {
+                if (!map.get(i).get(leftColumn).equals(map.get(i).get(rightColumn))) {
+                    if (smudges < expectedSmudges) {
+                        smudges++;
                     } else {
                         return false;
                     }
                 }
             }
-            i--;
-            j++;
+            leftColumn--;
+            rightColumn++;
         }
 
-        return mistakes == expectedMistakes;
+        return smudges == expectedSmudges;
 
     }
 }
