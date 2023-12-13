@@ -12,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class NotEnoughMineralsTest {
     private static Stream<Arguments> filePathsAndExpectedMaximumGeodesSum() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day19/example_input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day19/example_input",
                         33
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/day19/input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day19/input",
                         1092
                 )
         );
@@ -30,10 +30,10 @@ class NotEnoughMineralsTest {
 
     private static Stream<Arguments> filePathsAndExpectedMaximumGeodesMultiplication() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day19/example_input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day19/example_input",
                         3472
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/day19/input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day19/input",
                         3542
                 )
         );

@@ -12,19 +12,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class UnstableDiffusionTest {
     private static Stream<Arguments> filePathsAndExpectedElfMoves() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day23/example_input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day23/example_input",
                         true,
                         110
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/day23/input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day23/input",
                         true,
                         4025
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/day23/example_input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day23/example_input",
                         false,
                         20
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/day23/input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day23/input",
                         false,
                         935
                 )

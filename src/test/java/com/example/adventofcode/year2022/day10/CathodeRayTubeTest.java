@@ -13,7 +13,7 @@ class CathodeRayTubeTest {
 
     private static Stream<Arguments> filepathsAndExpectedResults() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day10/example_input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day10/example_input",
                         13140,
                         "##..##..##..##..##..##..##..##..##..##.." +
                         "###...###...###...###...###...###...###." +
@@ -22,7 +22,7 @@ class CathodeRayTubeTest {
                         "######......######......######......####" +
                         "#######.......#######.......#######....."
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/day10/input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day10/input",
                         11820,
                         "####.###....##.###..###..#..#..##..#..#." +
                         "#....#..#....#.#..#.#..#.#.#..#..#.#..#." +

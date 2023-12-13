@@ -13,8 +13,8 @@ class CalorieCountingTest {
 
     private static Stream<Arguments> filepathsAndExpectedMaxCalories() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day01/example_input", 24000),
-                Arguments.of("src/main/java/com/example/adventofcode/day01/input", 68467)
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day01/example_input", 24000),
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day01/input", 68467)
         );
     }
 
@@ -27,8 +27,8 @@ class CalorieCountingTest {
 
     private static Stream<Arguments> filepathsAndExpected3MaxCalories() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day01/example_input", 45000),
-                Arguments.of("src/main/java/com/example/adventofcode/day01/input", 203420)
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day01/example_input", 45000),
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day01/input", 203420)
         );
     }
 

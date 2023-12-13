@@ -12,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class HillClimbingAlgorithmTest {
     private static Stream<Arguments> filepathsAndExpectedLengthFromStart() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day12/example_input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day12/example_input",
                         31
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/day12/input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day12/input",
                         490
                 )
         );
@@ -30,10 +30,10 @@ class HillClimbingAlgorithmTest {
 
     private static Stream<Arguments> filepathsAndExpectedLengthFromBottom() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day12/example_input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day12/example_input",
                         29
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/day12/input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day12/input",
                         488
                 )
         );

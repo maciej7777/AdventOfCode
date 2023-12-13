@@ -12,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class ProboscideaVolcaniumTest {
     private static Stream<Arguments> filePathsAndRowsAndExpectedMaxPressureReduction() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day16/example_input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day16/example_input",
                         1651
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/day16/input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day16/input",
                         2056
                 )
         );
@@ -30,10 +30,10 @@ class ProboscideaVolcaniumTest {
 
     private static Stream<Arguments> filePathsAndRowsAndExpectedMaxPressureReductionWithElephants() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/day16/example_input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day16/example_input",
                         1707
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/day16/input",
+                Arguments.of("src/main/java/com/example/adventofcode/year2022/day16/input",
                         2513
                 )
         );
