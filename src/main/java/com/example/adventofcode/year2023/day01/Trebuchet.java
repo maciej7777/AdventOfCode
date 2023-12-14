@@ -26,23 +26,31 @@ public class Trebuchet {
     );
 
     public static void main(String[] args) throws IOException {
-        System.out.println(sumCalibrationNumbers(EXAMPLE_FILENAME));
-        System.out.println(sumCalibrationNumbers(FILENAME));
+        System.out.println(calculateCalibrationNumbersSum(EXAMPLE_FILENAME));
+        System.out.println(calculateCalibrationNumbersSum(FILENAME));
 
         System.out.println(sumCalibrationNumbersWithText(EXAMPLE_FILENAME2));
         System.out.println(sumCalibrationNumbersWithText(FILENAME));
     }
 
-    public static int sumCalibrationNumbers(final String filename) throws IOException {
-        List<Integer> sums = readCalibrationNumbers(filename);
+    public static int calculateCalibrationNumbersSum(final String filename) throws IOException {
+        List<String> lines = readLines(filename);
+        int sum = 0;
+        for (String line : lines) {
+            sum += obtainCalibrationNumber(obtainDigitsFromLine(line));
+        }
 
-        return sums.stream().mapToInt(i -> i).sum();
+        return sum;
     }
 
     public static int sumCalibrationNumbersWithText(final String filename) throws IOException {
-        List<Integer> sums = readCalibrationNumbersWithText(filename);
+        List<String> lines = readLines(filename);
+        int sum = 0;
+        for (String line : lines) {
+            sum += obtainCalibrationNumber(obtainNumbersFromLine(line));
+        }
 
-        return sums.stream().mapToInt(i -> i).sum();
+        return sum;
     }
 
     private static List<String> readLines(String filename) throws IOException {
@@ -57,63 +65,41 @@ public class Trebuchet {
         return lines;
     }
 
-    private static List<Integer> readCalibrationNumbers(final String filename) throws IOException {
-        List<Integer> sums;
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-            sums = new ArrayList<>();
-            while ((line = br.readLine()) != null) {
-                String currentNumber = "";
-
-                for (int i = 0; i < line.length(); i++) {
-                    if (Character.isDigit(line.charAt(i))) {
-                        currentNumber += line.charAt(i);
-                    }
-                }
-                if (currentNumber.length() == 2) {
-                    sums.add(Integer.parseInt(currentNumber));
-                } else if (currentNumber.length() == 1) {
-                    sums.add(Integer.parseInt(currentNumber + currentNumber));
-                } else {
-                    sums.add(Integer.parseInt(String.valueOf(currentNumber.charAt(0)) + currentNumber.charAt(currentNumber.length() - 1)));
-                }
-            }
-
+    private static int obtainCalibrationNumber(String numbersFromTheLine) {
+        if (numbersFromTheLine.length() == 2) {
+            return Integer.parseInt(numbersFromTheLine);
+        } else if (numbersFromTheLine.length() == 1) {
+            return Integer.parseInt(numbersFromTheLine + numbersFromTheLine);
+        } else {
+            return Integer.parseInt(String.valueOf(numbersFromTheLine.charAt(0)) + numbersFromTheLine.charAt(numbersFromTheLine.length() - 1));
         }
-        return sums;
     }
 
-    private static List<Integer> readCalibrationNumbersWithText(final String filename) throws IOException {
-        List<Integer> sums;
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-            sums = new ArrayList<>();
-            while ((line = br.readLine()) != null) {
-                String currentNumber = "";
+    private static String obtainDigitsFromLine(String line) {
+        String currentNumber = "";
+        for (int i = 0; i < line.length(); i++) {
+            if (Character.isDigit(line.charAt(i))) {
+                currentNumber += line.charAt(i);
+            }
+        }
+        return currentNumber;
+    }
 
-                for (int i = 0; i < line.length(); i++) {
-                    if (Character.isDigit(line.charAt(i))) {
-                        currentNumber += line.charAt(i);
-                    } else {
-                        for (Map.Entry<String, String> entry : digitNames.entrySet()) {
-                            if (line.substring(0, i + 1).endsWith(entry.getKey())) {
-                                currentNumber += entry.getValue();
-                            }
-                        }
+    private static String obtainNumbersFromLine(String line) {
+        String currentNumber = "";
+
+        for (int i = 0; i < line.length(); i++) {
+            if (Character.isDigit(line.charAt(i))) {
+                currentNumber += line.charAt(i);
+            } else {
+                for (Map.Entry<String, String> entry : digitNames.entrySet()) {
+                    if (line.substring(0, i + 1).endsWith(entry.getKey())) {
+                        currentNumber += entry.getValue();
                     }
-
-                }
-                if (currentNumber.length() == 2) {
-                    sums.add(Integer.parseInt(currentNumber));
-                } else if (currentNumber.length() == 1) {
-                    sums.add(Integer.parseInt(currentNumber + currentNumber));
-                } else {
-                    sums.add(Integer.parseInt(String.valueOf(currentNumber.charAt(0)) + currentNumber.charAt(currentNumber.length() - 1)));
                 }
             }
 
         }
-
-        return sums;
+        return currentNumber;
     }
 }
