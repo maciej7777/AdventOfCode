@@ -20,8 +20,8 @@ class TrebuchetTest {
     @ParameterizedTest
     @MethodSource("filepathsAndExpectedCalibrationNumbers")
     void sumCalibrationNumbers(final String filename,
-                               final int expectedCalibrationNumbers) throws IOException  {
-        assertEquals(expectedCalibrationNumbers, Trebuchet.sumCalibrationNumbers(filename));
+                               final int expectedCalibrationNumbers) throws IOException {
+        assertEquals(expectedCalibrationNumbers, Trebuchet.calculateCalibrationNumbersSum(filename));
     }
 
     private static Stream<Arguments> filepathsAndExpectedCalibrationNumbersWithText() {
