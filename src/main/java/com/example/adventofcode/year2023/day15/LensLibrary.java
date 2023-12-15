@@ -89,8 +89,7 @@ public class LensLibrary {
         for (int boxId = 0; boxId < boxes.size(); boxId++) {
             int i = 0;
             for (Map.Entry<String, Integer> element : boxes.get(boxId).entrySet()) {
-                int result = (boxId + 1) * (i + 1) * element.getValue();
-                sum += (result);
+                sum += (boxId + 1) * (i + 1) * element.getValue();
                 i++;
             }
         }
