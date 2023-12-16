@@ -1,11 +1,4 @@
-# AdventOfCode
-Advent of code (https://adventofcode.com/about) is an event driven by Eric Wastl. Following the description from the page, Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like. People use them as interview prep, company training, university coursework, practice problems, a speed contest, or to challenge each other.
-
-In this repository I paste my solutions for Advent of Code puzzles in 2022 and 2023. Each solution is provided in a separated directory, there are also test directories added.
-
 # Tasks 2022
-[2022](src/main/java/com/example/adventofcode/year2022/README.md)
-
 | Day | Task | Code | Tests |
 |:---:|:---|:---:|:---:|
 | 1 | [Calorie Counting](https://adventofcode.com/2022/day/1) | [Solution](src/main/java/com/example/adventofcode/year2022/year2022/day01/CalorieCounting.java) | [Tests](src/test/java/com/example/adventofcode/day01/CalorieCountingTest.java) |
