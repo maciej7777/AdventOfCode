@@ -121,56 +121,72 @@ public class TheFloorWillBeLava {
             switch (current.direction) {
                 case NORTH -> {
                     if (currentFloor == '.' || currentFloor == '|') {
-                        steps.add(new Step(new Point(current.position.x, current.position.y - 1), Direction.NORTH));
+                        steps.add(stepNorth(current));
                     } else if (currentFloor == '-') {
-                        steps.add(new Step(new Point(current.position.x + 1, current.position.y), Direction.EAST));
-                        steps.add(new Step(new Point(current.position.x - 1, current.position.y), Direction.WEST));
+                        steps.add(stepEast(current));
+                        steps.add(stepWest(current));
                     } else if (currentFloor == '/') {
-                        steps.add(new Step(new Point(current.position.x + 1, current.position.y), Direction.EAST));
+                        steps.add(stepEast(current));
                     } else /*'\\'*/ {
-                        steps.add(new Step(new Point(current.position.x - 1, current.position.y), Direction.WEST));
+                        steps.add(stepWest(current));
                     }
                 }
                 case SOUTH -> {
                     if (currentFloor == '.' || currentFloor == '|') {
-                        steps.add(new Step(new Point(current.position.x, current.position.y + 1), Direction.SOUTH));
+                        steps.add(stepSouth(current));
                     } else if (currentFloor == '-') {
-                        steps.add(new Step(new Point(current.position.x + 1, current.position.y), Direction.EAST));
-                        steps.add(new Step(new Point(current.position.x - 1, current.position.y), Direction.WEST));
+                        steps.add(stepEast(current));
+                        steps.add(stepWest(current));
                     } else if (currentFloor == '/') {
-                        steps.add(new Step(new Point(current.position.x - 1, current.position.y), Direction.WEST));
+                        steps.add(stepWest(current));
                     } else /*'\\'*/ {
-                        steps.add(new Step(new Point(current.position.x + 1, current.position.y), Direction.EAST));
+                        steps.add(stepEast(current));
                     }
                 }
                 case WEST -> {
                     if (currentFloor == '.' || currentFloor == '-') {
-                        steps.add(new Step(new Point(current.position.x - 1, current.position.y), Direction.WEST));
+                        steps.add(stepWest(current));
                     } else if (currentFloor == '|') {
-                        steps.add(new Step(new Point(current.position.x, current.position.y - 1), Direction.NORTH));
-                        steps.add(new Step(new Point(current.position.x, current.position.y + 1), Direction.SOUTH));
+                        steps.add(stepNorth(current));
+                        steps.add(stepSouth(current));
                     } else if (currentFloor == '/') {
-                        steps.add(new Step(new Point(current.position.x, current.position.y + 1), Direction.SOUTH));
+                        steps.add(stepSouth(current));
                     } else /*'\\'*/ {
-                        steps.add(new Step(new Point(current.position.x, current.position.y - 1), Direction.NORTH));
+                        steps.add(stepNorth(current));
                     }
                 }
                 case EAST -> {
                     if (currentFloor == '.' || currentFloor == '-') {
-                        steps.add(new Step(new Point(current.position.x + 1, current.position.y), Direction.EAST));
+                        steps.add(stepEast(current));
                     } else if (currentFloor == '|') {
-                        steps.add(new Step(new Point(current.position.x, current.position.y - 1), Direction.NORTH));
-                        steps.add(new Step(new Point(current.position.x, current.position.y + 1), Direction.SOUTH));
+                        steps.add(stepNorth(current));
+                        steps.add(stepSouth(current));
                     } else if (currentFloor == '/') {
-                        steps.add(new Step(new Point(current.position.x, current.position.y - 1), Direction.NORTH));
+                        steps.add(stepNorth(current));
 
                     } else /*'\\'*/ {
-                        steps.add(new Step(new Point(current.position.x, current.position.y + 1), Direction.SOUTH));
+                        steps.add(stepSouth(current));
 
                     }
                 }
             }
         }
         return energized;
+    }
+
+    private static Step stepWest(Step current) {
+        return new Step(new Point(current.position.x - 1, current.position.y), Direction.WEST);
+    }
+
+    private static Step stepSouth(Step current) {
+        return new Step(new Point(current.position.x, current.position.y + 1), Direction.SOUTH);
+    }
+
+    private static Step stepEast(Step current) {
+        return new Step(new Point(current.position.x + 1, current.position.y), Direction.EAST);
+    }
+
+    private static Step stepNorth(Step current) {
+        return new Step(new Point(current.position.x, current.position.y - 1), Direction.NORTH);
     }
 }
