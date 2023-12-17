@@ -9,6 +9,7 @@ public class ClumsyCrucible {
     private static final String FILENAME = "src/main/java/com/example/adventofcode/year2023/day17/input";
     private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2023/day17/example_input";
 
+
     public static void main(String[] args) throws IOException {
         System.out.println(calculateHeatLoss(EXAMPLE_FILENAME));
         //102
@@ -64,7 +65,7 @@ public class ClumsyCrucible {
         Map<Path, Integer> heatMap = buildHeatMap(lavaMap, true);
 
         Point endPoint = new Point(lavaMap.size() - 1, lavaMap.getFirst().size() - 1);
-        return calculateMinimumHeatAtPoint(endPoint, heatMap);
+        return calculateUltraCrucibleMinimumHeatAtPoint(endPoint, heatMap);
     }
 
     private static List<String> readLines(String filename) throws IOException {
@@ -145,6 +146,19 @@ public class ClumsyCrucible {
         int result = Integer.MAX_VALUE;
         for (Map.Entry<Path, Integer> heatMapEntry : heatMap.entrySet()) {
             if (heatMapEntry.getKey().currentPoint.equals(endPoint)) {
+                int totalHeat = heatMapEntry.getValue();
+                if (totalHeat < result) {
+                    result = totalHeat;
+                }
+            }
+        }
+        return result;
+    }
+
+    private static int calculateUltraCrucibleMinimumHeatAtPoint(Point endPoint, Map<Path, Integer> heatMap) {
+        int result = Integer.MAX_VALUE;
+        for (Map.Entry<Path, Integer> heatMapEntry : heatMap.entrySet()) {
+            if (heatMapEntry.getKey().currentPoint.equals(endPoint) && heatMapEntry.getKey().lineLength >= 4) {
                 int totalHeat = heatMapEntry.getValue();
                 if (totalHeat < result) {
                     result = totalHeat;
