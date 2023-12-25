@@ -1,0 +1,243 @@
+package com.example.adventofcode.year2023.day21;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
+
+public class StepCounterHardcoded {
+    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2023/day21/input";
+    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2023/day21/example_input";
+
+    private static final List<Point> DIRECTIONS = List.of(
+            new Point(0, 1),
+            new Point(0, -1),
+            new Point(1, 0),
+            new Point(-1, 0)
+    );
+
+    public static void main(String[] args) throws IOException {
+        System.out.println(countFinalGardenPlots(EXAMPLE_FILENAME, 6));
+        //16
+        System.out.println(countFinalGardenPlots(FILENAME, 64));
+        //3617
+
+        System.out.println(countFinalGardenPlotsInInfiniteMap(EXAMPLE_FILENAME, 6));
+        //16
+        System.out.println(countFinalGardenPlotsInInfiniteMap(EXAMPLE_FILENAME, 10));
+        //50
+        System.out.println(countFinalGardenPlotsInInfiniteMap(EXAMPLE_FILENAME, 50));
+        //1594
+        System.out.println(countFinalGardenPlotsInInfiniteMap(EXAMPLE_FILENAME, 100));
+        //6536
+        System.out.println(countFinalGardenPlotsInInfiniteMap(EXAMPLE_FILENAME, 500));
+        //167004
+        System.out.println(countFinalGardenPlotsInInfiniteMap(EXAMPLE_FILENAME, 1000));
+        //668697
+        //System.out.println(countFinalGardenPlotsInInfiniteMap(EXAMPLE_FILENAME, 5000));
+        //16733044
+        System.out.println(countFinalGardenPlotsInInfiniteMapExtended(FILENAME, 26501365));
+        //596857397104703
+    }
+
+
+    record Point(int x, int y) {
+    }
+
+    record State(Point point, int step) {
+    }
+
+    public static long countFinalGardenPlots(final String filename, final int steps) throws IOException {
+        List<String> lines = readLines(filename);
+
+        List<List<Character>> map = obtainScenarios(lines);
+        Point startPoint = findStartPoint(map);
+
+        return countGardenPlotsAfterSteps(steps, startPoint, map);
+    }
+
+    public static long countFinalGardenPlotsInInfiniteMap(final String filename, final int steps) throws IOException {
+        List<String> lines = readLines(filename);
+        List<List<Character>> map = obtainScenarios(lines);
+        Point start = findStartPoint(map);
+
+        return countGardenPlotsAfterStepsInInfiniteMap(steps, start, map);
+    }
+
+    public static long countFinalGardenPlotsInInfiniteMapExtended(final String filename, final int steps) throws IOException {
+        List<String> lines = readLines(filename);
+        List<List<Character>> map = obtainScenarios(lines);
+        Point start = findStartPoint(map);
+
+        return countGardenPlotsAfterStepsInInfiniteMapExtended(start, map);
+    }
+
+    private static List<String> readLines(String filename) throws IOException {
+        List<String> lines = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                lines.add(line);
+            }
+        }
+        return lines;
+    }
+
+    private static List<List<Character>> obtainScenarios(List<String> inputLines) {
+        List<List<Character>> map = new ArrayList<>();
+        for (String line : inputLines) {
+            char[] splitted = line.toCharArray();
+            List<Character> lavaLine = new ArrayList<>();
+            for (char c : splitted) {
+                lavaLine.add(c);
+            }
+            map.add(lavaLine);
+        }
+        return map;
+    }
+
+    private static Point findStartPoint(List<List<Character>> map) {
+        Point start = new Point(0, 0);
+        for (int j = 0; j < map.size(); j++) {
+            for (int i = 0; i < map.getFirst().size(); i++) {
+                if (map.get(j).get(i).equals('S')) {
+                    start = new Point(i, j);
+                }
+            }
+        }
+        return start;
+    }
+
+    private static int countGardenPlotsAfterSteps(int steps, Point start, List<List<Character>> map) {
+        int gardenPlots = 0;
+        Queue<State> queue = new ArrayDeque<>();
+        Set<State> visited = new HashSet<>();
+        queue.add(new State(start, 0));
+
+        while (!queue.isEmpty()) {
+            State poll = queue.poll();
+
+            if (poll.step == steps) {
+                gardenPlots++;
+                continue;
+            }
+
+            for (Point direction : DIRECTIONS) {
+                Point newPoint = new Point(poll.point.x + direction.x, poll.point.y + direction.y);
+
+                if (isValid(newPoint, map) && map.get(newPoint.y).get(newPoint.x) != '#') {
+                    State newState = new State(newPoint, poll.step + 1);
+
+                    if (!visited.contains(newState)) {
+                        visited.add(newState);
+                        queue.add(newState);
+                    }
+                }
+            }
+        }
+        return gardenPlots;
+    }
+
+    private static boolean isValid(Point newPoint, List<List<Character>> map) {
+        return newPoint.y >= 0 && newPoint.y < map.size()
+                && newPoint.x >= 0 && newPoint.x < map.getFirst().size();
+    }
+
+    private static long countGardenPlotsAfterStepsInInfiniteMap(int steps, Point start, List<List<Character>> map) {
+        long gardenPlots = 0;
+        Map<Point, Integer> visited = new HashMap<>();
+
+        List<Point> currentPoints = new ArrayList<>();
+        currentPoints.add(start);
+
+        int index = 0;
+        while (index < steps) {
+            List<Point> newPoints = new ArrayList<>();
+            for (Point point : currentPoints) {
+                for (Point direction : DIRECTIONS) {
+                    Point newPoint = new Point(point.x + direction.x, point.y + direction.y);
+
+                    int yCoordinateToCheck = (newPoint.y % map.size() + map.size()) % map.size();
+                    int xCoordinateToCheck = (newPoint.x % map.getFirst().size() + map.getFirst().size()) % map.getFirst().size();
+
+                    if (map.get(yCoordinateToCheck).get(xCoordinateToCheck) != '#' && !visited.containsKey(newPoint)) {
+                        newPoints.add(newPoint);
+                        visited.put(newPoint, index);
+                    }
+                }
+            }
+
+            if (index % 2 == 1) {
+                gardenPlots += newPoints.size();
+            }
+            currentPoints = newPoints;
+            index++;
+        }
+
+        return gardenPlots;
+    }
+
+    private static long countGardenPlotsAfterStepsInInfiniteMapExtended(Point start, List<List<Character>> map) {
+        long steps = 26501365L;
+        long gardenPlots = 0;
+        Map<Point, Integer> visited = new HashMap<>();
+
+        List<Long> plots = new ArrayList<>();
+        List<Long> plotDeltas = new ArrayList<>();
+        List<Long> plotDeltasSecondLevel = new ArrayList<>();
+
+
+        List<Point> currentPoints = new ArrayList<>();
+        currentPoints.add(start);
+        int mapSize = map.size();
+
+        int index = 1;
+        while (index < 1000) {
+            List<Point> newPoints = new ArrayList<>();
+            for (Point point : currentPoints) {
+                for (Point direction : DIRECTIONS) {
+                    Point newPoint = new Point(point.x + direction.x, point.y + direction.y);
+
+                    int yCoordinateToCheck = (newPoint.y % map.size() + map.size()) % map.size();
+                    int xCoordinateToCheck = (newPoint.x % map.getFirst().size() + map.getFirst().size()) % map.getFirst().size();
+
+                    if (map.get(yCoordinateToCheck).get(xCoordinateToCheck) != '#' && !visited.containsKey(newPoint)) {
+                        newPoints.add(newPoint);
+                        visited.put(newPoint, index);
+                    }
+                }
+            }
+
+            if (index % 2 == 1) {
+                gardenPlots += newPoints.size();
+
+                if (index % (mapSize * 2) == start.x) {
+                    plots.add(gardenPlots);
+
+                    if (plots.size() > 1) {
+                        plotDeltas.add(plots.getLast() - plots.get(plots.size() - 2));
+                    }
+
+                    if (plotDeltas.size() > 1) {
+                        plotDeltasSecondLevel.add(plotDeltas.getLast() - plotDeltas.get(plotDeltas.size() - 2));
+                    }
+
+                    if (plotDeltasSecondLevel.size() > 1) {
+                        break;
+                    }
+                }
+            }
+            currentPoints = newPoints;
+            index++;
+        }
+
+        long neededLoops = steps / (mapSize * 2L) - 1;
+        long currentLoop = index / (mapSize * 2L) - 1;
+        long deltaLoops = neededLoops - currentLoop;
+        long deltaLoopsTriangular = (neededLoops * (neededLoops + 1)) / 2 - (currentLoop * (currentLoop + 1)) / 2;
+        long deltaSecondLevel = plotDeltasSecondLevel.getLast();
+        long initialDelta = plotDeltas.getFirst();
+        return (deltaSecondLevel * deltaLoopsTriangular + initialDelta * deltaLoops + gardenPlots);
+    }
+}
