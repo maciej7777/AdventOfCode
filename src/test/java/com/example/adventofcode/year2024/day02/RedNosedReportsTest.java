@@ -35,6 +35,6 @@ class RedNosedReportsTest {
     @MethodSource("filepathsAndExpectedSafeReportsWithToleration")
     void countSafeReportsWithToleration(final String filename,
                                         final int expectedLocationIds) throws IOException {
-        assertEquals(expectedLocationIds, RedNosedReports.countSafeReportsWithToleration(filename));
+        assertEquals(expectedLocationIds, RedNosedReports.countReportsSafeWithToleration(filename));
     }
 }
