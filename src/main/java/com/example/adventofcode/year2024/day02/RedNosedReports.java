@@ -16,8 +16,8 @@ public class RedNosedReports {
     public static void main(String[] args) throws IOException {
         System.out.println(countSafeReports(EXAMPLE_FILENAME));
         System.out.println(countSafeReports(FILENAME));
-        System.out.println(countSafeReportsWithToleration(EXAMPLE_FILENAME));
-        System.out.println(countSafeReportsWithToleration(FILENAME));
+        System.out.println(countReportsSafeWithToleration(EXAMPLE_FILENAME));
+        System.out.println(countReportsSafeWithToleration(FILENAME));
 
     }
 
@@ -31,28 +31,31 @@ public class RedNosedReports {
         return safe;
     }
 
-    public static long countSafeReportsWithToleration(final String filename) throws IOException {
+    public static long countReportsSafeWithToleration(final String filename) throws IOException {
         List<String> lines = readLines(filename);
         int safe = 0;
         for (String line : lines) {
             int[] levels = parseLevels(line);
-            if (isSafe(levels)) {
+            if (isReportSafeWithToleration(levels)) {
                 safe++;
-            } else {
-                int potentiallySafe = 0;
-                for (int i = 0; i < levels.length; i++) {
-                    int[] levelsCopy = Arrays.copyOf(levels, levels.length);
-                    int[] levelsRemoved = ArrayUtils.remove(levelsCopy, i);
-                    if (isSafe(levelsRemoved)) {
-                        potentiallySafe++;
-                    }
-                }
-                if (potentiallySafe > 0) {
-                    safe++;
-                }
             }
         }
         return safe;
+    }
+
+    private static boolean isReportSafeWithToleration(int[] levels) {
+        if (isSafe(levels)) {
+            return true;
+        }
+
+        for (int i = 0; i < levels.length; i++) {
+            int[] levelsCopy = Arrays.copyOf(levels, levels.length);
+            int[] levelsRemoved = ArrayUtils.remove(levelsCopy, i);
+            if (isSafe(levelsRemoved)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static List<String> readLines(String filename) throws IOException {
