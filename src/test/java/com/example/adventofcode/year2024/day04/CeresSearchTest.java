@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CeresSearchTest {
 
-    private static Stream<Arguments> filepathsAndExpectedSafeReports() {
+    private static Stream<Arguments> filepathsAndExpectedXMASWords() {
         return Stream.of(
                 Arguments.of("src/main/java/com/example/adventofcode/year2024/day04/example_input", 18),
                 Arguments.of("src/main/java/com/example/adventofcode/year2024/day04/input", 2464)
@@ -19,13 +19,13 @@ class CeresSearchTest {
     }
 
     @ParameterizedTest
-    @MethodSource("filepathsAndExpectedSafeReports")
-    void calculateInstructionsResult(final String filename,
-                                     final int expectedInstructionsResult) throws IOException {
-        assertEquals(expectedInstructionsResult, CeresSearch.countXMASWords(filename));
+    @MethodSource("filepathsAndExpectedXMASWords")
+    void countXMASWords(final String filename,
+                        final int expectedXMASWords) throws IOException {
+        assertEquals(expectedXMASWords, CeresSearch.countXMASWords(filename));
     }
 
-    private static Stream<Arguments> filepathsAndExpectedSafeReportsWithToleration() {
+    private static Stream<Arguments> filepathsAndExpectedXShapedMASWords() {
         return Stream.of(
                 Arguments.of("src/main/java/com/example/adventofcode/year2024/day04/example_input", 9),
                 Arguments.of("src/main/java/com/example/adventofcode/year2024/day04/input", 1982)
@@ -33,9 +33,9 @@ class CeresSearchTest {
     }
 
     @ParameterizedTest
-    @MethodSource("filepathsAndExpectedSafeReportsWithToleration")
-    void calculateInstructionsResultWithIgnoringConditions(final String filename,
-                                                           final int expectedInstructionsResult) throws IOException {
-        assertEquals(expectedInstructionsResult, CeresSearch.countXShapedMASWords(filename));
+    @MethodSource("filepathsAndExpectedXShapedMASWords")
+    void countXShapedMASWords(final String filename,
+                              final int expectedXShapedMASWords) throws IOException {
+        assertEquals(expectedXShapedMASWords, CeresSearch.countXShapedMASWords(filename));
     }
 }
