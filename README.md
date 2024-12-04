@@ -6,8 +6,9 @@ that can be solved in any programming language you like. People use them as inte
 coursework, practice problems, a speed contest, or to challenge each other.
 
 In this repository I paste my solutions for Advent of Code puzzles
-in [2022](src/main/java/com/example/adventofcode/year2022/README.md)
-and [2023](src/main/java/com/example/adventofcode/year2023/README.md). Each solution is provided in a separated
+in [2022](src/main/java/com/example/adventofcode/year2022/README.md), 
+[2023](src/main/java/com/example/adventofcode/year2023/README.md)
+and [2024](src/main/java/com/example/adventofcode/year2024/README.md). Each solution is provided in a separated
 directory, there are also test directories added.
 
 # Solution megathreads
