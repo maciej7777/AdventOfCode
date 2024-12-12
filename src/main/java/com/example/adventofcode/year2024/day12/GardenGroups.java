@@ -93,7 +93,7 @@ public class GardenGroups {
             }
         }
 
-        return numberOfElements*borders;
+        return numberOfElements * borders;
     }
 
     record PointAndDirection(Point point, Point direction) {
@@ -142,7 +142,7 @@ public class GardenGroups {
             int currentY = pd.point.y + pd.direction.x;
             Point neighboar = new Point(currentX, currentY);
             PointAndDirection neighboarPAD = new PointAndDirection(neighboar, pd.direction);
-            while(borders.contains(neighboarPAD)) {
+            while (borders.contains(neighboarPAD)) {
                 borders.remove(neighboarPAD);
                 currentX += pd.direction.y;
                 currentY += pd.direction.x;
@@ -154,7 +154,7 @@ public class GardenGroups {
             currentY = pd.point.y - pd.direction.x;
             neighboar = new Point(currentX, currentY);
             neighboarPAD = new PointAndDirection(neighboar, pd.direction);
-            while(borders.contains(neighboarPAD)) {
+            while (borders.contains(neighboarPAD)) {
                 borders.remove(neighboarPAD);
                 currentX -= pd.direction.y;
                 currentY -= pd.direction.x;
@@ -163,7 +163,7 @@ public class GardenGroups {
             }
         }
 
-        return numberOfElements*finalBorders;
+        return numberOfElements * finalBorders;
     }
 
     private static boolean isValid(Point newPoint, List<List<Character>> elements) {
