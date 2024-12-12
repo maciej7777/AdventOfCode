@@ -66,14 +66,13 @@ public class GardenGroups {
         if (visited.contains(currentPoint)) {
             return 0;
         }
-        Set<Point> currentlyVisited = new HashSet<>();
+        Set<Point> currentRegion = new HashSet<>();
 
         Character currentElement = map.get(j).get(i);
         Deque<Point> areaToCheck = new ArrayDeque<>();
         areaToCheck.add(currentPoint);
         visited.add(currentPoint);
-        currentlyVisited.add(currentPoint);
-        int numberOfElements = 1;
+        currentRegion.add(currentPoint);
 
         int borders = 0;
         while (!areaToCheck.isEmpty()) {
@@ -83,17 +82,16 @@ public class GardenGroups {
                 Point newPoint = new Point(checking.x + direction.x, checking.y + direction.y);
 
                 if (isValid(newPoint, map) && !visited.contains(newPoint) && map.get(newPoint.y).get(newPoint.x).equals(currentElement)) {
-                    numberOfElements++;
                     areaToCheck.add(newPoint);
                     visited.add(newPoint);
-                    currentlyVisited.add(newPoint);
-                } else if (!currentlyVisited.contains(newPoint)) {
+                    currentRegion.add(newPoint);
+                } else if (!currentRegion.contains(newPoint)) {
                     borders++;
                 }
             }
         }
 
-        return numberOfElements * borders;
+        return currentRegion.size() * borders;
     }
 
     record PointAndDirection(Point point, Point direction) {
@@ -132,38 +130,33 @@ public class GardenGroups {
             }
         }
 
+        return numberOfElements * countNumberOfSides(borders);
+    }
+
+    private static int countNumberOfSides(Deque<PointAndDirection> borders) {
         int finalBorders = 0;
         while (!borders.isEmpty()) {
             PointAndDirection pd = borders.pop();
             finalBorders++;
 
+            removeAllPointsOnTheSameSide(borders, pd, pd.direction.y, pd.direction.x);
+            removeAllPointsOnTheSameSide(borders, pd, -1 * pd.direction.y, -1 * pd.direction.x);
+        }
+        return finalBorders;
+    }
 
-            int currentX = pd.point.x + pd.direction.y;
-            int currentY = pd.point.y + pd.direction.x;
-            Point neighboar = new Point(currentX, currentY);
-            PointAndDirection neighboarPAD = new PointAndDirection(neighboar, pd.direction);
-            while (borders.contains(neighboarPAD)) {
-                borders.remove(neighboarPAD);
-                currentX += pd.direction.y;
-                currentY += pd.direction.x;
-                neighboar = new Point(currentX, currentY);
-                neighboarPAD = new PointAndDirection(neighboar, pd.direction);
-            }
-
-            currentX = pd.point.x - pd.direction.y;
-            currentY = pd.point.y - pd.direction.x;
+    private static void removeAllPointsOnTheSameSide(Deque<PointAndDirection> borders, PointAndDirection pd, int dx, int dy) {
+        int currentX = pd.point.x + dx;
+        int currentY = pd.point.y + dy;
+        Point neighboar = new Point(currentX, currentY);
+        PointAndDirection neighboarPAD = new PointAndDirection(neighboar, pd.direction);
+        while (borders.contains(neighboarPAD)) {
+            borders.remove(neighboarPAD);
+            currentX += dx;
+            currentY += dy;
             neighboar = new Point(currentX, currentY);
             neighboarPAD = new PointAndDirection(neighboar, pd.direction);
-            while (borders.contains(neighboarPAD)) {
-                borders.remove(neighboarPAD);
-                currentX -= pd.direction.y;
-                currentY -= pd.direction.x;
-                neighboar = new Point(currentX, currentY);
-                neighboarPAD = new PointAndDirection(neighboar, pd.direction);
-            }
         }
-
-        return numberOfElements * finalBorders;
     }
 
     private static boolean isValid(Point newPoint, List<List<Character>> elements) {
