@@ -103,13 +103,13 @@ public class GardenGroups {
         if (visited.contains(currentPoint)) {
             return 0;
         }
-        Set<Point> currentlyVisited = new HashSet<>();
+        Set<Point> currentRegion = new HashSet<>();
 
         Character currentElement = map.get(j).get(i);
         Deque<Point> areaToCheck = new ArrayDeque<>();
         areaToCheck.add(currentPoint);
         visited.add(currentPoint);
-        currentlyVisited.add(currentPoint);
+        currentRegion.add(currentPoint);
         int numberOfElements = 1;
 
         Deque<PointAndDirection> borders = new ArrayDeque<>();
@@ -123,8 +123,8 @@ public class GardenGroups {
                     numberOfElements++;
                     areaToCheck.add(newPoint);
                     visited.add(newPoint);
-                    currentlyVisited.add(newPoint);
-                } else if (!currentlyVisited.contains(newPoint)) {
+                    currentRegion.add(newPoint);
+                } else if (!currentRegion.contains(newPoint)) {
                     borders.add(new PointAndDirection(newPoint, direction));
                 }
             }
@@ -139,13 +139,13 @@ public class GardenGroups {
             PointAndDirection pd = borders.pop();
             finalBorders++;
 
-            removeAllPointsOnTheSameSide(borders, pd, pd.direction.y, pd.direction.x);
-            removeAllPointsOnTheSameSide(borders, pd, -1 * pd.direction.y, -1 * pd.direction.x);
+            removePointsOnTheSameSide(borders, pd, pd.direction.y, pd.direction.x);
+            removePointsOnTheSameSide(borders, pd, -1 * pd.direction.y, -1 * pd.direction.x);
         }
         return finalBorders;
     }
 
-    private static void removeAllPointsOnTheSameSide(Deque<PointAndDirection> borders, PointAndDirection pd, int dx, int dy) {
+    private static void removePointsOnTheSameSide(Deque<PointAndDirection> borders, PointAndDirection pd, int dx, int dy) {
         int currentX = pd.point.x + dx;
         int currentY = pd.point.y + dy;
         Point neighboar = new Point(currentX, currentY);
