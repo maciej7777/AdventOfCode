@@ -51,20 +51,20 @@ public class RestroomRedoubt {
 
 
         int i = 0;
-        Set<Point> seen;
+        Set<Point> visibleRobots;
         do {
             i++;
-            seen = new HashSet<>();
+            visibleRobots = new HashSet<>();
             List<Robot> tmpRobots = new ArrayList<>();
             for (Robot r : robots) {
                 int newX = (r.position.x + r.velocity.x + width) % width;
                 int newY = (r.position.y + r.velocity.y + height) % height;
 
                 tmpRobots.add(new Robot(new Point(newX, newY), r.velocity));
-                seen.add(new Point(newX, newY));
+                visibleRobots.add(new Point(newX, newY));
             }
             robots = tmpRobots;
-        } while (seen.size() < robots.size());
+        } while (visibleRobots.size() < robots.size());
 
         printTheMap(robots, width, height);
 
