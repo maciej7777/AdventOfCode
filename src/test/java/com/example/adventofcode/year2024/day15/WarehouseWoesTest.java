@@ -14,6 +14,7 @@ class WarehouseWoesTest {
         return Stream.of(
                 Arguments.of("src/main/java/com/example/adventofcode/year2024/day15/example_input", 2028),
                 Arguments.of("src/main/java/com/example/adventofcode/year2024/day15/example_input2", 10092),
+                Arguments.of("src/main/java/com/example/adventofcode/year2024/day15/example_input3", 1921),
                 Arguments.of("src/main/java/com/example/adventofcode/year2024/day15/input", 1430536)
         );
     }
@@ -29,6 +30,7 @@ class WarehouseWoesTest {
         return Stream.of(
                 Arguments.of("src/main/java/com/example/adventofcode/year2024/day15/example_input", 1751),
                 Arguments.of("src/main/java/com/example/adventofcode/year2024/day15/example_input2", 9021),
+                Arguments.of("src/main/java/com/example/adventofcode/year2024/day15/example_input3", 1233),
                 Arguments.of("src/main/java/com/example/adventofcode/year2024/day15/input", 1452348)
         );
     }
