@@ -58,16 +58,18 @@ public class WarehouseWoes {
             }
         }
 
+        return calculateGPSSum(map, 'O');
+    }
+
+    private static int calculateGPSSum(List<List<Character>> map, char O) {
         int sum = 0;
         for (int i = 0; i < map.size(); i++) {
             for (int j = 0; j < map.get(i).size(); j++) {
-                if (map.get(i).get(j) == 'O') {
+                if (map.get(i).get(j) == O) {
                     sum += i * 100 + j;
                 }
             }
         }
-
-
         return sum;
     }
 
@@ -121,17 +123,7 @@ public class WarehouseWoes {
             }
         }
 
-        int sum = 0;
-        for (int i = 0; i < map.size(); i++) {
-            for (int j = 0; j < map.get(i).size(); j++) {
-                if (map.get(i).get(j) == '[') {
-                    sum += i * 100 + j;
-                }
-            }
-        }
-
-
-        return sum;
+        return calculateGPSSum(map, '[');
     }
 
     private static boolean tryToMove(Point currentPosition, Point move, List<List<Character>> map) {
@@ -147,7 +139,8 @@ public class WarehouseWoes {
                 map.get(proposedPosition.x).set(proposedPosition.y, map.get(currentPosition.x).get(currentPosition.y));
                 map.get(currentPosition.x).set(currentPosition.y, '.');
                 return true;
-            } else return false;
+            }
+            return false;
         }
     }
 
@@ -171,7 +164,7 @@ public class WarehouseWoes {
                 Point left = proposedPosition;
                 Point right = new Point(proposedPosition.x, proposedPosition.y + 1);
 
-                return (canMoveExtended(left, move, map) && canMoveExtended(right, move, map));
+                return canMoveExtended(left, move, map) && canMoveExtended(right, move, map);
             } else {
                 Point right = proposedPosition;
                 Point left = new Point(proposedPosition.x, proposedPosition.y - 1);
