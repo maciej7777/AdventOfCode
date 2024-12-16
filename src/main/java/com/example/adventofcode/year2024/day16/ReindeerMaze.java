@@ -22,7 +22,7 @@ public class ReindeerMaze {
     record Point(int x, int y) {
     }
 
-    private record Input(Point start, Point end, Set<Point> walls, int maxJ, int maxI) {
+    private record Input(Point start, Point end, Set<Point> walls) {
     }
 
     record PointDirection(Point point, Point direction) {
@@ -55,8 +55,7 @@ public class ReindeerMaze {
             visited.add(new PointDirection(state.point, state.direction));
             for (Point direction: DIRECTIONS) {
                 Point newPoint = new Point(state.point.x + direction.x, state.point.y + direction.y);
-                if (isValidPoint(newPoint.x, newPoint.y, input.maxI(), input.maxJ())
-                        && !visited.contains(new PointDirection(newPoint, direction))
+                if (!visited.contains(new PointDirection(newPoint, direction))
                         && !input.walls().contains(newPoint)) {
                     int cost = state.currentCost + 1;
                     if (direction != state.direction) {
@@ -93,7 +92,7 @@ public class ReindeerMaze {
             state.path.add(state.point);
             for (Point direction: DIRECTIONS) {
                 Point newPoint = new Point(state.point.x + direction.x, state.point.y + direction.y);
-                if (isValidPoint(newPoint.x, newPoint.y, input.maxI(), input.maxJ()) && !visited.contains(new PointDirection(newPoint, direction)) && !input.walls().contains(newPoint)) {
+                if (!visited.contains(new PointDirection(newPoint, direction)) && !input.walls().contains(newPoint)) {
                     int cost = state.currentCost + 1;
                     if (direction != state.direction) {
                         cost += 1000;
@@ -147,9 +146,7 @@ public class ReindeerMaze {
             j++;
         }
 
-        int maxJ = lines.size();
-        int maxI = lines.getFirst().length();
-        return new Input(start, end, walls, maxJ, maxI);
+        return new Input(start, end, walls);
     }
 
     private static boolean isValidPoint(int newX1, int newY1, int maxX, int maxY) {
