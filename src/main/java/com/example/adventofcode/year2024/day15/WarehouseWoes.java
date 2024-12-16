@@ -10,13 +10,16 @@ public class WarehouseWoes {
     private static final String FILENAME = "src/main/java/com/example/adventofcode/year2024/day15/input";
     private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2024/day15/example_input";
     private static final String EXAMPLE_FILENAME2 = "src/main/java/com/example/adventofcode/year2024/day15/example_input2";
+    private static final String EXAMPLE_FILENAME3 = "src/main/java/com/example/adventofcode/year2024/day15/example_input3";
 
     public static void main(String[] args) throws IOException {
         System.out.println(calculateBoxesGPSCoordinates(EXAMPLE_FILENAME));
         System.out.println(calculateBoxesGPSCoordinates(EXAMPLE_FILENAME2));
+        System.out.println(calculateBoxesGPSCoordinates(EXAMPLE_FILENAME3));
         System.out.println(calculateBoxesGPSCoordinates(FILENAME));
         System.out.println(calculateBoxesGPSCoordinatesForScaledWarehouse(EXAMPLE_FILENAME));
         System.out.println(calculateBoxesGPSCoordinatesForScaledWarehouse(EXAMPLE_FILENAME2));
+        System.out.println(calculateBoxesGPSCoordinatesForScaledWarehouse(EXAMPLE_FILENAME3));
         System.out.println(calculateBoxesGPSCoordinatesForScaledWarehouse(FILENAME));
     }
 
@@ -61,11 +64,11 @@ public class WarehouseWoes {
         return calculateGPSSum(map, 'O');
     }
 
-    private static int calculateGPSSum(List<List<Character>> map, char O) {
+    private static int calculateGPSSum(List<List<Character>> map, char box) {
         int sum = 0;
         for (int i = 0; i < map.size(); i++) {
             for (int j = 0; j < map.get(i).size(); j++) {
-                if (map.get(i).get(j) == O) {
+                if (map.get(i).get(j) == box) {
                     sum += i * 100 + j;
                 }
             }
