@@ -148,8 +148,4 @@ public class ReindeerMaze {
 
         return new Input(start, end, walls);
     }
-
-    private static boolean isValidPoint(int newX1, int newY1, int maxX, int maxY) {
-        return newX1 >= 0 && newX1 <= maxX && newY1 >= 0 && newY1 <= maxY;
-    }
 }
