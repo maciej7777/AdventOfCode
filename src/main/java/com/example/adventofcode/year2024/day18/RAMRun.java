@@ -16,7 +16,7 @@ public class RAMRun {
         System.out.println(calculateCoordinatesOfFirstBlockingByte(FILENAME, 70));
     }
 
-    record Point(int x, int y) {
+    public record Point(int x, int y) {
     }
 
     private static final List<Point> DIRECTIONS = List.of(
@@ -39,20 +39,28 @@ public class RAMRun {
         return calculateShortestPath(size, start, corruptedSegments.subList(0, fallenBytes), exit);
     }
 
-    public static String calculateCoordinatesOfFirstBlockingByte(final String filename, int size) throws IOException {
+    public static Point calculateCoordinatesOfFirstBlockingByte(final String filename, int size) throws IOException {
         List<String> lines = readLines(filename);
         List<Point> corruptedSegments = parseCorruptedSegments(lines);
 
         Point start = new Point(0, 0);
         Point exit = new Point(size, size);
 
-        for (int i = 1; i < corruptedSegments.size() - 1; i++) {
-            List<Point> newCorruptedSegments = corruptedSegments.subList(0, i);
-            if (calculateShortestPath(size, start, newCorruptedSegments, exit) == -1) {
-                return corruptedSegments.get(i-1).x + "," + corruptedSegments.get(i-1).y;
+        int minCorruptedBlock = findFirstBlockingByteIndex(size, corruptedSegments, start, exit);
+
+        return corruptedSegments.get(minCorruptedBlock-1);
+    }
+
+    private static List<String> readLines(String filename) throws IOException {
+        List<String> lines = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                lines.add(line);
             }
         }
-        return "-1,-1";
+        return lines;
     }
 
     private static List<Point> parseCorruptedSegments(List<String> lines) {
@@ -69,7 +77,6 @@ public class RAMRun {
         Set<Point> visited = new HashSet<>();
 
         int bestResult = -1;
-
         toVisit.add(new MazeState(start, 0));
 
         while (!toVisit.isEmpty()) {
@@ -94,20 +101,23 @@ public class RAMRun {
         return bestResult;
     }
 
-
     private static boolean isValidPoint(int newX1, int newY1, int size) {
         return newX1 >= 0 && newX1 <= size && newY1 >= 0 && newY1 <= size;
     }
 
-    private static List<String> readLines(String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
+    private static int findFirstBlockingByteIndex(int size, List<Point> corruptedSegments, Point start, Point exit) {
+        int minCorruptedBlock = 0;
+        int maxCorruptedBlock = corruptedSegments.size() - 1;
 
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
+        while (minCorruptedBlock < maxCorruptedBlock) {
+            int middleCorruptedBlock = (minCorruptedBlock+maxCorruptedBlock)/2;
+            List<Point> newCorruptedSegments = corruptedSegments.subList(0, middleCorruptedBlock);
+            if (calculateShortestPath(size, start, newCorruptedSegments, exit) == -1) {
+                maxCorruptedBlock = middleCorruptedBlock;
+            } else {
+                minCorruptedBlock = middleCorruptedBlock + 1;
             }
         }
-        return lines;
+        return minCorruptedBlock;
     }
 }
