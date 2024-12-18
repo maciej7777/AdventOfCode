@@ -1,5 +1,6 @@
 package com.example.adventofcode.year2024.day18;
 
+import com.example.adventofcode.year2024.day18.RAMRun.Point;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -28,8 +29,8 @@ class RAMRunTest {
 
     private static Stream<Arguments> filepathsAndMemorySizeAndExpectedCoordinates() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day18/example_input", 6, "6,1"),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day18/input", 70, "50,28")
+                Arguments.of("src/main/java/com/example/adventofcode/year2024/day18/example_input", 6, new Point(6,1)),
+                Arguments.of("src/main/java/com/example/adventofcode/year2024/day18/input", 70, new Point(50, 28))
         );
     }
 
@@ -37,7 +38,7 @@ class RAMRunTest {
     @MethodSource("filepathsAndMemorySizeAndExpectedCoordinates")
     void calculateCoordinatesOfFirstBlockingByte(final String filename,
                                                  final int memorySize,
-                                                 final String expectedCoordinates) throws IOException {
+                                                 final Point expectedCoordinates) throws IOException {
         assertEquals(expectedCoordinates, RAMRun.calculateCoordinatesOfFirstBlockingByte(filename, memorySize));
     }
 }
