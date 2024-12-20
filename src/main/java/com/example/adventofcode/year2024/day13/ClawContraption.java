@@ -23,7 +23,7 @@ public class ClawContraption {
     }
 
 
-    record Point(long x, long y) {
+    public record Point(long x, long y) {
     }
 
     public static long calculateMinimalNumberOfTokens(final String filename, Point prizePositionModifier) throws IOException {
