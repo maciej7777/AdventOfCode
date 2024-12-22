@@ -21,14 +21,13 @@ public class PlutonianPebbles {
         System.out.println(countStonesAfterBlinking(FILENAME, 75));
     }
 
+    private record CacheEntry(Long number, int iteration) {
+    }
+
     public static long countStonesAfterBlinkingBruteForce(final String filename, int times) throws IOException {
         String line = readLine(filename);
         String[] initialNumbers = line.split(" ");
-
-        List<Long> numbers = new ArrayList<>();
-        for (String initialNumber : initialNumbers) {
-            numbers.add(Long.parseLong(initialNumber));
-        }
+        List<Long> numbers = parseNumbers(initialNumbers);
 
         for (int i = 0; i < times; i++) {
             numbers = updateStonesByBlinking(numbers);
@@ -37,55 +36,59 @@ public class PlutonianPebbles {
         return numbers.size();
     }
 
-    private record CacheEntry(Long number, int iteration) {
-
-    }
-
-    private static Map<CacheEntry, Long> stoneCache = new HashMap<>();
-
     public static long countStonesAfterBlinking(final String filename, int times) throws IOException {
         String line = readLine(filename);
         String[] initialNumbers = line.split(" ");
-        stoneCache = new HashMap<>();
+        List<Long> numbers = parseNumbers(initialNumbers);
 
-        List<Long> numbers = new ArrayList<>();
-        for (String initialNumber : initialNumbers) {
-            numbers.add(Long.parseLong(initialNumber));
-        }
-
+        Map<CacheEntry, Long> stoneCache = new HashMap<>();
         long sum = 0;
         for (Long number : numbers) {
-            sum += countBlinkingStonesSize(number, 0, times);
+            sum += countBlinkingStonesSize(number, 0, times, stoneCache);
         }
 
         return sum;
     }
 
-    private static Long countBlinkingStonesSizeWithCache(long number, int iteration, int maxIterations) {
+    private static Long countBlinkingStonesSizeWithCache(long number, int iteration, int maxIterations, Map<CacheEntry, Long> stoneCache) {
         CacheEntry cacheEntry = new CacheEntry(number, iteration);
         if (stoneCache.containsKey(cacheEntry)) {
             return stoneCache.get(cacheEntry);
         }
 
-        long count = countBlinkingStonesSize(number, iteration, maxIterations);
+        long count = countBlinkingStonesSize(number, iteration, maxIterations, stoneCache);
         stoneCache.put(cacheEntry, count);
         return count;
     }
 
-    private static Long countBlinkingStonesSize(long number, int iteration, int maxIterations) {
+    private static Long countBlinkingStonesSize(long number, int iteration, int maxIterations, Map<CacheEntry, Long> stoneCache) {
         if (iteration == maxIterations) {
             return 1L;
         }
 
         String stringNumber = String.valueOf(number);
         if (number == 0) {
-            return countBlinkingStonesSizeWithCache(1, iteration + 1, maxIterations);
+            return countBlinkingStonesSizeWithCache(1, iteration + 1, maxIterations, stoneCache);
         } else if (stringNumber.length() % 2 == 0) {
-            return countBlinkingStonesSizeWithCache(Long.parseLong(stringNumber.substring(0, stringNumber.length() / 2)), iteration + 1, maxIterations) +
-                    countBlinkingStonesSizeWithCache(Long.parseLong(stringNumber.substring(stringNumber.length() / 2)), iteration + 1, maxIterations);
+            return countBlinkingStonesSizeWithCache(Long.parseLong(stringNumber.substring(0, stringNumber.length() / 2)), iteration + 1, maxIterations, stoneCache) +
+                    countBlinkingStonesSizeWithCache(Long.parseLong(stringNumber.substring(stringNumber.length() / 2)), iteration + 1, maxIterations, stoneCache);
         } else {
-            return countBlinkingStonesSizeWithCache(2024 * number, iteration + 1, maxIterations);
+            return countBlinkingStonesSizeWithCache(2024 * number, iteration + 1, maxIterations, stoneCache);
         }
+    }
+
+    private static String readLine(String filename) throws IOException {
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            return br.readLine();
+        }
+    }
+
+    private static List<Long> parseNumbers(String[] initialNumbers) {
+        List<Long> numbers = new ArrayList<>();
+        for (String initialNumber : initialNumbers) {
+            numbers.add(Long.parseLong(initialNumber));
+        }
+        return numbers;
     }
 
     private static List<Long> updateStonesByBlinking(List<Long> numbers) {
@@ -104,11 +107,5 @@ public class PlutonianPebbles {
         }
 
         return newStones;
-    }
-
-    private static String readLine(String filename) throws IOException {
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            return br.readLine();
-        }
     }
 }
