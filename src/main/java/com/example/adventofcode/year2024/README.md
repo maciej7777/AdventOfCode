@@ -24,7 +24,7 @@
 | 20  | [Race Condition](https://adventofcode.com/2024/day/20)         |     [Solution](day20/RaceCondition.java)     |     [Tests](../../../../../../test/java/com/example/adventofcode/year2024/day20/RaceConditionTest.java)     |
 | 21  | [Keypad Conundrum](https://adventofcode.com/2024/day/21)       |    [Solution](day21/KeypadConundrum.java)    |    [Tests](../../../../../../test/java/com/example/adventofcode/year2024/day21/KeypadConundrumTest.java)    |
 | 22  | [Monkey Market](https://adventofcode.com/2024/day/22)          |     [Solution](day22/MonkeyMarket.java)      |     [Tests](../../../../../../test/java/com/example/adventofcode/year2024/day22/MonkeyMarketTest.java)      |
-| 23  | [TBD](https://adventofcode.com/2024/day/23)                    |                     TODO                     |                                                    TODO                                                     |
+| 23  | [LAN Party](https://adventofcode.com/2024/day/23)              |       [Solution](day23/LANParty.java)        |       [Tests](../../../../../../test/java/com/example/adventofcode/year2024/day23/LANPartyTest.java)        |
 | 24  | [TBD](https://adventofcode.com/2024/day/24)                    |                     TODO                     |                                                    TODO                                                     |
 | 25  | [TBD](https://adventofcode.com/2024/day/25)                    |                     TODO                     |                                                    TODO                                                     |
 
