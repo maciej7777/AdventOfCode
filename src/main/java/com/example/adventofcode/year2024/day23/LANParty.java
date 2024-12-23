@@ -51,7 +51,7 @@ public class LANParty {
 
     public static int calculateInterConnectedComputersWithTElementBronKerbosch(final String filename) throws IOException {
         List<String> lines = readLines(filename);
-        Graph<String, DefaultEdge> graph = generateUndirectedGraph(lines);
+        Graph<String, DefaultEdge> graph = generateSimpleGraph(lines);
 
         BronKerboschCliqueFinder<String, DefaultEdge> cliqueAlgorithm = new BronKerboschCliqueFinder<>(graph);
 
@@ -68,7 +68,7 @@ public class LANParty {
 
     public static String calculatePassword(final String filename) throws IOException {
         List<String> lines = readLines(filename);
-        Graph<String, DefaultEdge> graph = generateUndirectedGraph(lines);
+        Graph<String, DefaultEdge> graph = generateSimpleGraph(lines);
 
         BronKerboschCliqueFinder<String, DefaultEdge> cliqueAlgorithm = new BronKerboschCliqueFinder<>(graph);
 
@@ -129,7 +129,7 @@ public class LANParty {
         return graph;
     }
 
-    private static SimpleGraph<String, DefaultEdge> generateUndirectedGraph(List<String> lines) {
+    private static SimpleGraph<String, DefaultEdge> generateSimpleGraph(List<String> lines) {
         SimpleGraph<String, DefaultEdge> graph = new SimpleGraph<>(DefaultEdge.class);
 
         for (String line : lines) {
