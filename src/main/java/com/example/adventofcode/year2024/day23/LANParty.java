@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class LANParty {
     private static final String FILENAME = "src/main/java/com/example/adventofcode/year2024/day23/input";
@@ -17,6 +18,8 @@ public class LANParty {
     public static void main(String[] args) throws IOException {
         System.out.println(calculateInterConnectedComputersWithTElement(EXAMPLE_FILENAME));
         System.out.println(calculateInterConnectedComputersWithTElement(FILENAME));
+        System.out.println(calculateInterConnectedComputersWithTElementBronKerbosch(EXAMPLE_FILENAME));
+        System.out.println(calculateInterConnectedComputersWithTElementBronKerbosch(FILENAME));
         System.out.println(calculatePassword(EXAMPLE_FILENAME));
         System.out.println(calculatePassword(FILENAME));
     }
@@ -46,14 +49,31 @@ public class LANParty {
         return count;
     }
 
+    public static int calculateInterConnectedComputersWithTElementBronKerbosch(final String filename) throws IOException {
+        List<String> lines = readLines(filename);
+        Graph<String, DefaultEdge> graph = generateUndirectedGraph(lines);
+
+        BronKerboschCliqueFinder<String, DefaultEdge> cliqueAlgorithm = new BronKerboschCliqueFinder<>(graph);
+
+        Collection<Set<String>> cliques = new HashSet<>();
+        cliqueAlgorithm.iterator().forEachRemaining(cliques::add);
+
+        return cliques.stream().filter(c -> c.size() >= 3)
+                .map(LANParty::generateThreeElementSubsets)
+                .flatMap(Collection::stream)
+                .filter(list -> list.stream().anyMatch(element -> element.startsWith("t")))
+                .collect(Collectors.toSet())
+                .size();
+    }
+
     public static String calculatePassword(final String filename) throws IOException {
         List<String> lines = readLines(filename);
         Graph<String, DefaultEdge> graph = generateUndirectedGraph(lines);
 
-        BronKerboschCliqueFinder<String, DefaultEdge> cliqueAlghoritm = new BronKerboschCliqueFinder<>(graph);
+        BronKerboschCliqueFinder<String, DefaultEdge> cliqueAlgorithm = new BronKerboschCliqueFinder<>(graph);
 
         Collection<Set<String>> cliques = new HashSet<>();
-        cliqueAlghoritm.maximumIterator().forEachRemaining(cliques::add);
+        cliqueAlgorithm.maximumIterator().forEachRemaining(cliques::add);
 
         StringBuilder result = new StringBuilder();
         for (String element : cliques.stream().findFirst().get().stream().sorted().toList()) {
@@ -73,6 +93,23 @@ public class LANParty {
             }
         }
         return lines;
+    }
+
+    private static List<List<String>> generateThreeElementSubsets(Set<String> inputSet) {
+        List<String> nodes = inputSet.stream().toList();
+        List<List<String>> result = new ArrayList<>();
+        for (int i = 0; i < nodes.size(); i++) {
+            for (int j = i + 1; j < nodes.size(); j++) {
+                for (int k = j + 1; k < nodes.size(); k++) {
+                    List<String> tmp = new ArrayList<>();
+                    tmp.add(nodes.get(i));
+                    tmp.add(nodes.get(j));
+                    tmp.add(nodes.get(k));
+                    result.add(tmp);
+                }
+            }
+        }
+        return result;
     }
 
     private static Map<String, List<String>> parseGraph(List<String> lines) {

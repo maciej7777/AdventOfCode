@@ -24,6 +24,13 @@ class LANPartyTest {
         assertEquals(expectedInterConnectedComputersWithTElement, LANParty.calculateInterConnectedComputersWithTElement(filename));
     }
 
+    @ParameterizedTest
+    @MethodSource("filepathsAndExpectedInterConnectedComputersWithTElement")
+    void calculateInterConnectedComputersWithTElementBronKerbosch(final String filename,
+                                                                  final long expectedInterConnectedComputersWithTElement) throws IOException {
+        assertEquals(expectedInterConnectedComputersWithTElement, LANParty.calculateInterConnectedComputersWithTElementBronKerbosch(filename));
+    }
+
     private static Stream<Arguments> filepathsAndExpectedPassword() {
         return Stream.of(
                 Arguments.of("src/main/java/com/example/adventofcode/year2024/day23/example_input", "co,de,ka,ta"),
