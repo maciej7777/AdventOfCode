@@ -33,4 +33,7 @@ reddit [solution megathreads 2024](https://www.reddit.com/r/adventofcode/wiki/ar
 
 Some threads on reddit were especially interesting in 2024. You can find some of them below:
 * https://www.reddit.com/r/adventofcode/comments/1hehu14/unpopular_opinion_day_14_part_2s_problem_was_great/
+
+Easter eggs:
+* https://www.reddit.com/r/adventofcode/comments/1hkk0t3/2024_day_23_part_2_kata_reference_in_description/
 * 
