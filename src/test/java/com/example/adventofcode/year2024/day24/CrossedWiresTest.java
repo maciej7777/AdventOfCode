@@ -20,8 +20,8 @@ class CrossedWiresTest {
 
     @ParameterizedTest
     @MethodSource("filepathsAndExpectedZ")
-    void calculateInterConnectedComputersWithTElement(final String filename,
-                                                      final long expectedZ) throws IOException {
+    void calculateZ(final String filename,
+                    final long expectedZ) throws IOException {
         assertEquals(expectedZ, CrossedWires.calculateZ(filename));
     }
 }
