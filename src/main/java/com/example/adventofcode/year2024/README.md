@@ -25,8 +25,8 @@
 | 21  | [Keypad Conundrum](https://adventofcode.com/2024/day/21)       |    [Solution](day21/KeypadConundrum.java)    |    [Tests](../../../../../../test/java/com/example/adventofcode/year2024/day21/KeypadConundrumTest.java)    |
 | 22  | [Monkey Market](https://adventofcode.com/2024/day/22)          |     [Solution](day22/MonkeyMarket.java)      |     [Tests](../../../../../../test/java/com/example/adventofcode/year2024/day22/MonkeyMarketTest.java)      |
 | 23  | [LAN Party](https://adventofcode.com/2024/day/23)              |       [Solution](day23/LANParty.java)        |       [Tests](../../../../../../test/java/com/example/adventofcode/year2024/day23/LANPartyTest.java)        |
-| 24  | [TBD](https://adventofcode.com/2024/day/24)                    |                     TODO                     |                                                    TODO                                                     |
-| 25  | [TBD](https://adventofcode.com/2024/day/25)                    |                     TODO                     |                                                    TODO                                                     |
+| 24  | [Crossed Wires](https://adventofcode.com/2024/day/24)          |     [Solution](day24/CrossedWires.java)      |     [Tests](../../../../../../test/java/com/example/adventofcode/year2024/day24/CrossedWiresTest.java)      |
+| 25  | [Code Chronicle](https://adventofcode.com/2024/day/25)         |     [Solution](day25/CodeChronicle.java)     |     [Tests](../../../../../../test/java/com/example/adventofcode/year2024/day25/CodeChronicleTest.java)     |
 
 You can read more about each of the tasks (and solutions) on the
 reddit [solution megathreads 2024](https://www.reddit.com/r/adventofcode/wiki/archives/solution_megathreads/2024/).
