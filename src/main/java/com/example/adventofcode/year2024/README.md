@@ -35,6 +35,12 @@ Some threads on reddit were especially interesting in 2024. You can find some of
 * https://www.reddit.com/r/adventofcode/comments/1hehu14/unpopular_opinion_day_14_part_2s_problem_was_great/
 * https://www.reddit.com/r/adventofcode/comments/1hlup76/2024_my_first_aoc_is_complete_this_has_been_very/
 * https://www.reddit.com/r/adventofcode/comments/1h3yspl/all_years_summary_of_leaderboard_times_stars_and/
+* https://aoc.xhyrom.dev/
+* https://jeroenheijmans.github.io/advent-of-code-surveys/
+* https://www.reddit.com/r/adventofcode/comments/1hlyocd/500_in_less_than_a_second/
+* https://www.reddit.com/r/adventofcode/comments/1hm78rg/2024_day_24_part_2_some_improvement_in_my/
+* https://www.reddit.com/r/adventofcode/comments/1hlxf1m/my_2024_ratings_and_comments/
+* https://www.reddit.com/r/adventofcode/comments/1hlu5f1/introducing_your_2024_golden_snowglobe_award/
 
 Easter eggs:
 * https://www.reddit.com/r/adventofcode/comments/1hkk0t3/2024_day_23_part_2_kata_reference_in_description/
