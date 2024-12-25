@@ -24,7 +24,7 @@ public class CrossedWires {
 
     public static long calculateZ(final String filename) throws IOException {
         List<String> lines = readLines(filename);
-        Input input = getInput(lines);
+        Input input = parseInput(lines);
 
         calculateResult(input.gates(), input.inputValues());
         return calculateBinaryNumber(input.zGates(), input.inputValues());
@@ -42,7 +42,7 @@ public class CrossedWires {
         return lines;
     }
 
-    private static Input getInput(List<String> lines) {
+    private static Input parseInput(List<String> lines) {
         Map<String, Boolean> inputValues = new HashMap<>();
         List<Gate> gates = new ArrayList<>();
         Set<String> zGates = new HashSet<>();
