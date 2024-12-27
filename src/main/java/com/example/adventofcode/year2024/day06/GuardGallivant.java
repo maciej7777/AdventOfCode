@@ -90,7 +90,7 @@ public class GuardGallivant {
             Point newPoint = new Point(currentPoint.x + directions.get(direction).x, currentPoint.y + directions.get(direction).y);
             if (input.obstacles.contains(newPoint)) {
                 direction = (direction + 1) % 4;
-                newPoint = new Point(currentPoint.x + directions.get(direction).x, currentPoint.y + directions.get(direction).y);
+                newPoint = currentPoint;
             }
             currentPoint = newPoint;
         }
