@@ -24,7 +24,7 @@ class ClawContraptionTest {
     @MethodSource("filepathsAndprizePositionModifierAndExpectedTokens")
     void calculateMinimalNumberOfTokens(final String filename,
                                         final Point prizePositionModifier,
-                                        final int expectedTokens) throws IOException {
+                                        final long expectedTokens) throws IOException {
         assertEquals(expectedTokens, ClawContraption.calculateMinimalNumberOfTokens(filename, prizePositionModifier));
     }
 }
