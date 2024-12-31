@@ -26,8 +26,7 @@ public class PlutonianPebbles {
 
     public static long countStonesAfterBlinkingBruteForce(final String filename, int times) throws IOException {
         String line = readLine(filename);
-        String[] initialNumbers = line.split(" ");
-        List<Long> numbers = parseNumbers(initialNumbers);
+        List<Long> numbers = parseNumbers(line);
 
         for (int i = 0; i < times; i++) {
             numbers = updateStonesByBlinking(numbers);
@@ -38,8 +37,7 @@ public class PlutonianPebbles {
 
     public static long countStonesAfterBlinking(final String filename, int times) throws IOException {
         String line = readLine(filename);
-        String[] initialNumbers = line.split(" ");
-        List<Long> numbers = parseNumbers(initialNumbers);
+        List<Long> numbers = parseNumbers(line);
 
         Map<CacheEntry, Long> stoneCache = new HashMap<>();
         long sum = 0;
@@ -50,40 +48,14 @@ public class PlutonianPebbles {
         return sum;
     }
 
-    private static Long countBlinkingStonesSizeWithCache(long number, int iteration, int maxIterations, Map<CacheEntry, Long> stoneCache) {
-        CacheEntry cacheEntry = new CacheEntry(number, iteration);
-        if (stoneCache.containsKey(cacheEntry)) {
-            return stoneCache.get(cacheEntry);
-        }
-
-        long count = countBlinkingStonesSize(number, iteration, maxIterations, stoneCache);
-        stoneCache.put(cacheEntry, count);
-        return count;
-    }
-
-    private static Long countBlinkingStonesSize(long number, int iteration, int maxIterations, Map<CacheEntry, Long> stoneCache) {
-        if (iteration == maxIterations) {
-            return 1L;
-        }
-
-        String stringNumber = String.valueOf(number);
-        if (number == 0) {
-            return countBlinkingStonesSizeWithCache(1, iteration + 1, maxIterations, stoneCache);
-        } else if (stringNumber.length() % 2 == 0) {
-            return countBlinkingStonesSizeWithCache(Long.parseLong(stringNumber.substring(0, stringNumber.length() / 2)), iteration + 1, maxIterations, stoneCache) +
-                    countBlinkingStonesSizeWithCache(Long.parseLong(stringNumber.substring(stringNumber.length() / 2)), iteration + 1, maxIterations, stoneCache);
-        } else {
-            return countBlinkingStonesSizeWithCache(2024 * number, iteration + 1, maxIterations, stoneCache);
-        }
-    }
-
     private static String readLine(String filename) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             return br.readLine();
         }
     }
 
-    private static List<Long> parseNumbers(String[] initialNumbers) {
+    private static List<Long> parseNumbers(String line) {
+        String[] initialNumbers = line.split(" ");
         List<Long> numbers = new ArrayList<>();
         for (String initialNumber : initialNumbers) {
             numbers.add(Long.parseLong(initialNumber));
@@ -107,5 +79,32 @@ public class PlutonianPebbles {
         }
 
         return newStones;
+    }
+
+    private static long countBlinkingStonesSizeWithCache(long number, int iteration, int maxIterations, Map<CacheEntry, Long> stoneCache) {
+        CacheEntry cacheEntry = new CacheEntry(number, iteration);
+        if (stoneCache.containsKey(cacheEntry)) {
+            return stoneCache.get(cacheEntry);
+        }
+
+        long count = countBlinkingStonesSize(number, iteration, maxIterations, stoneCache);
+        stoneCache.put(cacheEntry, count);
+        return count;
+    }
+
+    private static long countBlinkingStonesSize(long number, int iteration, int maxIterations, Map<CacheEntry, Long> stoneCache) {
+        if (iteration == maxIterations) {
+            return 1L;
+        }
+
+        String stringNumber = String.valueOf(number);
+        if (number == 0) {
+            return countBlinkingStonesSizeWithCache(1, iteration + 1, maxIterations, stoneCache);
+        } else if (stringNumber.length() % 2 == 0) {
+            return countBlinkingStonesSizeWithCache(Long.parseLong(stringNumber.substring(0, stringNumber.length() / 2)), iteration + 1, maxIterations, stoneCache) +
+                    countBlinkingStonesSizeWithCache(Long.parseLong(stringNumber.substring(stringNumber.length() / 2)), iteration + 1, maxIterations, stoneCache);
+        } else {
+            return countBlinkingStonesSizeWithCache(2024 * number, iteration + 1, maxIterations, stoneCache);
+        }
     }
 }
