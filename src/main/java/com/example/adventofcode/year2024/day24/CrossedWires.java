@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class CrossedWires {
     private static final String FILENAME = "src/main/java/com/example/adventofcode/year2024/day24/input";
@@ -14,20 +15,64 @@ public class CrossedWires {
         System.out.println(calculateZ(EXAMPLE_FILENAME));
         System.out.println(calculateZ(EXAMPLE_FILENAME2));
         System.out.println(calculateZ(FILENAME));
+        System.out.println(findSwitchedWires(FILENAME));
     }
 
     record Gate(String left, String right, String operator, String result) {
     }
 
-    private record Input(Map<String, Boolean> inputValues, List<Gate> gates, Set<String> zGates) {
+    private record Input(Map<String, Boolean> inputValues, List<Gate> gates, Set<String> zGates, String highestZ) {
     }
 
     public static long calculateZ(final String filename) throws IOException {
         List<String> lines = readLines(filename);
         Input input = parseInput(lines);
 
-        calculateResult(input.gates(), input.inputValues());
-        return calculateBinaryNumber(input.zGates(), input.inputValues());
+        Map<String, Boolean> wireValues = calculateWireValues(input.gates(), input.inputValues());
+        return calculateBinaryNumber(input.zGates(), wireValues);
+    }
+
+    public static String findSwitchedWires(final String filename) throws IOException {
+        List<String> lines = readLines(filename);
+        Input input = parseInput(lines);
+
+        Set<String> switchedWires = findSwitchedWires(input);
+        return joinAndSort(switchedWires);
+    }
+
+    private static Set<String> findSwitchedWires(Input input) {
+        Set<String> switchedWires = new HashSet<>();
+        Set<Character> xyz = Set.of('x', 'y', 'z');
+        for (Gate gate: input.gates()) {
+            if (gate.result.startsWith("z") && !gate.operator.equals("XOR") && !gate.result.equals(input.highestZ)) {
+                switchedWires.add(gate.result);
+            }
+            if (gate.operator.equals("XOR")
+                    && !xyz.contains(gate.result.charAt(0))
+                    && !xyz.contains(gate.left.charAt(0))
+                    && !xyz.contains(gate.right.charAt(0))) {
+                switchedWires.add(gate.result);
+            }
+            if (gate.operator.equals("AND") && !isGateInput(gate, "x00")) {
+                for (Gate nextGate: input.gates()) {
+                    if (isGateInput(nextGate, gate.result) && !nextGate.operator.equals("OR")) {
+                        switchedWires.add(gate.result);
+                    }
+                }
+            }
+            if (gate.operator.equals("XOR")) {
+                for (Gate nextGate: input.gates()) {
+                    if (isGateInput(nextGate, gate.result) && nextGate.operator.equals("OR")) {
+                        switchedWires.add(gate.result);
+                    }
+                }
+            }
+        }
+        return switchedWires;
+    }
+
+    private static boolean isGateInput(Gate gate, String input) {
+        return input.equals(gate.left) || input.equals(gate.right);
     }
 
     private static List<String> readLines(String filename) throws IOException {
@@ -71,27 +116,44 @@ public class CrossedWires {
                 }
             }
         }
-        return new Input(inputValues, gates, zGates);
+
+        return new Input(inputValues, gates, zGates, findHighestZ(zGates));
     }
 
-    private static void calculateResult(List<Gate> gates, Map<String, Boolean> inputValues) {
+    private static String findHighestZ(Set<String> zGates) {
+        int topZ = 0;
+        String topZValue = "z00";
+        for (String z: zGates) {
+            int zNumber = Integer.parseInt(z.substring(1));
+            if (zNumber > topZ) {
+                topZ = zNumber;
+                topZValue = z;
+            }
+        }
+        return topZValue;
+    }
+
+    private static Map<String, Boolean> calculateWireValues(List<Gate> gates, Map<String, Boolean> inputValues) {
+        Map<String, Boolean> wireValues = new HashMap<>(inputValues);
         while (!gates.isEmpty()) {
             List<Gate> newIterationGates = new ArrayList<>();
             for (Gate gate: gates) {
-                if (!inputValues.containsKey(gate.left) || !inputValues.containsKey(gate.right)) {
+                if (!wireValues.containsKey(gate.left) || !wireValues.containsKey(gate.right)) {
                     newIterationGates.add(gate);
                 } else {
                     boolean result = switch (gate.operator) {
-                        case "OR" -> inputValues.get(gate.left) || inputValues.get(gate.right);
-                        case "AND" -> inputValues.get(gate.left) && inputValues.get(gate.right);
-                        case "XOR" -> inputValues.get(gate.left) ^ inputValues.get(gate.right);
+                        case "OR" -> wireValues.get(gate.left) || wireValues.get(gate.right);
+                        case "AND" -> wireValues.get(gate.left) && wireValues.get(gate.right);
+                        case "XOR" -> wireValues.get(gate.left) ^ wireValues.get(gate.right);
                         default -> throw new InputMismatchException();
                     };
-                    inputValues.put(gate.result, result);
+                    wireValues.put(gate.result, result);
                 }
             }
             gates = newIterationGates;
         }
+
+        return wireValues;
     }
 
     private static long calculateBinaryNumber(Set<String> zGates, Map<String, Boolean> inputValues) {
@@ -105,5 +167,9 @@ public class CrossedWires {
             divider *= 2;
         }
         return result;
+    }
+
+    private static String joinAndSort(Set<String> wires) {
+        return wires.stream().sorted().collect(Collectors.joining(","));
     }
 }
