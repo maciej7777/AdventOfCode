@@ -118,7 +118,6 @@ public class DiskFragmenter {
                     diskFile.set(j, tmpSpace);
                     return;
                 } else if (diskFile.get(j).length < diskFile.get(i).length) {
-                    //TODO some space left
                     int diff = diskFile.get(i).length - diskFile.get(j).length;
                     diskFile.set(i, diskFile.get(j));
                     diskFile.set(j, new File(-1, diskFile.get(j).length, 0));
