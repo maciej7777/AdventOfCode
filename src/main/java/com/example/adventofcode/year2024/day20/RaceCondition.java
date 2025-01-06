@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class RaceCondition {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2024/day20/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2024/day20/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2024/day20/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2024/day20/example_input";
 
     private record Input(Point start, Point end, List<Point> walls) {
     }
