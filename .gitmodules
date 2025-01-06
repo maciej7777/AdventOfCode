@@ -1,0 +1,3 @@
+[submodule "AdventOfCodeData"]
+	path = AdventOfCodeData
+	url = git@github.com:maciej7777/AdventOfCodeData.git
