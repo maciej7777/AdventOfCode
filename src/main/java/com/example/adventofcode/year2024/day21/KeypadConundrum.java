@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.util.*;
 
 public class KeypadConundrum {
+    private static final String FILENAME = "AdventOfCodeData/2024/day21/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2024/day21/example_input";
+
     public static final Map<Character, Point> NUMBER_PAD_POSITIONS = Map.ofEntries(
             Map.entry('7', new Point(0, 0)),
             Map.entry('8', new Point(1, 0)),
@@ -34,9 +37,6 @@ public class KeypadConundrum {
             '^', new Point(0, -1),
             'v', new Point(0, 1)
     );
-
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2024/day21/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2024/day21/example_input";
 
     public static void main(String[] args) throws IOException {
         System.out.println(calculateSumOfCodeComplexities(EXAMPLE_FILENAME, 2));
