@@ -16,7 +16,7 @@ public class LinenLayout {
         System.out.println(calculatePossibleDesignsOptions(FILENAME));
     }
 
-    public static long calculatePossbleDesigns(final String filename) throws IOException {
+    public static long calculatePossibleDesigns(final String filename) throws IOException {
         List<String> lines = readLines(filename);
 
         String line0 = lines.getFirst();
