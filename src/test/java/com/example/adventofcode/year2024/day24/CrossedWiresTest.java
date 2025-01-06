@@ -12,9 +12,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class CrossedWiresTest {
     private static Stream<Arguments> filepathsAndExpectedZ() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day24/example_input", 4),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day24/example_input2", 2024),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day24/input", 56278503604006L)
+                Arguments.of("AdventOfCodeData/2024/day24/example_input", 4),
+                Arguments.of("AdventOfCodeData/2024/day24/example_input2", 2024),
+                Arguments.of("AdventOfCodeData/2024/day24/input", 56278503604006L)
         );
     }
 
@@ -27,7 +27,7 @@ class CrossedWiresTest {
 
     private static Stream<Arguments> filepathsAndExpectedSwitchedWires() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day24/input", "bhd,brk,dhg,dpd,nbf,z06,z23,z38")
+                Arguments.of("AdventOfCodeData/2024/day24/input", "bhd,brk,dhg,dpd,nbf,z06,z23,z38")
         );
     }
 
