@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class MonkeyMarketTest {
     private static Stream<Arguments> filepathsAndNumberOfSecretNumbersAndExpectedSumOfSecretNumbers() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day22/example_input", 2000, 37327623L),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day22/input", 2000, 13753970725L)
+                Arguments.of("AdventOfCodeData/2024/day22/example_input", 2000, 37327623L),
+                Arguments.of("AdventOfCodeData/2024/day22/input", 2000, 13753970725L)
         );
     }
 
@@ -27,9 +27,9 @@ class MonkeyMarketTest {
 
     private static Stream<Arguments> filepathsAndNumberOfSecretNumbersAndExpectedMaxBananasNumber() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day22/example_input", 2000, 24L),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day22/example_input2", 2000, 23L),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day22/input", 2000, 1570L)
+                Arguments.of("AdventOfCodeData/2024/day22/example_input", 2000, 24L),
+                Arguments.of("AdventOfCodeData/2024/day22/example_input2", 2000, 23L),
+                Arguments.of("AdventOfCodeData/2024/day22/input", 2000, 1570L)
         );
     }
 
