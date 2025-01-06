@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class LinenLayout {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2024/day19/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2024/day19/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2024/day19/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2024/day19/example_input";
 
     public static void main(String[] args) throws IOException {
         System.out.println(calculatePossibleDesigns(EXAMPLE_FILENAME));
@@ -16,7 +16,7 @@ public class LinenLayout {
         System.out.println(calculatePossibleDesignsOptions(FILENAME));
     }
 
-    public static long calculatePossibleDesigns(final String filename) throws IOException {
+    public static long calculatePossbleDesigns(final String filename) throws IOException {
         List<String> lines = readLines(filename);
 
         String line0 = lines.getFirst();
