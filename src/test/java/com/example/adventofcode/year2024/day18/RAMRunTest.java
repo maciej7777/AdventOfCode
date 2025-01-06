@@ -13,8 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class RAMRunTest {
     private static Stream<Arguments> filepathsAndFallenBytesAndMemorySizeAndExpectedMinimumSteps() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day18/example_input", 12, 6, 22),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day18/input", 1224, 70, 304)
+                Arguments.of("AdventOfCodeData/2024/day18/example_input", 12, 6, 22),
+                Arguments.of("AdventOfCodeData/2024/day18/input", 1224, 70, 304)
         );
     }
 
@@ -29,8 +29,8 @@ class RAMRunTest {
 
     private static Stream<Arguments> filepathsAndMemorySizeAndExpectedCoordinates() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day18/example_input", 6, new Point(6,1)),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day18/input", 70, new Point(50, 28))
+                Arguments.of("AdventOfCodeData/2024/day18/example_input", 6, new Point(6,1)),
+                Arguments.of("AdventOfCodeData/2024/day18/input", 70, new Point(50, 28))
         );
     }
 
