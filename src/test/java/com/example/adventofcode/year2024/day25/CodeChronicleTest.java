@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class CodeChronicleTest {
     private static Stream<Arguments> filepathsAndExpectedFittingKeys() {
         return Stream.of(
-                Arguments.of("AdventOfCodeData/2024/day25/example_input", 4),
+                Arguments.of("AdventOfCodeData/2024/day25/example_input", 3),
                 Arguments.of("AdventOfCodeData/2024/day25/input", 2835)
         );
     }
