@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class LANPartyTest {
     private static Stream<Arguments> filepathsAndExpectedInterConnectedComputersWithTElement() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day23/example_input", 7),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day23/input", 1098)
+                Arguments.of("AdventOfCodeData/2024/day23/example_input", 7),
+                Arguments.of("AdventOfCodeData/2024/day23/input", 1098)
         );
     }
 
@@ -33,8 +33,8 @@ class LANPartyTest {
 
     private static Stream<Arguments> filepathsAndExpectedPassword() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day23/example_input", "co,de,ka,ta"),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day23/input", "ar,ep,ih,ju,jx,le,ol,pk,pm,pp,xf,yu,zg")
+                Arguments.of("AdventOfCodeData/2024/example_input", "co,de,ka,ta"),
+                Arguments.of("AdventOfCodeData/2024/input", "ar,ep,ih,ju,jx,le,ol,pk,pm,pp,xf,yu,zg")
         );
     }
 
