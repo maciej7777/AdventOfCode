@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class LinenLayoutTest {
     private static Stream<Arguments> filepathsAndExpectedPossibleDesigns() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day19/example_input", 6),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day19/input", 247)
+                Arguments.of("AdventOfCodeData/2024/day19/example_input", 6),
+                Arguments.of("AdventOfCodeData/2024/day19/input", 247)
         );
     }
 
@@ -26,8 +26,8 @@ class LinenLayoutTest {
 
     private static Stream<Arguments> filepathsAndExpectedPossibleDesignsOptions() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day19/example_input", 16L),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day19/input", 692596560138745L)
+                Arguments.of("AdventOfCodeData/2024/day19/example_input", 16L),
+                Arguments.of("AdventOfCodeData/2024/day19/input", 692596560138745L)
         );
     }
 
