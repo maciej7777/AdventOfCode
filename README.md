@@ -6,10 +6,13 @@ that can be solved in any programming language you like. People use them as inte
 coursework, practice problems, a speed contest, or to challenge each other.
 
 In this repository I paste my solutions for Advent of Code puzzles
-in [2022](src/main/java/com/example/adventofcode/year2022/README.md), 
+in [2022](src/main/java/com/example/adventofcode/year2022/README.md),
 [2023](src/main/java/com/example/adventofcode/year2023/README.md)
 and [2024](src/main/java/com/example/adventofcode/year2024/README.md). Each solution is provided in a separated
-directory, there are also test directories added.
+directory, there are also test directories added. The repository does not contain the input data, as the owner of
+Advent of code asked directly not to share it. In my setup those files are saved in the private submodule
+AdventOfCodeData. If you want to run the code you will need to put your input data in that directory and organise it 
+in directories by year and day.
 
 # Solution megathreads
 
