@@ -13,11 +13,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ChronospatialComputerTest {
     private static Stream<Arguments> filepathsAndExpectedProgramOutput() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day17/example_input",
+                Arguments.of("AdventOfCodeData/2024/day17/example_input",
                         List.of(4, 6, 3, 5, 6, 3, 5, 2, 1, 0)),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day17/example_input2",
+                Arguments.of("AdventOfCodeData/2024/day17/example_input2",
                         List.of(0, 3, 5, 4, 3, 0)),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day17/input",
+                Arguments.of("AdventOfCodeData/2024/day17/input",
                         List.of(4, 3, 7, 1, 5, 3, 0, 5, 4))
         );
     }
@@ -31,8 +31,8 @@ class ChronospatialComputerTest {
 
     private static Stream<Arguments> filepathsAndExpectedMinimalInitialValue() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day17/example_input2", 117440L),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day17/input", 190384615275535L)
+                Arguments.of("AdventOfCodeData/2024/day17/example_input2", 117440L),
+                Arguments.of("AdventOfCodeData/2024/day17/input", 190384615275535L)
         );
     }
 
