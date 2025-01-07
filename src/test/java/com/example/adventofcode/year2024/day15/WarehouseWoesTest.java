@@ -12,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class WarehouseWoesTest {
     private static Stream<Arguments> filepathsAndExpectedBoxesGPSCoordinates() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day15/example_input", 2028),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day15/example_input2", 10092),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day15/example_input3", 1921),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day15/input", 1430536)
+                Arguments.of("AdventOfCodeData/2024/day15/example_input", 2028),
+                Arguments.of("AdventOfCodeData/2024/day15/example_input2", 10092),
+                Arguments.of("AdventOfCodeData/2024/day15/example_input3", 1921),
+                Arguments.of("AdventOfCodeData/2024/day15/input", 1430536)
         );
     }
 
@@ -28,10 +28,10 @@ class WarehouseWoesTest {
 
     private static Stream<Arguments> filepathsAndExpectedBoxesGPSCoordinatesForScaledWarehouse() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day15/example_input", 1751),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day15/example_input2", 9021),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day15/example_input3", 1233),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day15/input", 1452348)
+                Arguments.of("AdventOfCodeData/2024/day15/example_input", 1751),
+                Arguments.of("AdventOfCodeData/2024/day15/example_input2", 9021),
+                Arguments.of("AdventOfCodeData/2024/day15/example_input3", 1233),
+                Arguments.of("AdventOfCodeData/2024/day15/input", 1452348)
         );
     }
 
