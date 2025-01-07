@@ -12,9 +12,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ReindeerMazeTest {
     private static Stream<Arguments> filepathsAndExpectedBestReindeerScore() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day16/example_input", 7036),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day16/example_input2", 11048),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day16/input", 135536)
+                Arguments.of("AdventOfCodeData/2024/day16/example_input", 7036),
+                Arguments.of("AdventOfCodeData/2024/day16/example_input2", 11048),
+                Arguments.of("AdventOfCodeData/2024/day16/input", 135536)
         );
     }
 
@@ -27,9 +27,9 @@ class ReindeerMazeTest {
 
     private static Stream<Arguments> filepathsAndExpectedTilesOnTheBestPaths() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day16/example_input", 45),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day16/example_input2", 64),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day16/input", 583)
+                Arguments.of("AdventOfCodeData/2024/day16/example_input", 45),
+                Arguments.of("AdventOfCodeData/2024/day16/example_input2", 64),
+                Arguments.of("AdventOfCodeData/2024/day16/input", 583)
         );
     }
 
