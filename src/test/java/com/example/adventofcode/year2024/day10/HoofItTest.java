@@ -12,9 +12,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class HoofItTest {
     private static Stream<Arguments> filepathsAndExpectedTrailheadsScores() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day10/example_input", 1),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day10/example_input2", 36),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day10/input", 737)
+                Arguments.of("AdventOfCodeData/2024/day10/example_input", 1),
+                Arguments.of("AdventOfCodeData/2024/day10/example_input2", 36),
+                Arguments.of("AdventOfCodeData/2024/day10/input", 737)
         );
     }
 
@@ -27,9 +27,9 @@ class HoofItTest {
 
     private static Stream<Arguments> filepathsAndExpectedTrailheadsRaitings() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day10/example_input", 16),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day10/example_input2", 81),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day10/input", 1619)
+                Arguments.of("AdventOfCodeData/2024/day10/example_input", 16),
+                Arguments.of("AdventOfCodeData/2024/day10/example_input2", 81),
+                Arguments.of("AdventOfCodeData/2024/day10/input", 1619)
         );
     }
 
