@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Set;
 
 public class RestroomRedoubt {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2024/day14/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2024/day14/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2024/day14/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2024/day14/example_input";
 
     public static void main(String[] args) throws IOException {
         System.out.println(calculateSafetyFactor(EXAMPLE_FILENAME, 11, 7));
