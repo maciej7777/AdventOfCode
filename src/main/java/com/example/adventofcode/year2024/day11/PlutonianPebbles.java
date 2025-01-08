@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Map;
 
 public class PlutonianPebbles {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2024/day11/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2024/day11/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2024/day11/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2024/day11/example_input";
 
     public static void main(String[] args) throws IOException {
         System.out.println(countStonesAfterBlinkingBruteForce(EXAMPLE_FILENAME, 25));

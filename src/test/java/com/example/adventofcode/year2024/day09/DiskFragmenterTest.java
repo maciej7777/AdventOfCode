@@ -13,8 +13,8 @@ class DiskFragmenterTest {
 
     private static Stream<Arguments> filepathsAndExpectedFilesystemChecksum() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day09/example_input", 1928L),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day09/input", 6299243228569L)
+                Arguments.of("AdventOfCodeData/2024/day09/example_input", 1928L),
+                Arguments.of("AdventOfCodeData/2024/day09/input", 6299243228569L)
         );
     }
 
@@ -27,8 +27,8 @@ class DiskFragmenterTest {
 
     private static Stream<Arguments> filepathsAndExpectedFilesystemChecksumDefragmentedByFiles() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day09/example_input", 2858L),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day09/input", 6326952672104L)
+                Arguments.of("AdventOfCodeData/2024/day09/example_input", 2858L),
+                Arguments.of("AdventOfCodeData/2024/day09/input", 6326952672104L)
         );
     }
 
