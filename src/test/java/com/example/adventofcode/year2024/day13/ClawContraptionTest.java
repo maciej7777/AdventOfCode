@@ -13,10 +13,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ClawContraptionTest {
     private static Stream<Arguments> filepathsAndprizePositionModifierAndExpectedTokens() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day13/example_input", new Point(0L, 0L), 480),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day13/input", new Point(0L, 0L), 31761),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day13/example_input", new Point(10000000000000L, 10000000000000L), 875318608908L),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day13/input", new Point(10000000000000L, 10000000000000L), 90798500745591L)
+                Arguments.of("AdventOfCodeData/2024/day13/example_input", new Point(0L, 0L), 480),
+                Arguments.of("AdventOfCodeData/2024/day13/input", new Point(0L, 0L), 31761),
+                Arguments.of("AdventOfCodeData/2024/day13/example_input", new Point(10000000000000L, 10000000000000L), 875318608908L),
+                Arguments.of("AdventOfCodeData/2024/day13/input", new Point(10000000000000L, 10000000000000L), 90798500745591L)
         );
     }
 

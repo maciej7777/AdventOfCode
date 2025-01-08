@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.Map;
 
 public class ClawContraption {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2024/day13/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2024/day13/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2024/day13/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2024/day13/example_input";
 
     public static void main(String[] args) throws IOException {
         System.out.println(calculateMinimalNumberOfTokens(EXAMPLE_FILENAME, new Point(0L, 0L)));
