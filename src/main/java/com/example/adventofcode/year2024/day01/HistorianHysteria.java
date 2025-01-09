@@ -8,8 +8,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class HistorianHysteria {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2024/day01/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2024/day01/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2024/day01/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2024/day01/example_input";
 
     public static void main(String[] args) throws IOException {
         System.out.println(calculateTotalDistance(EXAMPLE_FILENAME));

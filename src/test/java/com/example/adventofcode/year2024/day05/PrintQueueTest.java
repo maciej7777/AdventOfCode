@@ -13,8 +13,8 @@ class PrintQueueTest {
 
     private static Stream<Arguments> filepathsAndExpectedMiddlePageSumForCorrectlyOrdered() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day05/example_input", 143),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day05/input", 5329)
+                Arguments.of("AdventOfCodeData/2024/day05/example_input", 143),
+                Arguments.of("AdventOfCodeData/2024/day05/input", 5329)
         );
     }
 
@@ -27,8 +27,8 @@ class PrintQueueTest {
 
     private static Stream<Arguments> filepathsAndExpectedMiddlePageSumForIncorrectlyOrdered() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day05/example_input", 123),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day05/input", 5833)
+                Arguments.of("AdventOfCodeData/2024/day05/example_input", 123),
+                Arguments.of("AdventOfCodeData/2024/day05/input", 5833)
         );
     }
 

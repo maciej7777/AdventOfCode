@@ -13,8 +13,8 @@ class ResonantCollinearityTest {
 
     private static Stream<Arguments> filepathsAndExpectedAntinodeLocations() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day08/example_input", 14),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day08/input", 259)
+                Arguments.of("AdventOfCodeData/2024/day08/example_input", 14),
+                Arguments.of("AdventOfCodeData/2024/day08/input", 259)
         );
     }
 
@@ -27,8 +27,8 @@ class ResonantCollinearityTest {
 
     private static Stream<Arguments> filepathsAndExpectedAntinodeLocationsWithResonantHarmonics() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day08/example_input", 34),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day08/input", 927)
+                Arguments.of("AdventOfCodeData/2024/day08/example_input", 34),
+                Arguments.of("AdventOfCodeData/2024/day08/input", 927)
         );
     }
 

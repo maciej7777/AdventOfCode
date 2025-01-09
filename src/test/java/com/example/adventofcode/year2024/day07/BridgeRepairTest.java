@@ -13,8 +13,8 @@ class BridgeRepairTest {
 
     private static Stream<Arguments> filepathsAndExpectedCalibrationNumber() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day07/example_input", 3749),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day07/input", 8401132154762L)
+                Arguments.of("AdventOfCodeData/2024/day07/example_input", 3749),
+                Arguments.of("AdventOfCodeData/2024/day07/input", 8401132154762L)
         );
     }
 
@@ -27,8 +27,8 @@ class BridgeRepairTest {
 
     private static Stream<Arguments> filepathsAndExpectedCalibrationNumberWithConcatenation() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day07/example_input", 11387),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day07/input", 95297119227552L)
+                Arguments.of("AdventOfCodeData/2024/day07/example_input", 11387),
+                Arguments.of("AdventOfCodeData/2024/day07/input", 95297119227552L)
         );
     }
 

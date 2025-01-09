@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class MullItOverTest {
     private static Stream<Arguments> filepathsAndExpectedInstructionsResult() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day03/example_input", 161),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day03/input", 169021493)
+                Arguments.of("AdventOfCodeData/2024/day03/example_input", 161),
+                Arguments.of("AdventOfCodeData/2024/day03/input", 169021493)
         );
     }
 
@@ -26,8 +26,8 @@ class MullItOverTest {
 
     private static Stream<Arguments> filepathsAndExpectedInstructionsResultWithIgnoringConditions() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day03/example_input2", 48),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day03/input", 111762583)
+                Arguments.of("AdventOfCodeData/2024/day03/example_input2", 48),
+                Arguments.of("AdventOfCodeData/2024/day03/input", 111762583)
         );
     }
 

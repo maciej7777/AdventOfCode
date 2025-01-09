@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class HistorianHysteriaTest {
     private static Stream<Arguments> filepathsAndExpectedTotalDistance() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day01/example_input", 11),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day01/input", 1882714)
+                Arguments.of("AdventOfCodeData/2024/day01/example_input", 11),
+                Arguments.of("AdventOfCodeData/2024/day01/input", 1882714)
         );
     }
 
@@ -26,8 +26,8 @@ class HistorianHysteriaTest {
 
     private static Stream<Arguments> filepathsAndExpectedCalibrationNumbersWithText() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day01/example_input", 31),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day01/input", 19437052L)
+                Arguments.of("AdventOfCodeData/2024/day01/example_input", 31),
+                Arguments.of("AdventOfCodeData/2024/day01/input", 19437052L)
         );
     }
 

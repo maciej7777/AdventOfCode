@@ -13,8 +13,9 @@ class GuardGallivantTest {
 
     private static Stream<Arguments> filepathsAndExpectedGuardsPositions() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day06/example_input", 41),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day06/input", 5177)
+                Arguments.of("AdventOfCodeData/2024/day06/example_input", 41),
+                Arguments.of("AdventOfCodeData/2024/day06/input", 5177),
+                Arguments.of("AdventOfCodeData/2024/day06/input2", 4711)
         );
     }
 
@@ -27,9 +28,9 @@ class GuardGallivantTest {
 
     private static Stream<Arguments> filepathsAndExpectedLoopPositions() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day06/example_input", 6),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day06/input", 1686),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day06/input2", 1562)
+                Arguments.of("AdventOfCodeData/2024/day06/example_input", 6),
+                Arguments.of("AdventOfCodeData/2024/day06/input", 1686),
+                Arguments.of("AdventOfCodeData/2024/day06/input2", 1562)
         );
     }
 

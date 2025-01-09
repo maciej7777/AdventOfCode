@@ -13,8 +13,8 @@ class CeresSearchTest {
 
     private static Stream<Arguments> filepathsAndExpectedXMASWords() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day04/example_input", 18),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day04/input", 2464)
+                Arguments.of("AdventOfCodeData/2024/day04/example_input", 18),
+                Arguments.of("AdventOfCodeData/2024/day04/input", 2464)
         );
     }
 
@@ -27,8 +27,8 @@ class CeresSearchTest {
 
     private static Stream<Arguments> filepathsAndExpectedXShapedMASWords() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day04/example_input", 9),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day04/input", 1982)
+                Arguments.of("AdventOfCodeData/2024/day04/example_input", 9),
+                Arguments.of("AdventOfCodeData/2024/day04/input", 1982)
         );
     }
 
