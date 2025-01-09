@@ -9,13 +9,14 @@ import java.util.List;
 import java.util.Set;
 
 public class GuardGallivant {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2024/day06/input";
-    private static final String FILENAME2 = "src/main/java/com/example/adventofcode/year2024/day06/input2";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2024/day06/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2024/day06/input";
+    private static final String FILENAME2 = "AdventOfCodeData/2024/day06/input2";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2024/day06/example_input";
 
     public static void main(String[] args) throws IOException {
         System.out.println(countGuardsPositions(EXAMPLE_FILENAME));
         System.out.println(countGuardsPositions(FILENAME));
+        System.out.println(countGuardsPositions(FILENAME2));
         System.out.println(countLoopPositions(EXAMPLE_FILENAME));
         System.out.println(countLoopPositions(FILENAME));
         System.out.println(countLoopPositions(FILENAME2));
