@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class RedNosedReportsTest {
     private static Stream<Arguments> filepathsAndExpectedSafeReports() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day02/example_input", 2),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day02/input", 279)
+                Arguments.of("AdventOfCodeData/2024/day02/example_input", 2),
+                Arguments.of("AdventOfCodeData/2024/day02/input", 279)
         );
     }
 
@@ -26,8 +26,8 @@ class RedNosedReportsTest {
 
     private static Stream<Arguments> filepathsAndExpectedSafeReportsWithToleration() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day02/example_input", 4),
-                Arguments.of("src/main/java/com/example/adventofcode/year2024/day02/input", 343)
+                Arguments.of("AdventOfCodeData/2024/day02/example_input", 4),
+                Arguments.of("AdventOfCodeData/2024/day02/input", 343)
         );
     }
 

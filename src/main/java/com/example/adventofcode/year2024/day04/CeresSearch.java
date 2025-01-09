@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CeresSearch {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2024/day04/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2024/day04/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2024/day04/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2024/day04/example_input";
     private static final List<Point> DIRECTIONS = List.of(
             new Point(-1, 0),
             new Point(1, 0),

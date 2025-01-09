@@ -11,9 +11,9 @@ import java.util.regex.Pattern;
 import static java.lang.Integer.parseInt;
 
 public class MullItOver {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2024/day03/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2024/day03/example_input";
-    private static final String EXAMPLE_FILENAME2 = "src/main/java/com/example/adventofcode/year2024/day03/example_input2";
+    private static final String FILENAME = "AdventOfCodeData/2024/day03/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2024/day03/example_input";
+    private static final String EXAMPLE_FILENAME2 = "AdventOfCodeData/2024/day03/example_input2";
 
     public static void main(String[] args) throws IOException {
         System.out.println(calculateInstructionsResult(EXAMPLE_FILENAME));
