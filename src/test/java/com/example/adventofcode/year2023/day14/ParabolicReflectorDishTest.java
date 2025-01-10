@@ -13,8 +13,8 @@ class ParabolicReflectorDishTest {
 
     private static Stream<Arguments> filepathsAndExpectedTotalLoad() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day14/example_input", 136),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day14/input", 109098)
+                Arguments.of("AdventOfCodeData/2023/day14/example_input", 136),
+                Arguments.of("AdventOfCodeData/2023/day14/input", 109098)
         );
     }
 
@@ -34,8 +34,8 @@ class ParabolicReflectorDishTest {
 
     private static Stream<Arguments> filepathsAndExpectedTotalLoadWithSpinCycle() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day14/example_input", 64),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day14/input", 100064)
+                Arguments.of("AdventOfCodeData/2023/day14/example_input", 64),
+                Arguments.of("AdventOfCodeData/2023/day14/input", 100064)
         );
     }
 

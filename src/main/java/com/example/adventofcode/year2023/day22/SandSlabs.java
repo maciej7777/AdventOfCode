@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class SandSlabs {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2023/day22/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2023/day22/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2023/day22/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2023/day22/example_input";
 
     public static void main(String[] args) throws IOException {
         System.out.println(countSafeToDisintegrateBricks(EXAMPLE_FILENAME));

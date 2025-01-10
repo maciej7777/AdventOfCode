@@ -13,8 +13,8 @@ class WaitForItTest {
 
     private static Stream<Arguments> filepathsAndExpectedProductOfWinningCombinations() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day06/example_input", 288),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day06/input", 840336)
+                Arguments.of("AdventOfCodeData/2023/day06/example_input", 288),
+                Arguments.of("AdventOfCodeData/2023/day06/input", 840336)
         );
     }
 
@@ -27,8 +27,8 @@ class WaitForItTest {
 
     private static Stream<Arguments> filepathsAndExpectedWinningCombinations() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day06/example_input", 71503),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day06/input", 41382569)
+                Arguments.of("AdventOfCodeData/2023/day06/example_input", 71503),
+                Arguments.of("AdventOfCodeData/2023/day06/input", 41382569)
         );
     }
 

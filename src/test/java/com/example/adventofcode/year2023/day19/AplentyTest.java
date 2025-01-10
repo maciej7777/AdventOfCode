@@ -13,8 +13,8 @@ class AplentyTest {
 
     private static Stream<Arguments> filepathsAndExpectedRatingsSum() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day19/example_input", 19114),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day19/input", 319062)
+                Arguments.of("AdventOfCodeData/2023/day19/example_input", 19114),
+                Arguments.of("AdventOfCodeData/2023/day19/input", 319062)
         );
     }
 
@@ -27,8 +27,8 @@ class AplentyTest {
 
     private static Stream<Arguments> filepathsAndExpectedCombinationsCount() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day19/example_input", 167409079868000L),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day19/input", 118638369682135L)
+                Arguments.of("AdventOfCodeData/2023/day19/example_input", 167409079868000L),
+                Arguments.of("AdventOfCodeData/2023/day19/input", 118638369682135L)
         );
     }
 

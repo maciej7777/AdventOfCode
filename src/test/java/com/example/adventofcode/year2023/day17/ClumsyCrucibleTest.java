@@ -13,8 +13,8 @@ class ClumsyCrucibleTest {
 
     private static Stream<Arguments> filepathsAndExpectedHeatLoss() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day17/example_input", 102),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day17/input", 817)
+                Arguments.of("AdventOfCodeData/2023/day17/example_input", 102),
+                Arguments.of("AdventOfCodeData/2023/day17/input", 817)
         );
     }
 
@@ -27,8 +27,8 @@ class ClumsyCrucibleTest {
 
     private static Stream<Arguments> filepathsAndExpectedHeatLossForUltraCrucible() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day17/example_input", 94),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day17/input", 925)
+                Arguments.of("AdventOfCodeData/2023/day17/example_input", 94),
+                Arguments.of("AdventOfCodeData/2023/day17/input", 925)
         );
     }
 

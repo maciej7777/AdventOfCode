@@ -13,8 +13,8 @@ class MirageMaintenanceTest {
 
     private static Stream<Arguments> filepathsAndExpectedExtrapolatedValues() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day09/example_input", 114),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day09/input", 1789635132)
+                Arguments.of("AdventOfCodeData/2023/day09/example_input", 114),
+                Arguments.of("AdventOfCodeData/2023/day09/input", 1789635132)
         );
     }
 
@@ -27,8 +27,8 @@ class MirageMaintenanceTest {
 
     private static Stream<Arguments> filepathsAndExpectedExtrapolatedValuesOnTheBeginning() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day09/example_input", 2),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day09/input", 913)
+                Arguments.of("AdventOfCodeData/2023/day09/example_input", 2),
+                Arguments.of("AdventOfCodeData/2023/day09/input", 913)
         );
     }
 

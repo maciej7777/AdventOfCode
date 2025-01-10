@@ -13,8 +13,8 @@ class CamelCardsTest {
 
     private static Stream<Arguments> filepathsAndExpectedTotalWinnings() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day07/example_input", 6440),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day07/input", 248179786)
+                Arguments.of("AdventOfCodeData/2023/day07/example_input", 6440),
+                Arguments.of("AdventOfCodeData/2023/day07/input", 248179786)
         );
     }
 
@@ -27,8 +27,8 @@ class CamelCardsTest {
 
     private static Stream<Arguments> filepathsAndExpectedTotalJokerWinnings() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day07/example_input", 5905),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day07/input", 247885995)
+                Arguments.of("AdventOfCodeData/2023/day07/example_input", 5905),
+                Arguments.of("AdventOfCodeData/2023/day07/input", 247885995)
         );
     }
 

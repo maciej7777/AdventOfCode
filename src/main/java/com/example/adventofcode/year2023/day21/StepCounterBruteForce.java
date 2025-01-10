@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class StepCounterBruteForce {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2023/day21/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2023/day21/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2023/day21/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2023/day21/example_input";
 
     private static final List<Point> DIRECTIONS = List.of(
             new Point(0, 1),

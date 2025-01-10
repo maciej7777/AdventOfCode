@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class TrebuchetTest {
     private static Stream<Arguments> filepathsAndExpectedCalibrationNumbers() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day01/example_input", 142),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day01/input", 54634)
+                Arguments.of("AdventOfCodeData/2023/day01/example_input", 142),
+                Arguments.of("AdventOfCodeData/2023/day01/input", 54634)
         );
     }
 
@@ -26,8 +26,8 @@ class TrebuchetTest {
 
     private static Stream<Arguments> filepathsAndExpectedCalibrationNumbersWithText() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day01/example_input2", 281),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day01/input", 53855)
+                Arguments.of("AdventOfCodeData/2023/day01/example_input2", 281),
+                Arguments.of("AdventOfCodeData/2023/day01/input", 53855)
         );
     }
 

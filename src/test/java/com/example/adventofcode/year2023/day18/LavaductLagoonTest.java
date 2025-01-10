@@ -13,8 +13,8 @@ class LavaductLagoonTest {
 
     private static Stream<Arguments> filepathsAndExpectedLavaHold() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day18/example_input", 62),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day18/input", 46334)
+                Arguments.of("AdventOfCodeData/2023/day18/example_input", 62),
+                Arguments.of("AdventOfCodeData/2023/day18/input", 46334)
         );
     }
 
@@ -27,8 +27,8 @@ class LavaductLagoonTest {
 
     private static Stream<Arguments> filepathsAndExpectedCorrectedLavaHold() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day18/example_input", 952408144115L),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day18/input", 102000662718092L)
+                Arguments.of("AdventOfCodeData/2023/day18/example_input", 952408144115L),
+                Arguments.of("AdventOfCodeData/2023/day18/input", 102000662718092L)
         );
     }
 

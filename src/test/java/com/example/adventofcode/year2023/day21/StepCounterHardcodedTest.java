@@ -13,8 +13,8 @@ class StepCounterHardcodedTest {
 
     private static Stream<Arguments> filepathsAndExpectedFinalGardenPlotsCount() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day21/example_input", 6, 16),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day21/input", 64, 3617)
+                Arguments.of("AdventOfCodeData/2023/day21/example_input", 6, 16),
+                Arguments.of("AdventOfCodeData/2023/day21/input", 64, 3617)
         );
     }
 
@@ -28,13 +28,13 @@ class StepCounterHardcodedTest {
 
     private static Stream<Arguments> filepathsAndExpectedFinalGardenPlotsCountInInfiniteMap() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day21/example_input", 6, 16),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day21/example_input", 10, 50),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day21/example_input", 50, 1594),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day21/example_input", 100, 6536),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day21/example_input", 500, 167004),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day21/example_input", 1000, 668697)
-                //Arguments.of("src/main/java/com/example/adventofcode/year2023/day21/example_input", 5000, 16733044)
+                Arguments.of("AdventOfCodeData/2023/day21/example_input", 6, 16),
+                Arguments.of("AdventOfCodeData/2023/day21/example_input", 10, 50),
+                Arguments.of("AdventOfCodeData/2023/day21/example_input", 50, 1594),
+                Arguments.of("AdventOfCodeData/2023/day21/example_input", 100, 6536),
+                Arguments.of("AdventOfCodeData/2023/day21/example_input", 500, 167004),
+                Arguments.of("AdventOfCodeData/2023/day21/example_input", 1000, 668697)
+                //Arguments.of("AdventOfCodeData/2023/day21/example_input", 5000, 16733044)
         );
     }
 
@@ -48,7 +48,7 @@ class StepCounterHardcodedTest {
 
     private static Stream<Arguments> filepathsAndExpectedFinalGardenPlotsCountInInfiniteMapExtended() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day21/input", 26501365, 596857397104703L)
+                Arguments.of("AdventOfCodeData/2023/day21/input", 26501365, 596857397104703L)
         );
     }
 

@@ -9,8 +9,8 @@ import java.util.*;
  * To learn more about this solution take a look to the <a href="https://en.wikipedia.org/wiki/Shoelace_formula">Shoelace formula</a>.
  */
 public class LavaductLagoon {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2023/day18/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2023/day18/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2023/day18/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2023/day18/example_input";
 
     public static void main(String[] args) throws IOException {
         System.out.println(calculateLavaHold(EXAMPLE_FILENAME));

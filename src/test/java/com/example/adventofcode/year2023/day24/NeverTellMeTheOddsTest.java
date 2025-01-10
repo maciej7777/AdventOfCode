@@ -13,8 +13,8 @@ class NeverTellMeTheOddsTest {
 
     private static Stream<Arguments> filepathsAndExpectedIntersections() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day24/example_input",7L, 27L, 2),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day24/input", 200000000000000L, 400000000000000L, 18184)
+                Arguments.of("AdventOfCodeData/2023/day24/example_input",7L, 27L, 2),
+                Arguments.of("AdventOfCodeData/2023/day24/input", 200000000000000L, 400000000000000L, 18184)
         );
     }
 
@@ -29,8 +29,8 @@ class NeverTellMeTheOddsTest {
 
     private static Stream<Arguments> filepathsAndExpectedCoordinatesSum() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day24/example_input", 47),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day24/input", 557789988450159L)
+                Arguments.of("AdventOfCodeData/2023/day24/example_input", 47),
+                Arguments.of("AdventOfCodeData/2023/day24/input", 557789988450159L)
         );
     }
 

@@ -13,8 +13,8 @@ class TheFloorWillBeLavaTest {
 
     private static Stream<Arguments> filepathsAndExpectedEnergizedTitles() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day16/example_input", 46),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day16/input", 7927)
+                Arguments.of("AdventOfCodeData/2023/day16/example_input", 46),
+                Arguments.of("AdventOfCodeData/2023/day16/input", 7927)
         );
     }
 
@@ -27,8 +27,8 @@ class TheFloorWillBeLavaTest {
 
     private static Stream<Arguments> filepathsAndExpectedBestTitles() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day16/example_input", 51),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day16/input", 8246)
+                Arguments.of("AdventOfCodeData/2023/day16/example_input", 51),
+                Arguments.of("AdventOfCodeData/2023/day16/input", 8246)
         );
     }
     @ParameterizedTest
