@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class SnowverloadTest {
     private static Stream<Arguments> filepathsAndExpectedMinCutsSizesMultiplication() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day25/example_input", 54),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day25/input", 551196)
+                Arguments.of("AdventOfCodeData/2023/day25/example_input", 54),
+                Arguments.of("AdventOfCodeData/2023/day25/input", 551196)
         );
     }
 

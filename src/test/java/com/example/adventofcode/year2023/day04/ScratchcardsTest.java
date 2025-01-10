@@ -13,8 +13,8 @@ class ScratchcardsTest {
 
     private static Stream<Arguments> filepathsAndExpectedWinningPoints() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day04/example_input", 13),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day04/input", 24542)
+                Arguments.of("AdventOfCodeData/2023/day04/example_input", 13),
+                Arguments.of("AdventOfCodeData/2023/day04/input", 24542)
         );
     }
 
@@ -27,8 +27,8 @@ class ScratchcardsTest {
 
     private static Stream<Arguments> filepathsAndExpectedTotalScratchcards() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day04/example_input", 30),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day04/input", 8736438)
+                Arguments.of("AdventOfCodeData/2023/day04/example_input", 30),
+                Arguments.of("AdventOfCodeData/2023/day04/input", 8736438)
         );
     }
 

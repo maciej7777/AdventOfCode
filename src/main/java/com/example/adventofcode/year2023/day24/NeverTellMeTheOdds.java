@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.Map;
 
 public class NeverTellMeTheOdds {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2023/day24/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2023/day24/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2023/day24/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2023/day24/example_input";
 
     static long inputAreaBegin = 200000000000000L;
     static long inputAreaEnd = 400000000000000L;

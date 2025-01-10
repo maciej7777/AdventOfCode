@@ -13,8 +13,8 @@ class IfYouGiveASeedAFertilizerTest {
 
     private static Stream<Arguments> filepathsAndExpectedLowestLocationNumber() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day05/example_input", 35),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day05/input", 650599855)
+                Arguments.of("AdventOfCodeData/2023/day05/example_input", 35),
+                Arguments.of("AdventOfCodeData/2023/day05/input", 650599855)
         );
     }
 
@@ -27,8 +27,8 @@ class IfYouGiveASeedAFertilizerTest {
 
     private static Stream<Arguments> filepathsAndExpectedLowestLocationNumberFromRanges() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day05/example_input", 46),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day05/input", 1240035)
+                Arguments.of("AdventOfCodeData/2023/day05/example_input", 46),
+                Arguments.of("AdventOfCodeData/2023/day05/input", 1240035)
         );
     }
 

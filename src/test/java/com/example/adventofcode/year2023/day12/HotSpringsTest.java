@@ -13,8 +13,8 @@ class HotSpringsTest {
 
     private static Stream<Arguments> filepathsAndExpectedSpringArrangements() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day12/example_input", 21),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day12/input", 7251)
+                Arguments.of("AdventOfCodeData/2023/day12/example_input", 21),
+                Arguments.of("AdventOfCodeData/2023/day12/input", 7251)
         );
     }
 
@@ -27,8 +27,8 @@ class HotSpringsTest {
 
     private static Stream<Arguments> filepathsAndExpectedFoldedSpringArrangements() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day12/example_input", 525152),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day12/input", 2128386729962L)
+                Arguments.of("AdventOfCodeData/2023/day12/example_input", 525152),
+                Arguments.of("AdventOfCodeData/2023/day12/input", 2128386729962L)
         );
     }
 

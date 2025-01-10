@@ -13,8 +13,8 @@ class ALongWalkBruteForceTest {
 
     private static Stream<Arguments> filepathsAndExpectedLongestHike() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day23/example_input", 94),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day23/input", 2170)
+                Arguments.of("AdventOfCodeData/2023/day23/example_input", 94),
+                Arguments.of("AdventOfCodeData/2023/day23/input", 2170)
         );
     }
 
@@ -27,8 +27,8 @@ class ALongWalkBruteForceTest {
 
     private static Stream<Arguments> filepathsAndExpectedLongestHikeWithoutSlopes() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day23/example_input", 154)
-                //Arguments.of("src/main/java/com/example/adventofcode/year2023/day23/input", 6502)
+                Arguments.of("AdventOfCodeData/2023/day23/example_input", 154)
+                //Arguments.of("AdventOfCodeData/2023/day23/input", 6502)
         );
     }
 

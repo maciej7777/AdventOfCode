@@ -13,9 +13,9 @@ class PulsePropagationTest {
 
     private static Stream<Arguments> filepathsAndExpectedLowAndHighPulsesProduct() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day20/example_input", 32000000),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day20/example_input2", 11687500),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day20/input", 1020211150)
+                Arguments.of("AdventOfCodeData/2023/day20/example_input", 32000000),
+                Arguments.of("AdventOfCodeData/2023/day20/example_input2", 11687500),
+                Arguments.of("AdventOfCodeData/2023/day20/input", 1020211150)
         );
     }
 
@@ -28,7 +28,7 @@ class PulsePropagationTest {
 
     private static Stream<Arguments> filepathsAndExpectedMinButtonPushes() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day20/input", 238815727638557L)
+                Arguments.of("AdventOfCodeData/2023/day20/input", 238815727638557L)
         );
     }
 

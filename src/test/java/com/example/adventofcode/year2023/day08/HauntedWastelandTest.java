@@ -13,9 +13,9 @@ class HauntedWastelandTest {
 
     private static Stream<Arguments> filepathsAndExpectedSteps() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day08/example_input", 2),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day08/example_input2", 6),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day08/input", 21389)
+                Arguments.of("AdventOfCodeData/2023/day08/example_input", 2),
+                Arguments.of("AdventOfCodeData/2023/day08/example_input2", 6),
+                Arguments.of("AdventOfCodeData/2023/day08/input", 21389)
         );
     }
 
@@ -28,8 +28,8 @@ class HauntedWastelandTest {
 
     private static Stream<Arguments> filepathsAndExpectedStepsByGhosts() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day08/example_input3", 6),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day08/input", 21083806112641L)
+                Arguments.of("AdventOfCodeData/2023/day08/example_input3", 6),
+                Arguments.of("AdventOfCodeData/2023/day08/input", 21083806112641L)
         );
     }
 

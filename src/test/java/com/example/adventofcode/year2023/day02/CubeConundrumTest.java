@@ -13,8 +13,8 @@ class CubeConundrumTest {
 
     private static Stream<Arguments> filepathsAndExpectedPossibleGamesIdsSum() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day02/example_input", 8),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day02/input", 2685)
+                Arguments.of("AdventOfCodeData/2023/day02/example_input", 8),
+                Arguments.of("AdventOfCodeData/2023/day02/input", 2685)
         );
     }
 
@@ -27,8 +27,8 @@ class CubeConundrumTest {
 
     private static Stream<Arguments> filepathsAndExpectedPowerOfSetsOfCubesSum() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day02/example_input", 2286),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day02/input", 83707)
+                Arguments.of("AdventOfCodeData/2023/day02/example_input", 2286),
+                Arguments.of("AdventOfCodeData/2023/day02/input", 83707)
         );
     }
 

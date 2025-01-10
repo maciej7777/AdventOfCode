@@ -13,8 +13,8 @@ class SandSlabsTest {
 
     private static Stream<Arguments> filepathsAndExpectedSafeToDisintegrateBricksCount() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day22/example_input", 5),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day22/input", 471)
+                Arguments.of("AdventOfCodeData/2023/day22/example_input", 5),
+                Arguments.of("AdventOfCodeData/2023/day22/input", 471)
         );
     }
 
@@ -27,8 +27,8 @@ class SandSlabsTest {
 
     private static Stream<Arguments> filepathsAndExpectedFallingBricksCount() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day22/example_input", 7),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day22/input", 68525)
+                Arguments.of("AdventOfCodeData/2023/day22/example_input", 7),
+                Arguments.of("AdventOfCodeData/2023/day22/input", 68525)
         );
     }
 

@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class HotSpringsBruteForceTest {
     private static Stream<Arguments> filepathsAndExpectedSpringArrangements() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day12/example_input", 21),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day12/input", 7251)
+                Arguments.of("AdventOfCodeData/2023/day12/example_input", 21),
+                Arguments.of("AdventOfCodeData/2023/day12/input", 7251)
         );
     }
 

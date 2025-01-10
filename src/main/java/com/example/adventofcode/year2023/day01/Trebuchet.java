@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.Map;
 
 public class Trebuchet {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2023/day01/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2023/day01/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2023/day01/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2023/day01/example_input";
 
-    private static final String EXAMPLE_FILENAME2 = "src/main/java/com/example/adventofcode/year2023/day01/example_input2";
+    private static final String EXAMPLE_FILENAME2 = "AdventOfCodeData/2023/day01/example_input2";
 
     private static final Map<String, String> digitNames = Map.of(
             "one", "1",

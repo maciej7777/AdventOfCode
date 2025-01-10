@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class PipeMazeTest {
     private static Stream<Arguments> filepathsAndExpectedHalfOfCircuit() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day10/example_input", 8),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day10/input", 6838)
+                Arguments.of("AdventOfCodeData/2023/day10/example_input", 8),
+                Arguments.of("AdventOfCodeData/2023/day10/input", 6838)
         );
     }
 
@@ -26,10 +26,10 @@ class PipeMazeTest {
 
     private static Stream<Arguments> filepathsAndExpectedLoopArea() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day10/example_input2", 4),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day10/example_input3", 8),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day10/example_input4", 10),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day10/input", 451)
+                Arguments.of("AdventOfCodeData/2023/day10/example_input2", 4),
+                Arguments.of("AdventOfCodeData/2023/day10/example_input3", 8),
+                Arguments.of("AdventOfCodeData/2023/day10/example_input4", 10),
+                Arguments.of("AdventOfCodeData/2023/day10/input", 451)
         );
     }
 

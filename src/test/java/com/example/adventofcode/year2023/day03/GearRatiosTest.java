@@ -13,8 +13,8 @@ class GearRatiosTest {
 
     private static Stream<Arguments> filepathsAndExpectedPartNumbersSum() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day03/example_input", 4361),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day03/input", 536576)
+                Arguments.of("AdventOfCodeData/2023/day03/example_input", 4361),
+                Arguments.of("AdventOfCodeData/2023/day03/input", 536576)
         );
     }
 
@@ -27,8 +27,8 @@ class GearRatiosTest {
 
     private static Stream<Arguments> filepathsAndExpectedGearRatiosSum() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day03/example_input", 467835),
-                Arguments.of("src/main/java/com/example/adventofcode/year2023/day03/input", 75741499)
+                Arguments.of("AdventOfCodeData/2023/day03/example_input", 467835),
+                Arguments.of("AdventOfCodeData/2023/day03/input", 75741499)
         );
     }
 

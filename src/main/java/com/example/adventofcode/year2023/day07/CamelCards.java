@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class CamelCards {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2023/day07/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2023/day07/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2023/day07/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2023/day07/example_input";
 
     private static final Map<Character, Integer> CARD_RANKING_PART1 = Map.ofEntries(
             Map.entry('A', 12),

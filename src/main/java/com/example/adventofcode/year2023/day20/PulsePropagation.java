@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.util.*;
 
 public class PulsePropagation {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/year2023/day20/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/year2023/day20/example_input";
-    private static final String EXAMPLE_FILENAME2 = "src/main/java/com/example/adventofcode/year2023/day20/example_input2";
+    private static final String FILENAME = "AdventOfCodeData/2023/day20/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2023/day20/example_input";
+    private static final String EXAMPLE_FILENAME2 = "AdventOfCodeData/2023/day20/example_input2";
 
     public static void main(String[] args) throws IOException {
         System.out.println(calculateLowAndHighPulsesProduct(EXAMPLE_FILENAME));
