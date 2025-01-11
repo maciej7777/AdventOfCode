@@ -8,8 +8,8 @@ import java.util.*;
 import static com.example.adventofcode.year2022.day11.MonkeyInTheMiddle.OperationType.*;
 
 public class MonkeyInTheMiddle {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day11/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day11/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2022day11/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022day11/example_input";
 
     public static void main(String[] args) throws IOException {
         List<Monkey> input = readInput(FILENAME);

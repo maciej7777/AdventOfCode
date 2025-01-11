@@ -12,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class BlizzardBasinTest {
     private static Stream<Arguments> filePathsAndExpectedTimeToLeaveTheValley() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day24/example_input",
+                Arguments.of("AdventOfCodeData/2022/day24/example_input",
                         18
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day24/input",
+                Arguments.of("AdventOfCodeData/2022/day24/input",
                         279
                 )
         );
@@ -30,10 +30,10 @@ class BlizzardBasinTest {
 
     private static Stream<Arguments> filePathsAndExpectedTimeToReachAllThePoints() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day24/example_input",
+                Arguments.of("AdventOfCodeData/2022/day24/example_input",
                         54
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day24/input",
+                Arguments.of("AdventOfCodeData/2022/day24/input",
                         762
                 )
         );

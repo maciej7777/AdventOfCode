@@ -12,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class BoilingBouldersTest {
     private static Stream<Arguments> filePathsAndRowsAndExpectedSurfaceArea() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day18/example_input",
+                Arguments.of("AdventOfCodeData/2022/day18/example_input",
                         64
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day18/input",
+                Arguments.of("AdventOfCodeData/2022/day18/input",
                         4460
                 )
         );
@@ -30,10 +30,10 @@ class BoilingBouldersTest {
 
     private static Stream<Arguments> filePathsAndRowsAndExpectedExteriorSurfaceArea() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day18/example_input",
+                Arguments.of("AdventOfCodeData/2022/day18/example_input",
                         58
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day18/input",
+                Arguments.of("AdventOfCodeData/2022/day18/input",
                         2498
                 )
         );

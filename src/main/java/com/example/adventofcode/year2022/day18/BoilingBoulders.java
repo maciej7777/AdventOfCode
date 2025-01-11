@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class BoilingBoulders {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day18/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day18/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2022day18/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022day18/example_input";
 
     public static void main(String[] args) throws IOException {
         List<CubePosition> input = readInput(FILENAME);

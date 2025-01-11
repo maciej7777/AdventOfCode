@@ -13,11 +13,11 @@ class SupplyStacksTest {
     private static Stream<Arguments> filePathsAndExpectedStacksTopForMovingSeparated() {
         return Stream.of(
                 Arguments.of(
-                        "src/main/java/com/example/adventofcode/year2022/day05/example_input",
+                        "AdventOfCodeData/2022/day05/example_input",
                         "CMZ"
                 ),
                 Arguments.of(
-                        "src/main/java/com/example/adventofcode/year2022/day05/input",
+                        "AdventOfCodeData/2022/day05/input",
                         "JDTMRWCQJ"
                 )
         );
@@ -33,11 +33,11 @@ class SupplyStacksTest {
     private static Stream<Arguments> filePathsAndExpectedStacksTopForMovingTogether() {
         return Stream.of(
                 Arguments.of(
-                        "src/main/java/com/example/adventofcode/year2022/day05/example_input",
+                        "AdventOfCodeData/2022/day05/example_input",
                         "MCD"
                 ),
                 Arguments.of(
-                        "src/main/java/com/example/adventofcode/year2022/day05/input",
+                        "AdventOfCodeData/2022/day05/input",
                         "VHJDDCWRD"
                 )
         );

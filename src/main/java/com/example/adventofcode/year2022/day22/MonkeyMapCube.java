@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class MonkeyMapCube {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day22/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day22/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2022day22/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022day22/example_input";
 
     private static final Map<RegionDirection, RegionDirectionInstruction> REGION_DIRECTION_INSTRUCTION_MAP = Map.ofEntries(
             Map.entry(new RegionDirection(0, 2), new RegionDirectionInstruction(3, 0, true)),

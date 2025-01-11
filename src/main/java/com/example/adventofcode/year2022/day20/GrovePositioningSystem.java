@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class GrovePositioningSystem {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day20/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day20/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2022day20/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022day20/example_input";
 
     public static void main(String[] args) throws IOException {
         System.out.println(calculateSumOfGroveCoordinates(EXAMPLE_FILENAME));

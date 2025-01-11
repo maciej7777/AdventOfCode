@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class BeaconExclusionZone {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day15/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day15/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2022day15/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022day15/example_input";
     public static final int SEARCHING_AREA = 1000000;
 
     public static void main(String[] args) throws IOException {

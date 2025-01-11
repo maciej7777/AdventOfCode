@@ -12,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class NoSpaceLeftOnDeviceTest {
     private static Stream<Arguments> filePathsAndExpectedSmallFilesSizeSum() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day07/example_input",
+                Arguments.of("AdventOfCodeData/2022/day07/example_input",
                         95437
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day07/input",
+                Arguments.of("AdventOfCodeData/2022/day07/input",
                         1444896
                 )
         );
@@ -30,10 +30,10 @@ class NoSpaceLeftOnDeviceTest {
 
     private static Stream<Arguments> filePathsAndExpectedSumOfEncryptedGroveCoordinates() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day07/example_input",
+                Arguments.of("AdventOfCodeData/2022/day07/example_input",
                         24933642
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day07/input",
+                Arguments.of("AdventOfCodeData/2022/day07/input",
                         404395
                 )
         );

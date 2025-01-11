@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class RucksackReorganizationTest {
     private static Stream<Arguments> filePathsAndExpectedSumOfPriorities() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day03/example_input", 157),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day03/input", 7428)
+                Arguments.of("AdventOfCodeData/2022/day03/example_input", 157),
+                Arguments.of("AdventOfCodeData/2022/day03/input", 7428)
         );
     }
 
@@ -26,8 +26,8 @@ class RucksackReorganizationTest {
 
     private static Stream<Arguments> filePathsAndExpectedSumOfPrioritiesForBatches() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day03/example_input", 70),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day03/input", 2650)
+                Arguments.of("AdventOfCodeData/2022/day03/example_input", 70),
+                Arguments.of("AdventOfCodeData/2022/day03/input", 2650)
         );
     }
 

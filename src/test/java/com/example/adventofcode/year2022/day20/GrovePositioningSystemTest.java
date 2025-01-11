@@ -12,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class GrovePositioningSystemTest {
     private static Stream<Arguments> filePathsAndExpectedSumOfGroveCoordinates() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day20/example_input",
+                Arguments.of("AdventOfCodeData/2022/day20/example_input",
                         3
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day20/input",
+                Arguments.of("AdventOfCodeData/2022/day20/input",
                         7584
                 )
         );
@@ -30,10 +30,10 @@ class GrovePositioningSystemTest {
 
     private static Stream<Arguments> filePathsAndExpectedSumOfEncryptedGroveCoordinates() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day20/example_input",
+                Arguments.of("AdventOfCodeData/2022/day20/example_input",
                         1623178306L
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day20/input",
+                Arguments.of("AdventOfCodeData/2022/day20/input",
                         4907679608191L
                 )
         );

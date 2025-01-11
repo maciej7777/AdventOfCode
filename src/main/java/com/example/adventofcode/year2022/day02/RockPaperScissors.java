@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Map;
 
 public class RockPaperScissors {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day02/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day02/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2022day02/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022day02/example_input";
 
 
     private static final Map<String, String> figuresMap = Map.of("X", "A", "Y", "B", "Z", "C");

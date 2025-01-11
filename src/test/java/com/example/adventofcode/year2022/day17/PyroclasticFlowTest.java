@@ -12,19 +12,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class PyroclasticFlowTest {
     private static Stream<Arguments> filePathsAndIterationsAndExpectedTowerHeight() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day17/example_input",
+                Arguments.of("AdventOfCodeData/2022/day17/example_input",
                         2022,
                         3068
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day17/input",
+                Arguments.of("AdventOfCodeData/2022/day17/input",
                         2022,
                         3124
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day17/example_input",
+                Arguments.of("AdventOfCodeData/2022/day17/example_input",
                         1000000000000L,
                         1514285714288L
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day17/input",
+                Arguments.of("AdventOfCodeData/2022/day17/input",
                         1000000000000L,
                         1561176470569L
                 )

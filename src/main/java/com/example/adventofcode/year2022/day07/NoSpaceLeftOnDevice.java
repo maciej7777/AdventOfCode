@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class NoSpaceLeftOnDevice {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day07/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day07/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2022day07/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022day07/example_input";
     private static final int SMALL_FILE_MAX_SIZE = 100000;
 
     public static void main(String[] args) throws IOException {
