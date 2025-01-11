@@ -13,11 +13,11 @@ class BeaconExclusionZoneTest {
 
     private static Stream<Arguments> filePathsAndRowsAndExpectedEmptyPositions() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day15/example_input",
+                Arguments.of("AdventOfCodeData/2022/day15/example_input",
                         10,
                         26
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day15/input",
+                Arguments.of("AdventOfCodeData/2022/day15/input",
                         2000000,
                         4919281
                 )
@@ -34,11 +34,11 @@ class BeaconExclusionZoneTest {
 
     private static Stream<Arguments> filePathsAndRangesAndExpectedTuningFrequencies() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day15/example_input",
+                Arguments.of("AdventOfCodeData/2022/day15/example_input",
                         20,
                         56000011
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day15/input",
+                Arguments.of("AdventOfCodeData/2022/day15/input",
                         4000000,
                         12630143363767L
                 )

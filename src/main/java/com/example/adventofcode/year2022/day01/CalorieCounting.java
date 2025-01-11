@@ -7,11 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CalorieCounting {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day01/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day01/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2022/day01/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022/day01/example_input";
 
     public static void main(String[] args) throws IOException {
+        System.out.println(countMaxCalories(EXAMPLE_FILENAME));
         System.out.println(countMaxCalories(FILENAME));
+        System.out.println(count3MaxCalories(EXAMPLE_FILENAME));
         System.out.println(count3MaxCalories(FILENAME));
     }
 

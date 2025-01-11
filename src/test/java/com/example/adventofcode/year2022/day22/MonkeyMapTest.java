@@ -12,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class MonkeyMapTest {
     private static Stream<Arguments> filePathsAndExpectedPassword() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day22/example_input",
+                Arguments.of("AdventOfCodeData/2022/day22/example_input",
                         6032
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day22/input",
+                Arguments.of("AdventOfCodeData/2022/day22/input",
                         64256
                 )
         );
@@ -30,10 +30,10 @@ class MonkeyMapTest {
 
     private static Stream<Arguments> filePathsAndExpectedCubePassword() {
         return Stream.of(
-                /*Arguments.of("src/main/java/com/example/adventofcode/year2022/day22/example_input",
+                /*Arguments.of("AdventOfCodeData/2022/day22/example_input",
                         5031
                 ),*/
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day22/input",
+                Arguments.of("AdventOfCodeData/2022/day22/input",
                         109224
                 )
         );

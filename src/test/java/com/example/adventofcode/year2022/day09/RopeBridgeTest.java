@@ -12,23 +12,23 @@ import static org.junit.jupiter.api.Assertions.*;
 class RopeBridgeTest {
     private static Stream<Arguments> filePathsRopeLengthAndExpectedPositionsTouchedByRopeTail() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day09/example_input",
+                Arguments.of("AdventOfCodeData/2022/day09/example_input",
                         2,
                         13
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day09/input",
+                Arguments.of("AdventOfCodeData/2022/day09/input",
                         2,
                         6357
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day09/example_input",
+                Arguments.of("AdventOfCodeData/2022/day09/example_input",
                         10,
                         1
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day09/example_input_larger",
+                Arguments.of("AdventOfCodeData/2022/day09/example_input_larger",
                         10,
                         36
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day09/input",
+                Arguments.of("AdventOfCodeData/2022/day09/input",
                         10,
                         2627
                 )

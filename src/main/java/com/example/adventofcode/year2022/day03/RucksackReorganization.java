@@ -7,8 +7,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class RucksackReorganization {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day03/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day03/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2022day03/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022day03/example_input";
 
     public static void main(String[] args) throws IOException {
         System.out.println(calculateSumOfPriorities(EXAMPLE_FILENAME));

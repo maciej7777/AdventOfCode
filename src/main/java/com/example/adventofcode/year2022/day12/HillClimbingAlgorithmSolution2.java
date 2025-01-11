@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class HillClimbingAlgorithmSolution2 {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day12/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day12/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2022day12/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022day12/example_input";
 
     public static void main(String[] args) throws IOException {
         System.out.println(obtainLengthOfShortestPathFromStart(FILENAME));

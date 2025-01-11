@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class UnstableDiffusion {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day23/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day23/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2022day23/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022day23/example_input";
 
     public static void main(String[] args) throws IOException {
         Set<Point> input = readInput(FILENAME);

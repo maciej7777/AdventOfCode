@@ -7,8 +7,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class RegolithReservoir {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day14/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day14/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2022day14/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022day14/example_input";
 
     public static void main(String[] args) throws IOException {
         Set<Point> input = readInput(FILENAME);

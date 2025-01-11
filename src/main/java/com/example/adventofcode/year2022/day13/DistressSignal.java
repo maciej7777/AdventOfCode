@@ -9,8 +9,8 @@ import static com.example.adventofcode.year2022.day13.DistressSignal.PacketType.
 import static com.example.adventofcode.year2022.day13.DistressSignal.PacketType.LIST;
 
 public class DistressSignal {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day13/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day13/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2022day13/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022day13/example_input";
 
     public static void main(String[] args) throws IOException {
         System.out.println("Sum: " + obtainSumOfOrderedPairs(FILENAME));

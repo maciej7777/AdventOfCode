@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class PyroclasticFlow {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day17/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day17/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2022day17/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022day17/example_input";
 
     public static void main(String[] args) throws IOException {
         System.out.println(obtainTowerHeight(EXAMPLE_FILENAME, 2022L));

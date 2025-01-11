@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class MonkeyMath {
-    private static final String FILENAME = "src/main/java/com/example/adventofcode/day21/input";
-    private static final String EXAMPLE_FILENAME = "src/main/java/com/example/adventofcode/day21/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2022day21/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022day21/example_input";
     public static final String ROOT = "root";
     public static final String HUMN = "humn";
 

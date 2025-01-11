@@ -12,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class DistressSignalTest {
     private static Stream<Arguments> filePathsAndExpectedSumOfOrderedPairs() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day13/example_input",
+                Arguments.of("AdventOfCodeData/2022/day13/example_input",
                         13
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day13/input",
+                Arguments.of("AdventOfCodeData/2022/day13/input",
                         5393
                 )
         );
@@ -30,10 +30,10 @@ class DistressSignalTest {
 
     private static Stream<Arguments> filePathsAndExpectedMultipliedPositions() {
         return Stream.of(
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day13/example_input",
+                Arguments.of("AdventOfCodeData/2022/day13/example_input",
                         140
                 ),
-                Arguments.of("src/main/java/com/example/adventofcode/year2022/day13/input",
+                Arguments.of("AdventOfCodeData/2022/day13/input",
                         26712
                 )
         );
