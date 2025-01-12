@@ -26,34 +26,19 @@ public class ClawContraption {
     public record Point(long x, long y) {
     }
 
+    public record ClawMachineConfiguration(Point a, Point b, Point prize) {
+    }
+
     public static long calculateMinimalNumberOfTokens(final String filename, Point prizePositionModifier) throws IOException {
         List<String> lines = readLines(filename);
+        List<ClawMachineConfiguration> machines = parseMachineConfiguration(lines, prizePositionModifier);
+
         long sum = 0;
-        Point a = new Point(0, 0);
-        Point b = new Point(0, 0);
-        Point prize;
-        for (String line : lines) {
-            if (line.startsWith("Button A: ")) {
-                String newLine = line.substring(12);
-                String[] numbers = newLine.split(", Y\\+");
-
-                a = new Point(Integer.parseInt(numbers[0]), Integer.parseInt(numbers[1]));
-            } else if (line.startsWith("Button B: ")) {
-                String newLine = line.substring(12);
-                String[] numbers = newLine.split(", Y\\+");
-
-                b = new Point(Integer.parseInt(numbers[0]), Integer.parseInt(numbers[1]));
-            } else if (line.startsWith("Prize: X=")) {
-                String newLine = line.substring(9);
-                String[] numbers = newLine.split(", Y=");
-
-                prize = new Point(Integer.parseInt(numbers[0]) + prizePositionModifier.x, Integer.parseInt(numbers[1]) + prizePositionModifier.y);
-
-                String equations = buildSolverEquations(a, b, prize);
-                Map<String, Long> resultMap = solveEquations(equations);
-                if (resultMap.size() == 2) {
-                    sum += 3 * resultMap.get("a") + resultMap.get("b");
-                }
+        for (ClawMachineConfiguration machine : machines) {
+            String equations = buildSolverEquations(machine.a, machine.b, machine.prize);
+            Map<String, Long> resultMap = solveEquations(equations);
+            if (resultMap.size() == 2) {
+                sum += 3 * resultMap.get("a") + resultMap.get("b");
             }
         }
 
@@ -70,6 +55,25 @@ public class ClawContraption {
             }
         }
         return lines;
+    }
+
+    private static List<ClawMachineConfiguration> parseMachineConfiguration(List<String> inputLines, Point prizePositionModifier) {
+        List<ClawMachineConfiguration> machines = new ArrayList<>();
+
+        for (int i = 0; i < inputLines.size(); i += 4) {
+            String[] aButtonData = inputLines.get(i).substring(12).split(", Y\\+");
+            Point a = new Point(Integer.parseInt(aButtonData[0]), Integer.parseInt(aButtonData[1]));
+
+            String[] bButtonData = inputLines.get(i + 1).substring(12).split(", Y\\+");
+            Point b = new Point(Integer.parseInt(bButtonData[0]), Integer.parseInt(bButtonData[1]));
+
+            String[] prizeData = inputLines.get(i + 2).substring(9).split(", Y=");
+            Point prize = new Point(Integer.parseInt(prizeData[0]) + prizePositionModifier.x, Integer.parseInt(prizeData[1]) + prizePositionModifier.y);
+
+            machines.add(new ClawMachineConfiguration(a, b, prize));
+        }
+
+        return machines;
     }
 
     private static String buildSolverEquations(Point a, Point b, Point prize) {
