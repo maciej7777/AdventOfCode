@@ -16,10 +16,10 @@ public class ClawContraption {
     private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2024/day13/example_input";
 
     public static void main(String[] args) throws IOException {
-        System.out.println(calculateMinimalNumberOfTokens(EXAMPLE_FILENAME, new Point(0L, 0L)));
-        System.out.println(calculateMinimalNumberOfTokens(FILENAME, new Point(0L, 0L)));
-        System.out.println(calculateMinimalNumberOfTokens(EXAMPLE_FILENAME, new Point(10000000000000L, 10000000000000L)));
-        System.out.println(calculateMinimalNumberOfTokens(FILENAME, new Point(10000000000000L, 10000000000000L)));
+        System.out.println(calculateMinimalNumberOfTokensWithSolver(EXAMPLE_FILENAME, new Point(0L, 0L)));
+        System.out.println(calculateMinimalNumberOfTokensWithSolver(FILENAME, new Point(0L, 0L)));
+        System.out.println(calculateMinimalNumberOfTokensWithSolver(EXAMPLE_FILENAME, new Point(10000000000000L, 10000000000000L)));
+        System.out.println(calculateMinimalNumberOfTokensWithSolver(FILENAME, new Point(10000000000000L, 10000000000000L)));
     }
 
 
@@ -30,6 +30,23 @@ public class ClawContraption {
     }
 
     public static long calculateMinimalNumberOfTokens(final String filename, Point prizePositionModifier) throws IOException {
+        List<String> lines = readLines(filename);
+        List<ClawMachineConfiguration> machines = parseMachineConfiguration(lines, prizePositionModifier);
+
+        long sum = 0;
+        for (ClawMachineConfiguration machine : machines) {
+            double aPushes = (double) (machine.prize.x * machine.b.y - machine.prize.y * machine.b.x) / (machine.a.x * machine.b.y - machine.a.y * machine.b.x);
+            double bPushes = (machine.prize.x - machine.a.x * aPushes) / machine.b.x;
+
+            if (aPushes % 1 == 0.0 && bPushes % 1 == 0.0) {
+                sum += 3 * (long) aPushes + (long) bPushes;
+            }
+        }
+
+        return sum;
+    }
+
+    public static long calculateMinimalNumberOfTokensWithSolver(final String filename, Point prizePositionModifier) throws IOException {
         List<String> lines = readLines(filename);
         List<ClawMachineConfiguration> machines = parseMachineConfiguration(lines, prizePositionModifier);
 

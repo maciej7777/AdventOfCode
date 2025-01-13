@@ -27,4 +27,12 @@ class ClawContraptionTest {
                                         final long expectedTokens) throws IOException {
         assertEquals(expectedTokens, ClawContraption.calculateMinimalNumberOfTokens(filename, prizePositionModifier));
     }
+
+    @ParameterizedTest
+    @MethodSource("filepathsAndprizePositionModifierAndExpectedTokens")
+    void calculateMinimalNumberOfTokensWithSolver(final String filename,
+                                                  final Point prizePositionModifier,
+                                                  final long expectedTokens) throws IOException {
+        assertEquals(expectedTokens, ClawContraption.calculateMinimalNumberOfTokensWithSolver(filename, prizePositionModifier));
+    }
 }
