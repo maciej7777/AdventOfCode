@@ -27,12 +27,58 @@ public class WarehouseWoes {
     record Point(int x, int y) {
     }
 
+    record Input(List<List<Character>> map, List<Point> movesDirections, Point robotPosition) {
+    }
+
     public static long calculateBoxesGPSCoordinates(final String filename) throws IOException {
         List<String> lines = readLines(filename);
+        Input input = parseInput(lines);
+
+        Point robotPosition = input.robotPosition;
+        for (Point move : input.movesDirections) {
+            Point proposedPosition = new Point(robotPosition.x + move.x, robotPosition.y + move.y);
+            if (tryToMove(robotPosition, move, input.map)) {
+                robotPosition = proposedPosition;
+            }
+        }
+
+        return calculateGPSSum(input.map, 'O');
+    }
+
+    public static long calculateBoxesGPSCoordinatesForScaledWarehouse(final String filename) throws IOException {
+        List<String> lines = readLines(filename);
+        Input input = parseInputForExpandedWarehouse(lines);
+
+        Point robotPosition = input.robotPosition;
+        for (Point move : input.movesDirections) {
+            Point proposedPosition = new Point(robotPosition.x + move.x, robotPosition.y + move.y);
+            if (canMoveExtended(robotPosition, move, input.map)) {
+                moveExtended(robotPosition, move, input.map);
+                robotPosition = proposedPosition;
+            }
+        }
+
+        return calculateGPSSum(input.map, '[');
+    }
+
+    private static List<String> readLines(String filename) throws IOException {
+        List<String> lines = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                lines.add(line);
+            }
+        }
+        return lines;
+    }
+
+    private static Input parseInput(List<String> inputLines) {
         List<List<Character>> map = new ArrayList<>();
         List<Point> movesDirections = new ArrayList<>();
         Point robotPosition = new Point(0, 0);
-        for (String line : lines) {
+
+        for (String line : inputLines) {
             if (line.contains("#")) {
                 List<Character> elements = new ArrayList<>();
                 for (int i = 0; i < line.length(); i++) {
@@ -54,34 +100,15 @@ public class WarehouseWoes {
             }
         }
 
-        for (Point move : movesDirections) {
-            Point proposedPosition = new Point(robotPosition.x + move.x, robotPosition.y + move.y);
-            if (tryToMove(robotPosition, move, map)) {
-                robotPosition = proposedPosition;
-            }
-        }
-
-        return calculateGPSSum(map, 'O');
+        return new Input(map, movesDirections, robotPosition);
     }
 
-    private static int calculateGPSSum(List<List<Character>> map, char box) {
-        int sum = 0;
-        for (int i = 0; i < map.size(); i++) {
-            for (int j = 0; j < map.get(i).size(); j++) {
-                if (map.get(i).get(j) == box) {
-                    sum += i * 100 + j;
-                }
-            }
-        }
-        return sum;
-    }
-
-    public static long calculateBoxesGPSCoordinatesForScaledWarehouse(final String filename) throws IOException {
-        List<String> lines = readLines(filename);
+    private static Input parseInputForExpandedWarehouse(List<String> inputLines) {
         List<List<Character>> map = new ArrayList<>();
         List<Point> movesDirections = new ArrayList<>();
         Point robotPosition = new Point(0, 0);
-        for (String line : lines) {
+
+        for (String line : inputLines) {
             if (line.contains("#")) {
                 List<Character> elements = new ArrayList<>();
                 for (int i = 0; i < line.length(); i++) {
@@ -118,15 +145,7 @@ public class WarehouseWoes {
             }
         }
 
-        for (Point move : movesDirections) {
-            Point proposedPosition = new Point(robotPosition.x + move.x, robotPosition.y + move.y);
-            if (canMoveExtended(robotPosition, move, map)) {
-                moveExtended(robotPosition, move, map);
-                robotPosition = proposedPosition;
-            }
-        }
-
-        return calculateGPSSum(map, '[');
+        return new Input(map, movesDirections, robotPosition);
     }
 
     private static boolean tryToMove(Point currentPosition, Point move, List<List<Character>> map) {
@@ -212,15 +231,15 @@ public class WarehouseWoes {
         }
     }
 
-    private static List<String> readLines(String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
+    private static int calculateGPSSum(List<List<Character>> map, char box) {
+        int sum = 0;
+        for (int i = 0; i < map.size(); i++) {
+            for (int j = 0; j < map.get(i).size(); j++) {
+                if (map.get(i).get(j) == box) {
+                    sum += i * 100 + j;
+                }
             }
         }
-        return lines;
+        return sum;
     }
 }
