@@ -1,11 +1,11 @@
 package com.example.adventofcode.year2024.day01;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import static com.example.adventofcode.utils.FileUtils.readLines;
 
 public class HistorianHysteria {
     private static final String FILENAME = "AdventOfCodeData/2024/day01/input";
@@ -46,25 +46,13 @@ public class HistorianHysteria {
         return sum;
     }
 
-    private static List<String> readLines(String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
-            }
-        }
-        return lines;
-    }
-
     private static List<List<Integer>> getIntegerLists(List<String> lines) {
         List<List<Integer>> idLists = new ArrayList<>();
         List<Integer> idList1 = new ArrayList<>();
         List<Integer> idList2 = new ArrayList<>();
 
         for (String line: lines) {
-            String[] ids = line.split("   ");
+            String[] ids = line.split(" {3}");
             idList1.add(Integer.parseInt(ids[0]));
             idList2.add(Integer.parseInt(ids[1]));
         }

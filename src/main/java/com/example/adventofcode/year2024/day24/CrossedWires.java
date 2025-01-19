@@ -1,10 +1,10 @@
 package com.example.adventofcode.year2024.day24;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
+
+import static com.example.adventofcode.utils.FileUtils.readLines;
 
 public class CrossedWires {
     private static final String FILENAME = "AdventOfCodeData/2024/day24/input";
@@ -73,18 +73,6 @@ public class CrossedWires {
 
     private static boolean isGateInput(Gate gate, String input) {
         return input.equals(gate.left) || input.equals(gate.right);
-    }
-
-    private static List<String> readLines(String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
-            }
-        }
-        return lines;
     }
 
     private static Input parseInput(List<String> lines) {
