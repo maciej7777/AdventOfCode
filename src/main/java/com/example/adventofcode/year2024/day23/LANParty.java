@@ -5,11 +5,11 @@ import org.jgrapht.alg.clique.BronKerboschCliqueFinder;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
+
+import static com.example.adventofcode.utils.FileUtils.readLines;
 
 public class LANParty {
     private static final String FILENAME = "AdventOfCodeData/2024/day23/input";
@@ -81,18 +81,6 @@ public class LANParty {
             result.append(",");
         }
         return result.substring(0, result.length() - 1);
-    }
-
-    private static List<String> readLines(String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
-            }
-        }
-        return lines;
     }
 
     private static List<List<String>> generateThreeElementSubsets(Set<String> inputSet) {

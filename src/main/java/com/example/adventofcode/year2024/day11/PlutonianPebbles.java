@@ -1,12 +1,12 @@
 package com.example.adventofcode.year2024.day11;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static com.example.adventofcode.utils.FileUtils.readLine;
 
 public class PlutonianPebbles {
     private static final String FILENAME = "AdventOfCodeData/2024/day11/input";
@@ -46,12 +46,6 @@ public class PlutonianPebbles {
         }
 
         return sum;
-    }
-
-    private static String readLine(String filename) throws IOException {
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            return br.readLine();
-        }
     }
 
     private static List<Long> parseNumbers(String line) {
