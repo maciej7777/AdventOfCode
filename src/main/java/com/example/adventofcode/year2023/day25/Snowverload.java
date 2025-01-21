@@ -7,10 +7,13 @@ import org.jgrapht.alg.interfaces.MinimumSTCutAlgorithm;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleDirectedGraph;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import static com.example.adventofcode.utils.FileUtils.readLines;
 
 public class Snowverload {
     private static final String FILENAME = "AdventOfCodeData/2023/day25/input";
@@ -19,9 +22,7 @@ public class Snowverload {
 
     public static void main(String[] args) throws IOException {
         System.out.println(calculateMinWiresCutSets(EXAMPLE_FILENAME));
-        //54
         System.out.println(calculateMinWiresCutSets(FILENAME));
-        //551196
     }
 
 
@@ -34,18 +35,6 @@ public class Snowverload {
 
         MinimumSTCutAlgorithm<String, DefaultWeightedEdge> mc = executeCuts(graph, EXPECTED_CUTS);
         return mc.getSourcePartition().size() * mc.getSinkPartition().size();
-    }
-
-    private static List<String> readLines(String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
-            }
-        }
-        return lines;
     }
 
     private static Graph<String, DefaultWeightedEdge> generateGraph(List<String> lines) {

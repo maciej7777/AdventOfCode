@@ -1,12 +1,12 @@
 package com.example.adventofcode.year2023.day23;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
+
+import static com.example.adventofcode.utils.FileUtils.readLines;
 
 public class ALongWalkBruteForce {
     private static final String FILENAME = "AdventOfCodeData/2023/day23/input";
@@ -14,11 +14,8 @@ public class ALongWalkBruteForce {
 
     public static void main(String[] args) throws IOException {
         System.out.println(calculateLongestHike(EXAMPLE_FILENAME));
-        //94
         System.out.println(calculateLongestHike(FILENAME));
-        //2170
         System.out.println(calculateLongestHikeWithoutSlopes(EXAMPLE_FILENAME));
-        //154
     }
 
     record Point(int x, int y) {
@@ -50,18 +47,6 @@ public class ALongWalkBruteForce {
         Point start = new Point(1, 0);
         Point end = new Point(map.getLast().size() - 2, map.size() - 1);
         return calculateLongestDistanceWithoutSlopesBetween(start, map, end);
-    }
-
-    private static List<String> readLines(String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
-            }
-        }
-        return lines;
     }
 
     private static List<List<Character>> obtainMap(List<String> inputLines) {

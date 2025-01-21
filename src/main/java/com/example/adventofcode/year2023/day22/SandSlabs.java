@@ -1,9 +1,9 @@
 package com.example.adventofcode.year2023.day22;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+
+import static com.example.adventofcode.utils.FileUtils.readLines;
 
 public class SandSlabs {
     private static final String FILENAME = "AdventOfCodeData/2023/day22/input";
@@ -11,13 +11,9 @@ public class SandSlabs {
 
     public static void main(String[] args) throws IOException {
         System.out.println(countSafeToDisintegrateBricks(EXAMPLE_FILENAME));
-        //5
         System.out.println(countSafeToDisintegrateBricks(FILENAME));
-        //471
         System.out.println(countFallingBricks(EXAMPLE_FILENAME));
-        //7
         System.out.println(countFallingBricks(FILENAME));
-        //68525
     }
 
     record Coordinate(int x, int y, int z) {
@@ -74,18 +70,6 @@ public class SandSlabs {
             fallingSum += countMovedBricks(bricksWithoutOne, bricksWithoutOneMoved);
         }
         return fallingSum;
-    }
-
-    private static List<String> readLines(final String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
-            }
-        }
-        return lines;
     }
 
     private static List<CoordinatesPair> mapToCubeCoordinates(final List<String> lines) {

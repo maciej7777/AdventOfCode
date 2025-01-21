@@ -1,9 +1,9 @@
 package com.example.adventofcode.year2023.day21;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+
+import static com.example.adventofcode.utils.FileUtils.readLines;
 
 public class StepCounterBruteForce {
     private static final String FILENAME = "AdventOfCodeData/2023/day21/input";
@@ -18,9 +18,7 @@ public class StepCounterBruteForce {
 
     public static void main(String[] args) throws IOException {
          System.out.println(countFinalGardenPlots(EXAMPLE_FILENAME, 6));
-         //16
          System.out.println(countFinalGardenPlots(FILENAME, 64));
-         //3617
     }
 
 
@@ -32,7 +30,6 @@ public class StepCounterBruteForce {
 
     public static long countFinalGardenPlots(final String filename, final int steps) throws IOException {
         List<String> lines = readLines(filename);
-
         List<List<Character>> map = obtainScenarios(lines);
         Point startPoint = findStartPoint(map);
 
@@ -45,18 +42,6 @@ public class StepCounterBruteForce {
         Point start = findStartPoint(map);
 
         return countGardenPlotsAfterStepsInInfiniteMap(steps, start, map);
-    }
-
-    private static List<String> readLines(String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
-            }
-        }
-        return lines;
     }
 
     private static List<List<Character>> obtainScenarios(List<String> inputLines) {

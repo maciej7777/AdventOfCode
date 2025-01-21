@@ -3,13 +3,13 @@ package com.example.adventofcode.year2023.day24;
 import org.matheclipse.core.eval.ExprEvaluator;
 import org.matheclipse.core.interfaces.IExpr;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static com.example.adventofcode.utils.FileUtils.readLines;
 
 public class NeverTellMeTheOdds {
     private static final String FILENAME = "AdventOfCodeData/2023/day24/input";
@@ -20,13 +20,9 @@ public class NeverTellMeTheOdds {
 
     public static void main(String[] args) throws IOException {
         System.out.println(countXYLinesIntersectionsInArea(EXAMPLE_FILENAME, 7L, 27L));
-        //2
         System.out.println(countXYLinesIntersectionsInArea(FILENAME, inputAreaBegin, inputAreaEnd));
-        //18184
         System.out.println(obtainThrowingPositionCoordinatesSum(EXAMPLE_FILENAME));
-        //47
         System.out.println(obtainThrowingPositionCoordinatesSum(FILENAME));
-        //557789988450159
     }
 
 
@@ -81,18 +77,6 @@ public class NeverTellMeTheOdds {
         Map<String, Long> resultMapped = solveEquations(equations);
 
         return resultMapped.get("x") + resultMapped.get("y") + resultMapped.get("z");
-    }
-
-    private static List<String> readLines(String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
-            }
-        }
-        return lines;
     }
 
     private static List<Hailstone> mapHailstones(List<String> lines) {
