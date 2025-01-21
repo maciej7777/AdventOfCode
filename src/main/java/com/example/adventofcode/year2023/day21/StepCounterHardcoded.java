@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
+import static com.example.adventofcode.utils.FileUtils.readLines;
+
 public class StepCounterHardcoded {
     private static final String FILENAME = "AdventOfCodeData/2023/day21/input";
     private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2023/day21/example_input";
@@ -18,26 +20,17 @@ public class StepCounterHardcoded {
 
     public static void main(String[] args) throws IOException {
         System.out.println(countFinalGardenPlots(EXAMPLE_FILENAME, 6));
-        //16
         System.out.println(countFinalGardenPlots(FILENAME, 64));
-        //3617
 
         System.out.println(countFinalGardenPlotsInInfiniteMap(EXAMPLE_FILENAME, 6));
-        //16
         System.out.println(countFinalGardenPlotsInInfiniteMap(EXAMPLE_FILENAME, 10));
-        //50
         System.out.println(countFinalGardenPlotsInInfiniteMap(EXAMPLE_FILENAME, 50));
-        //1594
         System.out.println(countFinalGardenPlotsInInfiniteMap(EXAMPLE_FILENAME, 100));
-        //6536
         System.out.println(countFinalGardenPlotsInInfiniteMap(EXAMPLE_FILENAME, 500));
-        //167004
         System.out.println(countFinalGardenPlotsInInfiniteMap(EXAMPLE_FILENAME, 1000));
-        //668697
         //System.out.println(countFinalGardenPlotsInInfiniteMap(EXAMPLE_FILENAME, 5000));
         //16733044
         System.out.println(countFinalGardenPlotsInInfiniteMapExtended(FILENAME, 26501365));
-        //596857397104703
     }
 
 
@@ -70,18 +63,6 @@ public class StepCounterHardcoded {
         Point start = findStartPoint(map);
 
         return countGardenPlotsAfterStepsInInfiniteMapExtended(start, map);
-    }
-
-    private static List<String> readLines(String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
-            }
-        }
-        return lines;
     }
 
     private static List<List<Character>> obtainScenarios(List<String> inputLines) {
