@@ -1,12 +1,12 @@
 package com.example.adventofcode.year2023.day15;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+
+import static com.example.adventofcode.utils.FileUtils.readLine;
 
 public class LensLibrary {
     private static final String FILENAME = "AdventOfCodeData/2023/day15/input";
@@ -37,12 +37,6 @@ public class LensLibrary {
         String line = readLine(filename);
         List<Map<String, Integer>> boxes = createBoxes(line);
         return sumFocusingPower(boxes);
-    }
-
-    private static String readLine(String filename) throws IOException {
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            return br.readLine();
-        }
     }
 
     private static int calculateHash(String tested) {
