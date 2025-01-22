@@ -1,10 +1,10 @@
 package com.example.adventofcode.year2023.day11;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.adventofcode.utils.FileUtils.readLines;
 
 public class CosmicExpansion {
     private static final String FILENAME = "AdventOfCodeData/2023/day11/input";
@@ -48,18 +48,6 @@ public class CosmicExpansion {
         List<Point> galaxies = locateGalaxies(spaceMap);
 
         return calculateDistancesBetweenGalaxiesWithExpansion(galaxies, rowsToDuplicate, columnsToDuplicate, expansion);
-    }
-
-    private static List<String> readLines(String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
-            }
-        }
-        return lines;
     }
 
     private static List<List<Character>> obtainSpaceMap(List<String> inputLines) {
