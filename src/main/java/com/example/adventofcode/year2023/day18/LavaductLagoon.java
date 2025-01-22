@@ -1,9 +1,11 @@
 package com.example.adventofcode.year2023.day18;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import static com.example.adventofcode.utils.FileUtils.readLines;
 
 /**
  * To learn more about this solution take a look to the <a href="https://en.wikipedia.org/wiki/Shoelace_formula">Shoelace formula</a>.
@@ -52,18 +54,6 @@ public class LavaductLagoon {
         List<Operation> operations = obtainCorrectOperations(lines);
 
         return calculateLavaHold(operations);
-    }
-
-    private static List<String> readLines(String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
-            }
-        }
-        return lines;
     }
 
     private static List<Operation> obtainOperations(List<String> lines) {

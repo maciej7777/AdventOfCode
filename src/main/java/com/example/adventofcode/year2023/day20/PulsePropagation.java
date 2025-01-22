@@ -1,9 +1,9 @@
 package com.example.adventofcode.year2023.day20;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+
+import static com.example.adventofcode.utils.FileUtils.readLines;
 
 public class PulsePropagation {
     private static final String FILENAME = "AdventOfCodeData/2023/day20/input";
@@ -12,13 +12,9 @@ public class PulsePropagation {
 
     public static void main(String[] args) throws IOException {
         System.out.println(calculateLowAndHighPulsesProduct(EXAMPLE_FILENAME));
-        //32000000
         System.out.println(calculateLowAndHighPulsesProduct(EXAMPLE_FILENAME2));
-        //11687500
         System.out.println(calculateLowAndHighPulsesProduct(FILENAME));
-        //1020211150
         System.out.println(calculateMinButtonPushesForRx(FILENAME));
-        //238815727638557L
     }
 
 
@@ -125,18 +121,6 @@ public class PulsePropagation {
             buttonPushes++;
         }
         return lcm(cycleCounts);
-    }
-
-    private static List<String> readLines(String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
-            }
-        }
-        return lines;
     }
 
     private static Map<String, Node> createNodes(List<String> lines) {
