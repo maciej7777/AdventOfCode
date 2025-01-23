@@ -1,12 +1,12 @@
 package com.example.adventofcode.year2023.day08;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static com.example.adventofcode.utils.FileUtils.readLines;
 
 public class HauntedWasteland {
     private static final String FILENAME = "AdventOfCodeData/2023/day08/input";
@@ -48,18 +48,6 @@ public class HauntedWasteland {
             distances.add(calculateStepsFor(input, node, "Z"));
         }
         return calculateLcmOfArrayElements(distances.toArray(new Long[0]));
-    }
-
-    private static List<String> readLines(String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
-            }
-        }
-        return lines;
     }
 
     private static Input mapInput(List<String> inputLines) {
