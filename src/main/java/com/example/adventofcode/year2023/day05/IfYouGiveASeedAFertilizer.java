@@ -1,10 +1,10 @@
 package com.example.adventofcode.year2023.day05;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.adventofcode.utils.FileUtils.readLines;
 
 public class IfYouGiveASeedAFertilizer {
     private static final String FILENAME = "AdventOfCodeData/2023/day05/input";
@@ -180,17 +180,5 @@ public class IfYouGiveASeedAFertilizer {
 
     private static boolean isOverlapping(Range range1, Range range2) {
         return !(range1.last < range2.first || range2.last < range1.first);
-    }
-
-    private static List<String> readLines(String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
-            }
-        }
-        return lines;
     }
 }
