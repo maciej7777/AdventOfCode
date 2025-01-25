@@ -1,39 +1,23 @@
 package com.example.adventofcode.year2022.day25;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.List;
+
+import static com.example.adventofcode.utils.FileUtils.readLines;
 
 public class FullOfHotAir {
-    private static final String FILENAME = "AdventOfCodeData/2022day25/input";
-    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022day25/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2022/day25/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022/day25/example_input";
 
     public static void main(String[] args) throws IOException {
-        List<String> exampleInput = readInput(EXAMPLE_FILENAME);
-        List<String> input = readInput(FILENAME);
-
-        System.out.println(calculatePositions(exampleInput));
-        System.out.println(calculatePositions(input));
+        System.out.println(calculateFuelNeeded(EXAMPLE_FILENAME));
+        System.out.println(calculateFuelNeeded(FILENAME));
 
     }
 
     public static String calculateFuelNeeded(final String fileName) throws IOException {
-        List<String> input = readInput(fileName);
+        List<String> input = readLines(fileName);
         return calculatePositions(input);
-    }
-
-    private static List<String> readInput(final String filename) throws IOException {
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-            List<String> input = new ArrayList<>();
-
-            while ((line = br.readLine()) != null) {
-                input.add(line);
-            }
-
-            return input;
-        }
     }
 
     private static String calculatePositions(final List<String> inputLines) {

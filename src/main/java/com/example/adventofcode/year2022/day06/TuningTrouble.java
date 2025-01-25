@@ -1,13 +1,16 @@
 package com.example.adventofcode.year2022.day06;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import static com.example.adventofcode.utils.FileUtils.readLines;
 
 public class TuningTrouble {
-    private static final String FILENAME = "AdventOfCodeData/2022day06/input";
-    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022day06/example_input";
+    private static final String FILENAME = "AdventOfCodeData/2022/day06/input";
+    private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2022/day06/example_input";
 
     public static void main(String[] args) throws IOException {
         List<String> lines = readLines(FILENAME);
@@ -15,17 +18,6 @@ public class TuningTrouble {
         for (String line: lines) {
             System.out.println(calculateMarkerPositionFor(line, 4));
             System.out.println(calculateMarkerPositionFor(line, 14));
-        }
-    }
-
-    public static List<String> readLines(String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
-            }
-            return lines;
         }
     }
 
