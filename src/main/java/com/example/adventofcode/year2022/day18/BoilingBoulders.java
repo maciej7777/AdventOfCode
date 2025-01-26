@@ -34,7 +34,7 @@ public class BoilingBoulders {
     record CubePosition(int x, int y, int z) {
     }
 
-    public static List<CubePosition> readInput(String filename) throws IOException {
+    private static List<CubePosition> readInput(String filename) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
             List<CubePosition> map = new ArrayList<>();
@@ -48,7 +48,7 @@ public class BoilingBoulders {
         }
     }
 
-    public static int calculateSurfaceArea(List<CubePosition> cubes) {
+    private static int calculateSurfaceArea(List<CubePosition> cubes) {
         int positions = 0;
         for (CubePosition cube : cubes) {
             int tmpPositions = 6;
@@ -73,7 +73,7 @@ public class BoilingBoulders {
         return positions;
     }
 
-    public static int calculateExteriorSurfaceArea(List<CubePosition> cubes) {
+    private static int calculateExteriorSurfaceArea(List<CubePosition> cubes) {
         int positions = 0;
 
         List<CubePosition> internalAir = countInternalAir(cubes);
