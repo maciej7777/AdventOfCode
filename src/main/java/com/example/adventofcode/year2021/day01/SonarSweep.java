@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.adventofcode.utils.FileUtils.readLines;
+
 public class SonarSweep {
     private static final String FILENAME = "AdventOfCodeData/2021/day01/input";
     private static final String EXAMPLE_FILENAME = "AdventOfCodeData/2021/day01/example_input";
@@ -54,18 +56,6 @@ public class SonarSweep {
         }
 
         return levelIncreases;
-    }
-
-    private static List<String> readLines(String filename) throws IOException {
-        List<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-
-            while ((line = br.readLine()) != null) {
-                lines.add(line);
-            }
-        }
-        return lines;
     }
 
     private static List<Integer> parseMeasurements(List<String> lines) {
