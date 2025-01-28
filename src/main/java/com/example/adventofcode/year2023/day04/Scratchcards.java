@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import static com.example.adventofcode.utils.FileUtils.readLines;
+import static com.example.adventofcode.utils.MathUtils.pow;
 
 public class Scratchcards {
     private static final String FILENAME = "AdventOfCodeData/2023/day04/input";
@@ -81,14 +82,6 @@ public class Scratchcards {
             }
         }
         return sum;
-    }
-
-    private static int pow(int a, int b) {
-        if (b == 0) return 1;
-        if (b == 1) return a;
-        if (((b & 1) == 0)) return pow(a * a, b / 2); //even a=(a^2)^b/2
-        else return a * pow(a * a, b / 2); //odd  a=a*(a^2)^b/2
-
     }
 
     private static int countWinningNumbers(List<Integer> ourNumbers, List<Integer> winningNumbers) {
