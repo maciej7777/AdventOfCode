@@ -1,11 +1,6 @@
 package com.example.adventofcode.year2021.day01;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.example.adventofcode.utils.FileUtils.readLines;
