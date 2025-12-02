@@ -61,7 +61,7 @@ public class GiftShop {
         return count;
     }
 
-    private static List<Interval> generateIntervals(List<String> lines) {
+    private static List<Interval> generateIntervals(final List<String> lines) {
         List<Interval> intervalList = new ArrayList<>();
         for (String line : lines) {
             String[] elements = line.split(",");
@@ -76,8 +76,10 @@ public class GiftShop {
         return intervalList;
     }
 
-    private static boolean checkIfNumberIsSpecial(String number, int length, int j) {
-        if (length % j == 0) {
+    private static boolean checkIfNumberIsSpecial(final String number, final int length, final int j) {
+        if (length % j != 0) {
+            return false;
+        } else {
             for (int k = 1; k < j; k++) {
                 String previous = number.substring(number.length() * (k - 1) / j, (number.length() * k / j));
                 String next = number.substring(number.length() * k / j, (number.length() * (k + 1) / j));
@@ -86,8 +88,6 @@ public class GiftShop {
                     return false;
                 }
             }
-        } else {
-            return false;
         }
 
         return true;
