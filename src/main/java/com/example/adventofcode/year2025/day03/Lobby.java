@@ -47,18 +47,18 @@ public class Lobby {
         return sum;
     }
 
-    public static long calculateTotalOutputJoltage(final String filename, final int length) throws IOException {
+    public static long calculateTotalOutputJoltage(final String filename, final int joltageLength) throws IOException {
         List<String> lines = readLines(filename);
         long sum = 0;
 
         for (String line: lines) {
             String[] elements = line.split("");
 
-            List<Integer> maxValues = prepareArray(length, 0);
-            List<Integer> maxPositions = prepareArray(length + 1, -1);
+            List<Integer> maxValues = prepareArray(joltageLength, 0);
+            List<Integer> maxPositions = prepareArray(joltageLength + 1, -1);
 
-            for (int i = 0; i < length; i++) {
-                for (int j = maxPositions.get(i)+1; j < elements.length - length + i + 1; j++) {
+            for (int i = 0; i < joltageLength; i++) {
+                for (int j = maxPositions.get(i)+1; j < elements.length - joltageLength + i + 1; j++) {
                     if (Integer.parseInt(elements[j]) > maxValues.get(i)) {
                         maxValues.set(i, Integer.parseInt(elements[j]));
                         maxPositions.set(i + 1, j);
@@ -66,7 +66,7 @@ public class Lobby {
                 }
             }
 
-            sum += parseMaxJoltageNumber(length, maxValues);
+            sum += parseMaxJoltageNumber(joltageLength, maxValues);
         }
 
         return sum;
