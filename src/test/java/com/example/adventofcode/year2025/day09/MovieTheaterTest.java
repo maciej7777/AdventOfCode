@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MovieTheaterTest {
     
-    private static Stream<Arguments> filepathsAndConnectionsAndExpectedLargestArea() {
+    private static Stream<Arguments> filepathsAndExpectedLargestArea() {
         return Stream.of(
                 Arguments.of("AdventOfCodeData/2025/day09/example_input", 50),
                 Arguments.of("AdventOfCodeData/2025/day09/input", 4769758290L)
@@ -19,20 +19,20 @@ class MovieTheaterTest {
     }
 
     @ParameterizedTest
-    @MethodSource("filepathsAndConnectionsAndExpectedLargestArea")
+    @MethodSource("filepathsAndExpectedLargestArea")
     void calculateLargestAreaBruteForce(final String filename,
                                         final long expectedLargestArea) throws IOException {
         assertEquals(expectedLargestArea, MovieTheater.calculateLargestAreaBruteForce(filename));
     }
 
     @ParameterizedTest
-    @MethodSource("filepathsAndConnectionsAndExpectedLargestArea")
+    @MethodSource("filepathsAndExpectedLargestArea")
     void calculateLargestArea(final String filename,
                               final long expectedLargestArea) throws IOException {
         assertEquals(expectedLargestArea, MovieTheater.calculateLargestArea(filename));
     }
 
-    private static Stream<Arguments> filepathsAndConnectionsAndExpectedLargestAreaInsideOfPolygon() {
+    private static Stream<Arguments> filepathsAndExpectedLargestAreaInsideOfPolygon() {
         return Stream.of(
                 Arguments.of("AdventOfCodeData/2025/day09/example_input", 24),
                 Arguments.of("AdventOfCodeData/2025/day09/input", 1588990708L)
@@ -40,7 +40,7 @@ class MovieTheaterTest {
     }
 
     @ParameterizedTest
-    @MethodSource("filepathsAndConnectionsAndExpectedLargestAreaInsideOfPolygon")
+    @MethodSource("filepathsAndExpectedLargestAreaInsideOfPolygon")
     void calculateLargestAreaInsideOfPolygon(final String filename,
                                              final long expectedLargestArea) throws IOException {
         assertEquals(expectedLargestArea, MovieTheater.calculateLargestAreaInsideOfPolygon(filename));

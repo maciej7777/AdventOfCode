@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ReactorTest {
 
-    private static Stream<Arguments> filepathsAndConnectionsAndExpectedWaysOut() {
+    private static Stream<Arguments> filepathsAndExpectedWaysOut() {
         return Stream.of(
                 Arguments.of("AdventOfCodeData/2025/day11/example_input", 5),
                 Arguments.of("AdventOfCodeData/2025/day11/input", 615)
@@ -19,13 +19,13 @@ class ReactorTest {
     }
 
     @ParameterizedTest
-    @MethodSource("filepathsAndConnectionsAndExpectedWaysOut")
+    @MethodSource("filepathsAndExpectedWaysOut")
     void countWaysOut(final String filename,
                       final long expectedWaysOut) throws IOException {
         assertEquals(expectedWaysOut, Reactor.countWaysOut(filename));
     }
 
-    private static Stream<Arguments> filepathsAndConnectionsAndExpectedWaysOutThroughNodesSubset() {
+    private static Stream<Arguments> filepathsAndExpectedWaysOutThroughNodesSubset() {
         return Stream.of(
                 Arguments.of("AdventOfCodeData/2025/day11/example_input2", 2),
                 Arguments.of("AdventOfCodeData/2025/day11/input", 303012373210128L)
@@ -33,7 +33,7 @@ class ReactorTest {
     }
 
     @ParameterizedTest
-    @MethodSource("filepathsAndConnectionsAndExpectedWaysOutThroughNodesSubset")
+    @MethodSource("filepathsAndExpectedWaysOutThroughNodesSubset")
     void countWaysOutThroughNodesSubset(final String filename,
                                         final long expectedWaysOut) throws IOException {
         assertEquals(expectedWaysOut, Reactor.countWaysOutThroughNodesSubset(filename));
